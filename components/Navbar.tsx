@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <img
-            src="/images/PNG/Asset 8@2x.png"
+            src="/images/PNG/Asset 6@2x.png"
             alt="URBAN STAYS Logo"
             style={{
               height: 120,

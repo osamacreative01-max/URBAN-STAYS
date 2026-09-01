@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div style={{ marginBottom: "1rem" }}>
               <img
-                src="/images/PNG/Asset 8@2x.png"
+                src="/images/PNG/Asset 6@2x.png"
                 alt="URBAN STAYS Logo"
                 style={{ height: 120, width: 180, objectFit: "contain" }}
               />

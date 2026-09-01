@@ -28,7 +28,7 @@ export default function Preloader() {
       }}
     >
       <img
-        src="/images/PNG/Asset 8@2x.png"
+        src="/images/PNG/Asset 6@2x.png"
         alt="URBAN STAYS"
         style={{
           height: 80,
