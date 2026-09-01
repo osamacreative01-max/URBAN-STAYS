@@ -207,8 +207,8 @@ export default function HomePage() {
             </h2>
             <div className="divider-gold" />
             <p
-              className="font-lato text-base leading-relaxed mb-4 mt-6"
-              style={{ color: "#2B2D31" }}
+              className="font-lato text-base mb-5 mt-6"
+              style={{ color: "#2B2D31", lineHeight: "1.85" }}
             >
               Situated at the iconic Masingita Hotel in the heart of Sandton, URBAN
               STAYS offers a curated selection of fully serviced luxury apartments —
@@ -216,8 +216,8 @@ export default function HomePage() {
               refuse to settle for less.
             </p>
             <p
-              className="font-lato text-base leading-relaxed mb-8"
-              style={{ color: "#2B2D31" }}
+              className="font-lato text-base mb-8"
+              style={{ color: "#2B2D31", lineHeight: "1.85" }}
             >
               Each space is thoughtfully appointed with premium furnishings, modern
               amenities, and warm, authentic touches that make every stay feel like
@@ -225,7 +225,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/apartments"
-              className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-block px-7 py-3"
+              className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-block px-7 py-3 mt-2"
               style={{
                 border: "1px solid #C5A46D",
                 color: "#C5A46D",
@@ -572,6 +572,7 @@ export default function HomePage() {
                       borderRadius: "50%",
                       objectFit: "cover",
                       border: "2px solid rgba(197,164,109,0.4)",
+                      filter: "sepia(0.25) saturate(1.1) brightness(1.05)",
                     }}
                   />
                 ) : (
@@ -668,11 +669,11 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <p className="font-montserrat text-lg font-light tracking-wider" style={{ color: "#FFFFFF" }}>
+                  <p className="font-montserrat text-lg font-light tracking-wider" style={{ color: "#FFFFFF", textShadow: "0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3)" }}>
                     Sandton · Johannesburg
                   </p>
                   <div style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)", margin: "0.5rem auto" }} />
-                  <p className="font-lato text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <p className="font-lato text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.65)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
                     Africa's Richest Square Mile
                   </p>
                 </div>
@@ -797,9 +798,7 @@ export default function HomePage() {
               {
                 icon: (
                   <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.2" className="w-6 h-6">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M16 8l-4 4-4-4" />
-                    <path d="M16 16l-4-4-4 4" />
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ),
                 title: "Exceptional Value",
