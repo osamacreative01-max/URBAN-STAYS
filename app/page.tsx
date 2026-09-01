@@ -267,7 +267,7 @@ export default function HomePage() {
             The URBAN Experience
           </p>
           <h2
-            className="font-montserrat text-3xl md:text-4xl font-light mb-4"
+            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
             style={{ color: "#FFFFFF" }}
           >
             Crafted for the{" "}
@@ -284,10 +284,10 @@ export default function HomePage() {
               icon: (
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
+                  className="w-8 h-8"
                   fill="none"
                   stroke="#C5A46D"
-                  strokeWidth="1"
+                  strokeWidth="1.2"
                   aria-hidden="true"
                 >
                   <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -301,10 +301,10 @@ export default function HomePage() {
               icon: (
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
+                  className="w-8 h-8"
                   fill="none"
                   stroke="#C5A46D"
-                  strokeWidth="1"
+                  strokeWidth="1.2"
                   aria-hidden="true"
                 >
                   <circle cx="12" cy="12" r="10" />
@@ -318,10 +318,10 @@ export default function HomePage() {
               icon: (
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
+                  className="w-8 h-8"
                   fill="none"
                   stroke="#C5A46D"
-                  strokeWidth="1"
+                  strokeWidth="1.2"
                   aria-hidden="true"
                 >
                   <path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3" />
@@ -335,27 +335,71 @@ export default function HomePage() {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-5 sm:p-8 text-center transition-all duration-300 group card-hover reveal-scale flex flex-col items-center"
-              style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+              className="group relative rounded-xl p-8 sm:p-10 text-center transition-all duration-500 card-hover reveal-scale flex flex-col items-center"
+              style={{
+                background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                border: "1px solid rgba(197,164,109,0.2)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+              }}
               data-delay={String(i + 1)}
             >
-              <div className="mb-6">{item.icon}</div>
+              {/* Gold corner accent */}
+              <div
+                className="absolute top-0 right-0 w-14 h-14 opacity-30"
+                style={{
+                  background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
+                  borderRadius: "0 0.75rem 0 0",
+                }}
+              />
+
+              {/* Icon */}
+              <div
+                className="mb-6 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110"
+                style={{
+                  width: 64,
+                  height: 64,
+                  background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
+                  border: "1px solid rgba(197,164,109,0.25)",
+                }}
+              >
+                {item.icon}
+              </div>
+
+              {/* Title */}
               <h3
                 className="font-montserrat text-base font-semibold tracking-wider uppercase mb-3"
                 style={{ color: "#FFFFFF" }}
               >
                 {item.title}
               </h3>
+
+              {/* Divider */}
               <div
                 className="mx-auto mb-5"
-                style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }}
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                }}
               />
+
+              {/* Description */}
               <p
                 className="font-lato text-sm leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.65)" }}
               >
                 {item.text}
               </p>
+
+              {/* Bottom gold line */}
+              <div
+                className="mx-auto mt-6"
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                }}
+              />
             </div>
           ))}
         </div>
