@@ -91,7 +91,7 @@ export default function HomePage() {
       <ScrollObserver />
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center justify-center"
+        className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         {/* Hero background image */}
@@ -112,16 +112,18 @@ export default function HomePage() {
         />
 
         {/* Hero content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto" style={{ zIndex: 20 }}>
+        <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto" style={{ zIndex: 20 }}>
           <p className="font-lato text-xs tracking-[0.4em] uppercase mb-6" style={{ color: "#C5A46D" }} data-delay="1">
             Sandton · Johannesburg · South Africa
           </p>
           <h1
-            className="font-montserrat text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-6"
+            className="font-montserrat text-[1.35rem] sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-6"
             style={{ color: "#FFFFFF" }}
             data-delay="2"
           >
-            Luxury Serviced Apartments in Sandton
+            Luxury Serviced Apartments in
+            <br />
+            Sandton
             <br />
             <span className="font-semibold" style={{ color: "#C5A46D" }}>
               URBAN STAYS
