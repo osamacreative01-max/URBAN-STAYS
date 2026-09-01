@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description:
       "Premium serviced apartments in Sandton with private shuttle and chauffeur services.",
     type: "website",
-    url: "https://lavishstays.co.za",
+    url: "https://urbanstays.co.za",
     siteName: "URBAN STAYS",
     images: [
       {

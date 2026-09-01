@@ -1,7 +1,7 @@
 "use client";
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "+923401313713"; // Replace with actual WhatsApp Business number
+  const whatsappNumber = "923401313713";
   const message = encodeURIComponent(
     "Hi URBAN STAYS! I'm interested in booking a luxury apartment in Sandton. Could you please assist me?"
   );

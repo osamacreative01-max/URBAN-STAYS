@@ -139,7 +139,7 @@ export default function Footer() {
                 South Africa
               </p>
               <a
-                href="https://wa.me/27000000000"
+                href="https://wa.me/923401313713"
                 className="font-lato text-sm transition-all duration-300 group"
                 style={{ color: "rgba(255,255,255,0.65)" }}
               >
@@ -150,11 +150,11 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="mailto:info@lavishstays.co.za"
+                href="mailto:info@urbanstays.co.za"
                 className="font-lato text-sm transition-all duration-300 group"
                 style={{ color: "rgba(255,255,255,0.65)" }}
               >
-                info@lavishstays.co.za
+                info@urbanstays.co.za
                 <span
                   className="inline-block w-0 h-0.5 bg-C9A45C transition-all duration-300 ml-2"
                   style={{ backgroundColor: "#C5A46D" }}
@@ -165,9 +165,9 @@ export default function Footer() {
             {/* Social icons */}
             <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem" }}>
               {[
-                { label: "Instagram", short: "IG", href: "https://instagram.com/lavishstays" },
-                { label: "Facebook",  short: "FB", href: "https://facebook.com/lavishstays" },
-                { label: "TikTok",    short: "TK", href: "https://tiktok.com/@lavishstays" },
+                { label: "Instagram", short: "IG", href: "https://instagram.com/urbanstays" },
+                { label: "Facebook",  short: "FB", href: "https://facebook.com/urbanstays" },
+                { label: "TikTok",    short: "TK", href: "https://tiktok.com/@urbanstays" },
               ].map((s, i) => (
                 <a
                   key={i}

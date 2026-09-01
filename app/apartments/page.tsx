@@ -225,7 +225,7 @@ export default function ApartmentsPage() {
                     Book {apt.name}
                   </a>
                   <a
-                    href={`https://wa.me/27000000000?text=${encodeURIComponent(
+                    href={`https://wa.me/923401313713?text=${encodeURIComponent(
                       `Hi, I'm interested in the ${apt.name} at URBAN STAYS.`
                     )}`}
                     target="_blank"
@@ -355,7 +355,7 @@ export default function ApartmentsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                  href="https://wa.me/27000000000?text=Hi%20Lavish%20Stays%2C%20I%20would%20like%20to%20make%20a%20booking."
+                  href="https://wa.me/923401313713?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-montserrat text-xs font-semibold tracking-widest uppercase px-6 py-3 inline-flex items-center gap-2"
@@ -367,7 +367,7 @@ export default function ApartmentsPage() {
                   Reserve via WhatsApp
                 </a>
                 <a
-                  href="mailto:info@lavishstays.co.za?subject=Booking%20Enquiry"
+                  href="mailto:info@urbanstays.co.za?subject=Booking%20Enquiry"
                   className="font-montserrat text-xs tracking-widest uppercase px-6 py-3"
                   style={{ border: "1px solid #C5A46D", color: "#C5A46D" }}
                 >

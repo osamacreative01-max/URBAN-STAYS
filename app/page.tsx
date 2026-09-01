@@ -10,8 +10,8 @@ export default function HomePage() {
     "@type": "LodgingBusiness",
     "name": "URBAN STAYS",
     "description": "Luxury serviced apartments in the heart of Sandton, Johannesburg. Premium accommodation with personalized service and private chauffeur options.",
-    "url": "https://lavishstays.co.za",
-    "logo": "https://lavishstays.co.za/logo.png",
+    "url": "https://urbanstays.co.za",
+    "logo": "https://urbanstays.co.za/logo.png",
     "image": [
       "https://images.unsplash.com/photo-1600596542815-3ad19b989b7b?w=1200&q=80",
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
@@ -30,7 +30,7 @@ export default function HomePage() {
       "longitude": "28.0567"
     },
     "telephone": "+27-00-000-0000",
-    "email": "info@lavishstays.co.za",
+    "email": "info@urbanstays.co.za",
     "priceRange": "R2,800 - R6,500",
     "amenityFeature": [
       {
@@ -74,9 +74,9 @@ export default function HomePage() {
       "reviewCount": "127"
     },
     "sameAs": [
-      "https://www.facebook.com/lavishstays",
-      "https://www.instagram.com/lavishstays",
-      "https://www.linkedin.com/company/lavishstays"
+      "https://www.facebook.com/urbanstays",
+      "https://www.instagram.com/urbanstays",
+      "https://www.linkedin.com/company/urbanstays"
     ]
   };
 
@@ -474,7 +474,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                  href="https://wa.me/27000000000?text=Hi%20Lavish%20Stays%2C%20I%20would%20like%20to%20make%20a%20booking."
+                  href="https://wa.me/923401313713?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-montserrat text-xs font-semibold tracking-widest uppercase px-6 py-3 inline-flex items-center gap-2"
@@ -486,7 +486,7 @@ export default function HomePage() {
                   Make Booking via WhatsApp
                 </a>
                 <a
-                  href="mailto:info@lavishstays.co.za?subject=Booking%20Enquiry"
+                  href="mailto:info@urbanstays.co.za?subject=Booking%20Enquiry"
                   className="font-montserrat text-xs tracking-widest uppercase px-6 py-3"
                   style={{ border: "1px solid rgba(197,164,109,0.5)", color: "#C5A46D" }}
                 >

@@ -133,7 +133,7 @@ export default function ContactPage() {
               <div>
                 <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>WhatsApp</h3>
                 <a
-                  href={`https://wa.me/27000000000?text=${waMessage}`}
+                  href={`https://wa.me/923401313713?text=${waMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-lato text-sm"
@@ -146,11 +146,11 @@ export default function ContactPage() {
               <div>
                 <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>Email</h3>
                 <a
-                  href="mailto:info@lavishstays.co.za"
+                  href="mailto:info@urbanstays.co.za"
                   className="font-lato text-sm"
                   style={{ color: "#C5A46D" }}
                 >
-                  info@lavishstays.co.za
+                  info@urbanstays.co.za
                 </a>
               </div>
               {/* Address */}
@@ -183,9 +183,9 @@ export default function ContactPage() {
               <h3 style={{ ...labelStyle, marginBottom: "1rem" }}>Follow Us</h3>
               <div style={{ display: "flex", gap: "0.75rem" }}>
                 {[
-                  { label: "Instagram", short: "IG", href: "https://instagram.com/lavishstays" },
-                  { label: "Facebook",  short: "FB", href: "https://facebook.com/lavishstays" },
-                  { label: "TikTok",    short: "TK", href: "https://tiktok.com/@lavishstays" },
+                  { label: "Instagram", short: "IG", href: "https://instagram.com/urbanstays" },
+                  { label: "Facebook",  short: "FB", href: "https://facebook.com/urbanstays" },
+                  { label: "TikTok",    short: "TK", href: "https://tiktok.com/@urbanstays" },
                 ].map((s) => (
                   <a
                     key={s.label}
@@ -369,7 +369,7 @@ export default function ContactPage() {
                 >
                   Prefer instant response?{" "}
                   <a
-                    href={`https://wa.me/27000000000?text=${waMessage}`}
+                    href={`https://wa.me/923401313713?text=${waMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: "#C5A46D" }}
