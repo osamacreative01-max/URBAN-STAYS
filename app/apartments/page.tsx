@@ -278,6 +278,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "High-Speed Wi-Fi",
+              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.06 PM.jpeg",
             },
             {
               icon: (
@@ -288,6 +289,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Smart TV",
+              image: "/images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg",
             },
             {
               icon: (
@@ -297,6 +299,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Daily Housekeeping",
+              image: "/images/gallery/master bedroom big windows view.jpg",
             },
             {
               icon: (
@@ -305,6 +308,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "24/7 Concierge",
+              image: "/images/gallery/Leonardo Sandton.jpg",
             },
             {
               icon: (
@@ -314,6 +318,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Secure Parking",
+              image: "/images/gallery/Sandton Towers.jpg",
             },
             {
               icon: (
@@ -323,6 +328,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "In-unit Laundry",
+              image: "/images/gallery/Sandton, South Africa.jpg",
             },
             {
               icon: (
@@ -331,6 +337,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Premium Bedding",
+              image: "/images/gallery/Sandton, South Africa 🤍.jpg",
             },
             {
               icon: (
@@ -343,11 +350,12 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Welcome Pack",
+              image: "/images/gallery/Sandton city diaries __.jpg",
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="group relative rounded-xl p-6 text-center transition-all duration-500 card-hover reveal-scale"
+              className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover reveal-scale flex flex-col"
               style={{
                 background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                 border: "1px solid rgba(197,164,109,0.2)",
@@ -357,39 +365,58 @@ export default function ApartmentsPage() {
             >
               {/* Gold corner accent */}
               <div
-                className="absolute top-0 right-0 w-12 h-12 opacity-30"
+                className="absolute top-0 right-0 w-10 h-10 opacity-30 z-10"
                 style={{
                   background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
-                  borderRadius: "0 0.75rem 0 0",
+                  borderRadius: "0 0.5rem 0 0",
                 }}
               />
 
-              {/* Icon */}
-              <div
-                className="mx-auto mb-4 flex items-center justify-center rounded-full transition-all duration-300"
-                style={{
-                  width: 56,
-                  height: 56,
-                  background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
-                  border: "1px solid rgba(197,164,109,0.25)",
-                }}
-              >
-                {item.icon}
+              {/* Image */}
+              <div className="relative h-32 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to bottom, rgba(23,35,58,0.2) 0%, rgba(23,35,58,0.85) 100%)",
+                  }}
+                />
               </div>
 
-              {/* Label */}
-              <p
-                className="font-montserrat text-sm font-medium"
-                style={{ color: "rgba(255,255,255,0.9)" }}
-              >
-                {item.label}
-              </p>
+              {/* Content */}
+              <div className="p-5 text-center flex flex-col items-center flex-1">
+                {/* Icon */}
+                <div
+                  className="mb-3 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-7 relative z-10"
+                  style={{
+                    width: 48,
+                    height: 48,
+                    background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
+                    border: "2px solid rgba(197,164,109,0.4)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {item.icon}
+                </div>
+
+                {/* Label */}
+                <p
+                  className="font-montserrat text-xs font-medium tracking-wide"
+                  style={{ color: "rgba(255,255,255,0.9)" }}
+                >
+                  {item.label}
+                </p>
+              </div>
 
               {/* Bottom gold line */}
               <div
-                className="mx-auto mt-5"
+                className="mx-auto mb-4"
                 style={{
-                  width: 40,
+                  width: 32,
                   height: 2,
                   background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
                 }}
