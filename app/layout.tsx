@@ -15,7 +15,7 @@ const montserratRegular = localFont({
 });
 
 const montserratMedium = localFont({
-  src: "../public/fonts/Gontserrat-Medium.ttf",
+  src: "../public/fonts/Montserrat-Medium.ttf",
   weight: "500",
   variable: "--font-montserrat-medium",
   display: "swap",

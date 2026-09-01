@@ -325,7 +325,7 @@ export default function ApartmentsPage() {
             {/* Interim booking options — remove once NightsBridge is live */}
             <div
               className="flex flex-col items-center justify-center text-center py-12 px-8"
-              style={{ backgroundColor: "#F8F3EA" }}
+              style={{ backgroundColor: "#F7F3EA" }}
             >
               <svg
                 viewBox="0 0 24 24"
