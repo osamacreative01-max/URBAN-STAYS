@@ -14,7 +14,7 @@ const nearby = [
   { name: "Sandton Gautrain Station",   distance: "8 min walk",     image: "/images/gallery/Sandton, South Africa.jpg" },
   { name: "OR Tambo International",     distance: "35 min drive",   image: "/images/gallery/Sandton city diaries __.jpg" },
   { name: "Lanseria Airport",           distance: "40 min drive",   image: "/images/gallery/download (4).jpg" },
-  { name: "Rosebank",                   distance: "12 min drive",   image: "/images/gallery/#aictch travel aesthetic_.jpg" },
+  { name: "Rosebank",                   distance: "12 min drive",   image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM456.jpeg" },
   { name: "Melrose Arch",               distance: "10 min drive",   image: "/images/gallery/Sandton, South Africa 🤍.jpg" },
   { name: "Hyde Park Corner",           distance: "15 min drive",   image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM.jpeg" },
 ];
