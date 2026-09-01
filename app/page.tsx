@@ -296,6 +296,7 @@ export default function HomePage() {
               ),
               title: "Luxury Apartments",
               text: "Fully furnished, serviced apartments with premium fittings and curated décor — ready for short or extended stays.",
+              image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
             },
             {
               icon: (
@@ -313,6 +314,7 @@ export default function HomePage() {
               ),
               title: "Personalised Service",
               text: "From arrival to departure, our team anticipates your every need — concierge, housekeeping, and more.",
+              image: "/images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg",
             },
             {
               icon: (
@@ -331,11 +333,12 @@ export default function HomePage() {
               ),
               title: "Shuttle & Chauffeur",
               text: "Professional, private transport for airport transfers, business meetings, or wherever Sandton takes you.",
+              image: "/images/UrbanStays_Shuttles - Car3.png",
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="group relative rounded-xl p-8 sm:p-10 text-center transition-all duration-500 card-hover reveal-scale flex flex-col items-center"
+              className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover reveal-scale flex flex-col"
               style={{
                 background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                 border: "1px solid rgba(197,164,109,0.2)",
@@ -345,55 +348,74 @@ export default function HomePage() {
             >
               {/* Gold corner accent */}
               <div
-                className="absolute top-0 right-0 w-14 h-14 opacity-30"
+                className="absolute top-0 right-0 w-14 h-14 opacity-30 z-10"
                 style={{
                   background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
                   borderRadius: "0 0.75rem 0 0",
                 }}
               />
 
-              {/* Icon */}
-              <div
-                className="mb-6 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110"
-                style={{
-                  width: 64,
-                  height: 64,
-                  background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
-                  border: "1px solid rgba(197,164,109,0.25)",
-                }}
-              >
-                {item.icon}
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to bottom, rgba(23,35,58,0.2) 0%, rgba(23,35,58,0.8) 100%)",
+                  }}
+                />
               </div>
 
-              {/* Title */}
-              <h3
-                className="font-montserrat text-base font-semibold tracking-wider uppercase mb-3"
-                style={{ color: "#FFFFFF" }}
-              >
-                {item.title}
-              </h3>
+              {/* Content */}
+              <div className="p-8 text-center flex flex-col items-center flex-1">
+                {/* Icon */}
+                <div
+                  className="mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-10 relative z-10"
+                  style={{
+                    width: 64,
+                    height: 64,
+                    background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
+                    border: "2px solid rgba(197,164,109,0.4)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {item.icon}
+                </div>
 
-              {/* Divider */}
-              <div
-                className="mx-auto mb-5"
-                style={{
-                  width: 40,
-                  height: 2,
-                  background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
-                }}
-              />
+                {/* Title */}
+                <h3
+                  className="font-montserrat text-base font-semibold tracking-wider uppercase mb-3"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {item.title}
+                </h3>
 
-              {/* Description */}
-              <p
-                className="font-lato text-sm leading-relaxed"
-                style={{ color: "rgba(255,255,255,0.65)" }}
-              >
-                {item.text}
-              </p>
+                {/* Divider */}
+                <div
+                  className="mx-auto mb-5"
+                  style={{
+                    width: 40,
+                    height: 2,
+                    background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                  }}
+                />
+
+                {/* Description */}
+                <p
+                  className="font-lato text-sm leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
+                >
+                  {item.text}
+                </p>
+              </div>
 
               {/* Bottom gold line */}
               <div
-                className="mx-auto mt-6"
+                className="mx-auto mb-6"
                 style={{
                   width: 40,
                   height: 2,
