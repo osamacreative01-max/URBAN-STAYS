@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 };
 
 const nearby = [
-  { name: "Sandton City Mall",          distance: "5 min walk" },
-  { name: "Nelson Mandela Square",      distance: "5 min walk" },
-  { name: "Sandton Gautrain Station",   distance: "8 min walk" },
-  { name: "OR Tambo International",     distance: "35 min drive" },
-  { name: "Lanseria Airport",           distance: "40 min drive" },
-  { name: "Rosebank",                   distance: "12 min drive" },
-  { name: "Melrose Arch",               distance: "10 min drive" },
-  { name: "Hyde Park Corner",           distance: "15 min drive" },
+  { name: "Sandton City Mall",          distance: "5 min walk",     image: "/images/gallery/Sandton Mall.jpg" },
+  { name: "Nelson Mandela Square",      distance: "5 min walk",     image: "/images/gallery/📍sandton city.jpg" },
+  { name: "Sandton Gautrain Station",   distance: "8 min walk",     image: "/images/gallery/Sandton, South Africa.jpg" },
+  { name: "OR Tambo International",     distance: "35 min drive",   image: "/images/gallery/Sandton city diaries __.jpg" },
+  { name: "Lanseria Airport",           distance: "40 min drive",   image: "/images/gallery/download (4).jpg" },
+  { name: "Rosebank",                   distance: "12 min drive",   image: "/images/gallery/#aictch travel aesthetic_.jpg" },
+  { name: "Melrose Arch",               distance: "10 min drive",   image: "/images/gallery/Sandton, South Africa 🤍.jpg" },
+  { name: "Hyde Park Corner",           distance: "15 min drive",   image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM.jpeg" },
 ];
 
 export default function LocationPage() {
@@ -223,7 +223,7 @@ export default function LocationPage() {
             {nearby.map((place, i) => (
               <div
                 key={i}
-                className="group relative rounded-xl p-6 transition-all duration-500 card-hover"
+                className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover flex flex-col"
                 style={{
                   background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                   border: "1px solid rgba(197,164,109,0.2)",
@@ -232,51 +232,66 @@ export default function LocationPage() {
               >
                 {/* Gold corner accent */}
                 <div
-                  className="absolute top-0 right-0 w-12 h-12 opacity-30"
+                  className="absolute top-0 right-0 w-10 h-10 opacity-30 z-10"
                   style={{
                     background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
-                    borderRadius: "0 0.75rem 0 0",
+                    borderRadius: "0 0.5rem 0 0",
                   }}
                 />
 
-                {/* Location pin icon */}
-                <div
-                  className="mb-4"
-                  style={{
-                    width: 36,
-                    height: 36,
-                    background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
-                    border: "1px solid rgba(197,164,109,0.25)",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-4 h-4">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+                {/* Image */}
+                <div className="relative h-32 overflow-hidden">
+                  <img
+                    src={place.image}
+                    alt={place.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: "linear-gradient(to bottom, rgba(23,35,58,0.2) 0%, rgba(23,35,58,0.85) 100%)",
+                    }}
+                  />
                 </div>
 
-                {/* Place name */}
-                <p
-                  className="font-montserrat text-sm font-semibold tracking-wide mb-1"
-                  style={{ color: "#FFFFFF" }}
-                >
-                  {place.name}
-                </p>
+                {/* Content */}
+                <div className="p-5 text-center flex flex-col items-center flex-1">
+                  {/* Location pin icon */}
+                  <div
+                    className="mb-3 flex items-center justify-center rounded-full -mt-6 relative z-10"
+                    style={{
+                      width: 40,
+                      height: 40,
+                      background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
+                      border: "2px solid rgba(197,164,109,0.4)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-4 h-4">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
 
-                {/* Distance */}
-                <p className="font-lato text-xs" style={{ color: "#C5A46D" }}>
-                  {place.distance}
-                </p>
+                  {/* Place name */}
+                  <p
+                    className="font-montserrat text-xs font-semibold tracking-wide mb-1"
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    {place.name}
+                  </p>
+
+                  {/* Distance */}
+                  <p className="font-lato text-xs" style={{ color: "#C5A46D" }}>
+                    {place.distance}
+                  </p>
+                </div>
 
                 {/* Bottom gold line */}
                 <div
-                  className="mx-auto mt-5"
+                  className="mx-auto mb-4"
                   style={{
-                    width: 40,
+                    width: 32,
                     height: 2,
                     background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
                   }}
