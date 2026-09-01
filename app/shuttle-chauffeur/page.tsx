@@ -60,9 +60,9 @@ const services = [
 ];
 
 const fleet = [
-  { name: "Executive Sedan", desc: "Mercedes-Benz E-Class or equivalent · 1–3 passengers" },
-  { name: "Premium SUV", desc: "BMW X5 or equivalent · 1–5 passengers · extra luggage" },
-  { name: "Luxury Van", desc: "Mercedes-Benz V-Class or equivalent · Up to 7 passengers" },
+  { name: "Executive Sedan", desc: "Mercedes-Benz E-Class or equivalent · 1–3 passengers", image: "/images/UrbanStays_Shuttles - Car3.png" },
+  { name: "Premium SUV", desc: "BMW X5 or equivalent · 1–5 passengers · extra luggage", image: "/images/WhatsApp Image 2026-08-03 at 5.08.33 PM.jpeg" },
+  { name: "Luxury Van", desc: "Mercedes-Benz V-Class or equivalent · Up to 7 passengers", image: "/images/gallery/Sandton Towers.jpg" },
 ];
 
 export default function ShuttleChauffeurPage() {
@@ -197,7 +197,7 @@ export default function ShuttleChauffeurPage() {
             {fleet.map((v, i) => (
               <div
                 key={i}
-                className="group relative rounded-xl p-8 text-center transition-all duration-500 card-hover"
+                className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover flex flex-col"
                 style={{
                   background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                   border: "1px solid rgba(197,164,109,0.2)",
@@ -206,57 +206,86 @@ export default function ShuttleChauffeurPage() {
               >
                 {/* Gold corner accent */}
                 <div
-                  className="absolute top-0 right-0 w-14 h-14 opacity-30"
+                  className="absolute top-0 right-0 w-14 h-14 opacity-30 z-10"
                   style={{
                     background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
                     borderRadius: "0 0.75rem 0 0",
                   }}
                 />
 
-                {/* Icon */}
-                <div
-                  className="mx-auto mb-5 flex items-center justify-center rounded-full"
-                  style={{
-                    width: 60,
-                    height: 60,
-                    background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
-                    border: "1px solid rgba(197,164,109,0.25)",
-                  }}
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#C5A46D"
-                    strokeWidth="1.2"
-                    className="w-7 h-7"
-                    aria-hidden="true"
-                  >
-                    <rect x="1" y="3" width="15" height="13" rx="2" />
-                    <path d="M16 8h4l3 3v4h-7V8z" />
-                    <circle cx="5.5" cy="18.5" r="2.5" />
-                    <circle cx="18.5" cy="18.5" r="2.5" />
-                  </svg>
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: "linear-gradient(to bottom, rgba(23,35,58,0.2) 0%, rgba(23,35,58,0.85) 100%)",
+                    }}
+                  />
                 </div>
 
-                {/* Vehicle name */}
-                <h3
-                  className="font-montserrat text-base font-semibold tracking-wide mb-2"
-                  style={{ color: "#FFFFFF" }}
-                >
-                  {v.name}
-                </h3>
+                {/* Content */}
+                <div className="p-8 text-center flex flex-col items-center flex-1">
+                  {/* Icon */}
+                  <div
+                    className="mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-10 relative z-10"
+                    style={{
+                      width: 64,
+                      height: 64,
+                      background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
+                      border: "2px solid rgba(197,164,109,0.4)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#C5A46D"
+                      strokeWidth="1.2"
+                      className="w-7 h-7"
+                      aria-hidden="true"
+                    >
+                      <rect x="1" y="3" width="15" height="13" rx="2" />
+                      <path d="M16 8h4l3 3v4h-7V8z" />
+                      <circle cx="5.5" cy="18.5" r="2.5" />
+                      <circle cx="18.5" cy="18.5" r="2.5" />
+                    </svg>
+                  </div>
 
-                {/* Description */}
-                <p
-                  className="font-lato text-sm leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.65)" }}
-                >
-                  {v.desc}
-                </p>
+                  {/* Vehicle name */}
+                  <h3
+                    className="font-montserrat text-base font-semibold tracking-wide mb-2"
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    {v.name}
+                  </h3>
+
+                  {/* Divider */}
+                  <div
+                    className="mx-auto mb-4"
+                    style={{
+                      width: 40,
+                      height: 2,
+                      background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                    }}
+                  />
+
+                  {/* Description */}
+                  <p
+                    className="font-lato text-sm leading-relaxed"
+                    style={{ color: "rgba(255,255,255,0.65)" }}
+                  >
+                    {v.desc}
+                  </p>
+                </div>
 
                 {/* Bottom gold line */}
                 <div
-                  className="mx-auto mt-6"
+                  className="mx-auto mb-6"
                   style={{
                     width: 40,
                     height: 2,
