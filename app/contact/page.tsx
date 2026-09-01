@@ -139,7 +139,7 @@ export default function ContactPage() {
                   className="font-lato text-sm"
                   style={{ color: "#C5A46D" }}
                 >
-                  +27 (0) 00 000 0000
+                  +92 340 1313713
                 </a>
               </div>
               {/* Email */}

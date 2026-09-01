@@ -157,7 +157,7 @@ export default function ShuttleChauffeurPage() {
                   {service.title}
                 </h3>
                 <div
-                  style={{ width: 32, height: 1, backgroundColor: "#C5A46D", marginBottom: "1rem" }}
+                  style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)", marginBottom: "1rem" }}
                 />
                 <p
                   className="font-lato text-sm leading-relaxed"
@@ -307,7 +307,7 @@ export default function ShuttleChauffeurPage() {
       {/* ── REQUEST CTA ───────────────────────────────────────────── */}
       <section
         className="py-20 px-6"
-        style={{ backgroundColor: "#C5A46D" }}
+        style={{ background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2

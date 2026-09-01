@@ -210,8 +210,8 @@ export default function HomePage() {
               className="font-lato text-base leading-relaxed mb-4 mt-6"
               style={{ color: "#2B2D31" }}
             >
-              Situated at the iconic Masingita Hotel in the heart of Sandton, Lavish
-              Stays offers a curated selection of fully serviced luxury apartments —
+              Situated at the iconic Masingita Hotel in the heart of Sandton, URBAN
+              STAYS offers a curated selection of fully serviced luxury apartments —
               designed for discerning travellers, executives, and those who simply
               refuse to settle for less.
             </p>
@@ -377,7 +377,7 @@ export default function HomePage() {
       {/* ── SHUTTLE CTA STRIP ─────────────────────────────────────── */}
       <section
         className="py-16 px-6 reveal"
-        style={{ background: "linear-gradient(135deg, #17233A 0%, #17233A 50%, #1a1814 100%)" }}
+        style={{ background: "linear-gradient(135deg, #17233A 0%, #17233A 50%, #17233A 100%)" }}
       >
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
@@ -443,7 +443,7 @@ export default function HomePage() {
               className="flex flex-col items-center justify-center text-center py-12 px-8"
               style={{
                 borderBottom: "1px solid rgba(197,164,109,0.2)",
-                backgroundColor: "#1a1a1a",
+                background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)",
               }}
             >
               <svg

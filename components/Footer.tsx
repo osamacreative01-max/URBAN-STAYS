@@ -21,7 +21,7 @@ export default function Footer() {
               style={{
                 width: 48,
                 height: 1,
-                backgroundColor: "#C5A46D",
+                background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
                 marginBottom: "1rem",
               }}
             />
