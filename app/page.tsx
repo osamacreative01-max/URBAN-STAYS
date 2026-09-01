@@ -656,8 +656,8 @@ export default function HomePage() {
                     alt={t.name}
                     className="relative rounded-full object-cover"
                     style={{
-                      width: 68,
-                      height: 68,
+                      width: 100,
+                      height: 100,
                       border: "3px solid white",
                       boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
                     }}
@@ -666,8 +666,8 @@ export default function HomePage() {
                   <div
                     className="relative rounded-full flex items-center justify-center"
                     style={{
-                      width: 68,
-                      height: 68,
+                      width: 100,
+                      height: 100,
                       background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 100%)",
                       border: "3px solid white",
                       boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
