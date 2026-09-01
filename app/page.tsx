@@ -145,7 +145,7 @@ export default function HomePage() {
               href="/apartments#book"
               className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 px-8 py-4"
               style={{
-                backgroundColor: "#C5A46D",
+                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
                 color: "#17233A",
               }}
             >
@@ -849,7 +849,7 @@ export default function HomePage() {
               href="/apartments"
               className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 inline-block px-8 py-4"
               style={{
-                backgroundColor: "#C5A46D",
+                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
                 color: "#17233A",
               }}
             >
