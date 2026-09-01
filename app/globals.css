@@ -20,7 +20,8 @@
 @utility font-montserrat-medium { font-family: var(--font-montserrat-medium, var(--font-montserrat, 'Montserrat'), sans-serif); font-weight: 500; }
 /* Body font · Montserrat Regular — body text, descriptions, paragraphs, general UI */
 @utility font-lato             { font-family: var(--font-montserrat, 'Montserrat', sans-serif); font-weight: 400; }
-@utility section-padding { padding: 5rem 1.5rem; }
+@utility section-padding { padding: 4rem 1.5rem; }
+@media (min-width: 1024px) { .section-padding { padding: 4.5rem 2rem; } }
 @utility divider-gold {
   width: 60px; height: 2px;
   background: linear-gradient(90deg, transparent, #C5A46D, transparent);
@@ -295,6 +296,29 @@ nextjs-portal,
   border-color: transparent;
 }
 .btn-outline-gold:hover::before { opacity: 1; }
+
+/* ─── Outline button on dark backgrounds ───────────────────── */
+.btn-outline-gold-on-dark {
+  border: 1px solid rgba(197,164,109,0.6); color: #C5A46D;
+  position: relative; overflow: hidden;
+  transition: all 0.4s ease;
+}
+.btn-outline-gold-on-dark::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%);
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+.btn-outline-gold-on-dark:hover {
+  color: #17233A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(197,164,109,0.25);
+  border-color: transparent;
+}
+.btn-outline-gold-on-dark:hover::before { opacity: 1; }
 
 /* ─── Premium Card Hover ───────────────────────────────────── */
 .card-hover {

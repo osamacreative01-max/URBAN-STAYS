@@ -182,7 +182,7 @@ export default function ShuttleChauffeurPage() {
               Our Vehicles
             </p>
             <h2
-              className="font-montserrat text-3xl font-light mb-4"
+              className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               The{" "}
@@ -192,27 +192,43 @@ export default function ShuttleChauffeurPage() {
             </h2>
             <div className="divider-gold-center" />
           </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             {fleet.map((v, i) => (
               <div
                 key={i}
-                className="p-8 text-center transition-all duration-300"
-                style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+                className="group relative rounded-xl p-8 text-center transition-all duration-500 card-hover"
+                style={{
+                  background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                  border: "1px solid rgba(197,164,109,0.2)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                }}
               >
+                {/* Gold corner accent */}
                 <div
-                  className="flex items-center justify-center mx-auto mb-5"
+                  className="absolute top-0 right-0 w-14 h-14 opacity-30"
                   style={{
-                    width: 48,
-                    height: 48,
-                    border: "1px solid rgba(197,164,109,0.45)",
+                    background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
+                    borderRadius: "0 0.75rem 0 0",
+                  }}
+                />
+
+                {/* Icon */}
+                <div
+                  className="mx-auto mb-5 flex items-center justify-center rounded-full"
+                  style={{
+                    width: 60,
+                    height: 60,
+                    background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
+                    border: "1px solid rgba(197,164,109,0.25)",
                   }}
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#C5A46D"
-                    strokeWidth="1"
-                    className="w-6 h-6"
+                    strokeWidth="1.2"
+                    className="w-7 h-7"
                     aria-hidden="true"
                   >
                     <rect x="1" y="3" width="15" height="13" rx="2" />
@@ -221,18 +237,32 @@ export default function ShuttleChauffeurPage() {
                     <circle cx="18.5" cy="18.5" r="2.5" />
                   </svg>
                 </div>
+
+                {/* Vehicle name */}
                 <h3
                   className="font-montserrat text-base font-semibold tracking-wide mb-2"
                   style={{ color: "#FFFFFF" }}
                 >
                   {v.name}
                 </h3>
+
+                {/* Description */}
                 <p
-                  className="font-lato text-xs"
-                  style={{ color: "rgba(255,255,255,0.55)" }}
+                  className="font-lato text-sm leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.65)" }}
                 >
                   {v.desc}
                 </p>
+
+                {/* Bottom gold line */}
+                <div
+                  className="mx-auto mt-6"
+                  style={{
+                    width: 40,
+                    height: 2,
+                    background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                  }}
+                />
               </div>
             ))}
           </div>

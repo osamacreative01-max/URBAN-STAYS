@@ -26,8 +26,8 @@ export default function Footer() {
               }}
             />
             <p
-              className="font-lato text-sm leading-relaxed transition-all duration-300"
-              style={{ color: "rgba(255,255,255,0.60)" }}
+              className="font-lato text-sm leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.75)" }}
             >
               Luxury serviced apartments in the heart of Sandton. Where every detail
               is curated for your comfort.
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* ── Quick Links ── */}
           <div className="reveal-scale">
             <h4
-              className="font-montserrat uppercase transition-all duration-300"
+              className="font-montserrat uppercase"
               style={{
                 fontSize: "0.65rem",
                 letterSpacing: "0.2em",
@@ -57,8 +57,8 @@ export default function Footer() {
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="font-lato text-sm transition-all duration-300 group"
-                    style={{ color: "rgba(255,255,255,0.65)" }}
+                    className="font-lato text-sm group"
+                    style={{ color: "rgba(255,255,255,0.80)" }}
                   >
                     {link.label}
                     <span
@@ -74,7 +74,7 @@ export default function Footer() {
           {/* ── Information ── */}
           <div className="reveal-scale" style={{ transitionDelay: "0.1s" }}>
             <h4
-              className="font-montserrat uppercase transition-all duration-300"
+              className="font-montserrat uppercase"
               style={{
                 fontSize: "0.65rem",
                 letterSpacing: "0.2em",
@@ -93,8 +93,8 @@ export default function Footer() {
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="font-lato text-sm transition-all duration-300 group"
-                    style={{ color: "rgba(255,255,255,0.65)" }}
+                    className="font-lato text-sm group"
+                    style={{ color: "rgba(255,255,255,0.80)" }}
                   >
                     {link.label}
                     <span
@@ -110,7 +110,7 @@ export default function Footer() {
           {/* ── Contact ── */}
           <div className="reveal-scale" style={{ transitionDelay: "0.2s" }}>
             <h4
-              className="font-montserrat uppercase transition-all duration-300"
+              className="font-montserrat uppercase"
               style={{
                 fontSize: "0.65rem",
                 letterSpacing: "0.2em",
@@ -129,8 +129,8 @@ export default function Footer() {
               }}
             >
               <p
-                className="font-lato text-sm leading-relaxed transition-all duration-300"
-                style={{ color: "rgba(255,255,255,0.60)" }}
+                className="font-lato text-sm leading-relaxed"
+                style={{ color: "rgba(255,255,255,0.75)" }}
               >
                 Masingita Hotel
                 <br />
@@ -140,8 +140,8 @@ export default function Footer() {
               </p>
               <a
                 href="https://wa.me/923401313713"
-                className="font-lato text-sm transition-all duration-300 group"
-                style={{ color: "rgba(255,255,255,0.65)" }}
+                className="font-lato text-sm group"
+                style={{ color: "rgba(255,255,255,0.80)" }}
               >
                 WhatsApp Us
                 <span
@@ -151,8 +151,8 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:info@urbanstays.co.za"
-                className="font-lato text-sm transition-all duration-300 group"
-                style={{ color: "rgba(255,255,255,0.65)" }}
+                className="font-lato text-sm group"
+                style={{ color: "rgba(255,255,255,0.80)" }}
               >
                 info@urbanstays.co.za
                 <span
@@ -175,7 +175,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="font-montserrat text-xs transition-all duration-300 group"
+                  className="font-montserrat text-xs group"
                   style={{
                     width: 40,
                     height: 40,
@@ -183,7 +183,7 @@ export default function Footer() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "rgba(255,255,255,0.65)",
+                    color: "rgba(255,255,255,0.80)",
                   }}
                 >
                   {s.short}
@@ -203,14 +203,14 @@ export default function Footer() {
           }}
         >
           <p
-            className="font-lato text-xs transition-all duration-300"
-            style={{ color: "rgba(255,255,255,0.35)" }}
+            className="font-lato text-xs"
+            style={{ color: "rgba(255,255,255,0.55)" }}
           >
             © {new Date().getFullYear()} URBAN STAYS. All rights reserved.
           </p>
           <p
-            className="font-lato text-xs transition-all duration-300"
-            style={{ color: "rgba(255,255,255,0.35)" }}
+            className="font-lato text-xs"
+            style={{ color: "rgba(255,255,255,0.55)" }}
           >
             Developed by{" "}
             <span style={{ color: "#C5A46D" }}>RGB Technologies</span>

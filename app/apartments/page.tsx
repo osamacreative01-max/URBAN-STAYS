@@ -247,9 +247,15 @@ export default function ApartmentsPage() {
 
       {/* ── AMENITIES STRIP ───────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
-        <div className="max-w-6xl mx-auto text-center mb-12">
+        <div className="max-w-6xl mx-auto text-center mb-14">
+          <p
+            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            style={{ color: "#C5A46D" }}
+          >
+            Premium Amenities
+          </p>
           <h2
-            className="font-montserrat text-2xl font-light mb-3"
+            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
             style={{ color: "#FFFFFF" }}
           >
             Included in Every{" "}
@@ -259,29 +265,135 @@ export default function ApartmentsPage() {
           </h2>
           <div className="divider-gold-center" />
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5">
           {[
-            "High-Speed Wi-Fi",
-            "Smart TV",
-            "Daily Housekeeping",
-            "24/7 Concierge",
-            "Secure Parking",
-            "In-unit Laundry",
-            "Premium Bedding",
-            "Welcome Pack",
-          ].map((label, i) => (
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M5 12.55a11 11 0 0114.08 0" />
+                  <path d="M1.42 9a16 16 0 0121.16 0" />
+                  <path d="M8.53 16.11a6 6 0 016.95 0" />
+                  <circle cx="12" cy="20" r="1" fill="#C5A46D" />
+                </svg>
+              ),
+              label: "High-Speed Wi-Fi",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                </svg>
+              ),
+              label: "Smart TV",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              ),
+              label: "Daily Housekeeping",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+              ),
+              label: "24/7 Concierge",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg>
+              ),
+              label: "Secure Parking",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22 6 12 13 2 6" />
+                </svg>
+              ),
+              label: "In-unit Laundry",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                </svg>
+              ),
+              label: "Premium Bedding",
+            },
+            {
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
+                  <path d="M20 12v10H4V12" />
+                  <path d="M2 7h20v5H2z" />
+                  <path d="M12 22V7" />
+                  <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
+                  <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
+                </svg>
+              ),
+              label: "Welcome Pack",
+            },
+          ].map((item, i) => (
             <div
               key={i}
-              className="p-5 text-center transition-all duration-300 card-hover reveal-scale"
-              style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+              className="group relative rounded-xl p-6 text-center transition-all duration-500 card-hover reveal-scale"
+              style={{
+                background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                border: "1px solid rgba(197,164,109,0.2)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+              }}
               data-delay={String(i + 1)}
             >
-              <p
-                className="font-lato text-sm"
-                style={{ color: "rgba(255,255,255,0.75)" }}
+              {/* Gold corner accent */}
+              <div
+                className="absolute top-0 right-0 w-12 h-12 opacity-30"
+                style={{
+                  background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
+                  borderRadius: "0 0.75rem 0 0",
+                }}
+              />
+
+              {/* Icon */}
+              <div
+                className="mx-auto mb-4 flex items-center justify-center rounded-full transition-all duration-300"
+                style={{
+                  width: 56,
+                  height: 56,
+                  background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
+                  border: "1px solid rgba(197,164,109,0.25)",
+                }}
               >
-                {label}
+                {item.icon}
+              </div>
+
+              {/* Label */}
+              <p
+                className="font-montserrat text-sm font-medium"
+                style={{ color: "rgba(255,255,255,0.9)" }}
+              >
+                {item.label}
               </p>
+
+              {/* Bottom gold line */}
+              <div
+                className="mx-auto mt-5"
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                }}
+              />
             </div>
           ))}
         </div>

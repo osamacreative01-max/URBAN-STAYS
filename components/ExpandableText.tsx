@@ -48,7 +48,7 @@ export default function ExpandableText({
       </div>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="font-montserrat text-xs tracking-wider uppercase mt-2 transition-colors duration-300"
+        className="font-montserrat text-xs tracking-wider uppercase mt-4 transition-colors duration-300"
         style={{
           color: "#C5A46D",
           background: "none",

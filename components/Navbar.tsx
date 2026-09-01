@@ -70,9 +70,19 @@ export default function Navbar() {
             src="/images/PNG/Asset 8@2x.png"
             alt="URBAN STAYS Logo"
             style={{
-              height: 80,
+              height: 120,
               width: "auto",
               objectFit: "contain",
+              transition: "all 0.4s ease",
+              filter: "drop-shadow(0 0 0 transparent)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.filter = "drop-shadow(0 0 12px rgba(197,164,109,0.6))";
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.filter = "drop-shadow(0 0 0 transparent)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           />
         </Link>
@@ -100,11 +110,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/apartments#book"
-            className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 ml-4 px-5 py-2"
-            style={{
-              border: "1px solid #C5A46D",
-              color: "#C5A46D",
-            }}
+            className="btn-outline-gold font-montserrat text-xs tracking-widest uppercase ml-4 px-5 py-2"
           >
             Reserve Now
           </Link>
@@ -173,8 +179,7 @@ export default function Navbar() {
           <Link
             href="/apartments#book"
             onClick={() => setMenuOpen(false)}
-            className="block mt-4 text-center font-montserrat text-xs tracking-widest uppercase transition-all duration-300 px-5 py-3"
-            style={{ border: "1px solid #C5A46D", color: "#C5A46D" }}
+            className="btn-outline-gold block mt-4 text-center font-montserrat text-xs tracking-widest uppercase px-5 py-3"
           >
             Reserve Now
           </Link>

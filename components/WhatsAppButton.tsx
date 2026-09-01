@@ -12,7 +12,7 @@ export default function WhatsAppButton() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"
+      className="fixed bottom-6 right-5 sm:right-6 z-50 flex items-center gap-3 group"
       aria-label="Chat with us on WhatsApp"
     >
       {/* Tooltip */}

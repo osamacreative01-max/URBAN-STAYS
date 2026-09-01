@@ -113,7 +113,7 @@ export default function HomePage() {
 
         {/* Hero content */}
         <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto" style={{ zIndex: 20 }}>
-          <p className="font-lato text-xs tracking-[0.4em] uppercase mb-6" style={{ color: "#C5A46D" }} data-delay="1">
+          <p className="font-lato text-xs sm:text-sm tracking-[0.4em] uppercase mb-6" style={{ color: "#C5A46D" }} data-delay="1">
             Sandton · Johannesburg · South Africa
           </p>
           <h1
@@ -121,9 +121,7 @@ export default function HomePage() {
             style={{ color: "#FFFFFF" }}
             data-delay="2"
           >
-            Luxury Serviced Apartments in
-            <br />
-            Sandton
+            Luxury Serviced Apartments in Sandton
             <br />
             <span className="font-semibold" style={{ color: "#C5A46D" }}>
               URBAN STAYS
@@ -135,31 +133,22 @@ export default function HomePage() {
             data-delay="3"
           />
           <p
-            className="font-lato text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
-            style={{ color: "rgba(255,255,255,0.85)" }}
+            className="font-lato text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-8 mb-12"
+            style={{ color: "rgba(255,255,255,0.9)", textAlign: "center", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             data-delay="4"
           >
-            Luxury serviced apartments in the heart of Sandton. Curated comfort,
-            personalised service, and an experience that redefines accommodation.
+            Luxury serviced apartments in the heart of Sandton. Curated comfort, personalised service, and an experience that redefines accommodation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-delay="5">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-delay="5">
             <Link
               href="/apartments#book"
-              className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 px-8 py-4"
-              style={{
-                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
-                color: "#17233A",
-              }}
+              className="btn-gold font-montserrat text-xs font-semibold tracking-[0.2em] uppercase px-8 py-4"
             >
               Reserve Your Apartment
             </Link>
             <Link
               href="/apartments"
-              className="font-montserrat text-xs tracking-[0.2em] uppercase transition-all duration-300 px-8 py-4"
-              style={{
-                border: "1px solid rgba(255,255,255,0.6)",
-                color: "#FFFFFF",
-              }}
+              className="btn-outline-gold font-montserrat text-xs tracking-[0.2em] uppercase px-8 py-4"
             >
               View All Apartments
             </Link>
@@ -227,11 +216,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/apartments"
-              className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-block px-7 py-3 mt-2"
-              style={{
-                border: "1px solid #C5A46D",
-                color: "#C5A46D",
-              }}
+              className="btn-outline-gold font-montserrat text-xs tracking-widest uppercase inline-block px-7 py-3 mt-2"
             >
               Discover Our Apartments
             </Link>
@@ -350,11 +335,11 @@ export default function HomePage() {
           ].map((item, i) => (
             <div
               key={i}
-              className="p-8 text-center transition-all duration-300 group card-hover reveal-scale"
+              className="p-5 sm:p-8 text-center transition-all duration-300 group card-hover reveal-scale flex flex-col items-center"
               style={{ border: "1px solid rgba(255,255,255,0.12)" }}
               data-delay={String(i + 1)}
             >
-              <div className="flex justify-center mb-5">{item.icon}</div>
+              <div className="mb-6">{item.icon}</div>
               <h3
                 className="font-montserrat text-base font-semibold tracking-wider uppercase mb-3"
                 style={{ color: "#FFFFFF" }}
@@ -362,7 +347,7 @@ export default function HomePage() {
                 {item.title}
               </h3>
               <div
-                className="mx-auto mb-4"
+                className="mx-auto mb-5"
                 style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }}
               />
               <p
@@ -376,33 +361,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Gold divider */}
+      <div className="flex justify-center" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)", padding: "2px 0" }}>
+        <div style={{ width: 80, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }} />
+      </div>
+
       {/* ── SHUTTLE CTA STRIP ─────────────────────────────────────── */}
       <section
         className="py-16 px-6 reveal"
-        style={{ background: "linear-gradient(135deg, #17233A 0%, #17233A 50%, #17233A 100%)" }}
+        style={{ background: "linear-gradient(135deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}
       >
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h3
               className="font-montserrat text-2xl font-light mb-2"
-              style={{ color: "#FFFFFF" }}
+              style={{ color: "#17233A" }}
             >
               Need a{" "}
               <span className="font-semibold" style={{ color: "#C5A46D" }}>Private Transfer?</span>
             </h3>
-            <p className="font-lato text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
+            <p className="font-lato text-sm" style={{ color: "#2B2D31" }}>
               Airport pickups, corporate transfers, city tours — handled with elegance.
             </p>
           </div>
           <Link
             href="/shuttle-chauffeur"
-            className="flex-shrink-0 font-montserrat text-xs tracking-widest uppercase transition-all duration-300 px-8 py-4"
-            style={{ border: "1px solid #C5A46D", color: "#C5A46D" }}
+            className="btn-outline-gold flex-shrink-0 font-montserrat text-xs tracking-widest uppercase px-8 py-4"
           >
             Book Shuttle Service
           </Link>
         </div>
       </section>
+
+      {/* Gold divider */}
+      <div className="flex justify-center" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)", padding: "2px 0" }}>
+        <div style={{ width: 80, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }} />
+      </div>
 
       {/* ── NIGHTSBRIDGE BOOKING ──────────────────────────────────── */}
       <section id="book" className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
@@ -489,8 +483,7 @@ export default function HomePage() {
                 </a>
                 <a
                   href="mailto:info@urbanstays.co.za?subject=Booking%20Enquiry"
-                  className="font-montserrat text-xs tracking-widest uppercase px-6 py-3"
-                  style={{ border: "1px solid rgba(197,164,109,0.5)", color: "#C5A46D" }}
+                  className="btn-outline-gold font-montserrat text-xs tracking-widest uppercase px-6 py-3"
                 >
                   Send Booking Email
                 </a>
@@ -511,9 +504,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Gold divider */}
+      <div className="flex justify-center" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)", padding: "2px 0" }}>
+        <div style={{ width: 80, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }} />
+      </div>
+
       {/* ── TESTIMONIALS ──────────────────────────────────────────── */}
-      <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
-        <div className="max-w-6xl mx-auto text-center mb-14">
+      <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)", paddingBottom: "6rem" }}>
+        <div className="max-w-6xl mx-auto text-center mb-16">
           <p
             className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
@@ -521,8 +519,8 @@ export default function HomePage() {
             Guest Experiences
           </p>
           <h2
-            className="font-montserrat text-3xl font-light mb-4"
-            style={{ color: "#FFFFFF" }}
+            className="font-montserrat text-3xl md:text-4xl font-light mb-4"
+            style={{ color: "#17233A" }}
           >
             What Our Guests{" "}
             <span className="font-semibold" style={{ color: "#C5A46D" }}>
@@ -558,68 +556,101 @@ export default function HomePage() {
           ].map((t, i) => (
             <div
               key={i}
-              className="p-8 transition-all duration-300 card-hover reveal-scale"
-              style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+              className="group relative rounded-2xl p-8 sm:p-10 transition-all duration-500 card-hover reveal-scale flex flex-col items-center text-center"
+              style={{
+                background: "linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%)",
+                border: "1px solid rgba(197,164,109,0.2)",
+                boxShadow: "0 4px 24px rgba(23,35,58,0.06), 0 1px 4px rgba(197,164,109,0.08)",
+              }}
               data-delay={String(i + 1)}
             >
+              {/* Gold corner accent */}
+              <div
+                className="absolute top-0 right-0 w-20 h-20"
+                style={{
+                  background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
+                  borderRadius: "0 1rem 0 0",
+                }}
+              />
+
               {/* Avatar */}
-              <div className="flex justify-center mb-5">
+              <div className="relative mb-6">
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 100%)",
+                    padding: "3px",
+                  }}
+                >
+                  <div className="w-full h-full rounded-full bg-white" />
+                </div>
                 {"photo" in t && t.photo ? (
                   <img
                     src={t.photo}
                     alt={t.name}
+                    className="relative rounded-full object-cover"
                     style={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      border: "2px solid rgba(197,164,109,0.4)",
-                      filter: "sepia(0.25) saturate(1.1) brightness(1.05)",
+                      width: 68,
+                      height: 68,
+                      border: "3px solid white",
+                      boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
                     }}
                   />
                 ) : (
                   <div
+                    className="relative rounded-full flex items-center justify-center"
                     style={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: "50%",
+                      width: 68,
+                      height: 68,
                       background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 100%)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
+                      border: "3px solid white",
+                      boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
                     }}
                   >
                     <span
                       className="font-montserrat font-semibold"
-                      style={{ color: "#17233A", fontSize: "1.1rem" }}
+                      style={{ color: "#17233A", fontSize: "1.25rem" }}
                     >
                       {t.name.charAt(0)}
                     </span>
                   </div>
                 )}
               </div>
+
+              {/* Quote icon */}
               <div
-                className="font-montserrat font-light mb-4 leading-none"
-                style={{ color: "#C5A46D", fontSize: "3rem" }}
+                className="font-montserrat font-light mb-3 leading-none"
+                style={{ color: "#C5A46D", fontSize: "2.5rem", opacity: 0.6 }}
               >
                 &ldquo;
               </div>
+
+              {/* Quote text */}
               <p
-                className="font-lato text-sm leading-relaxed mb-6"
-                style={{ color: "rgba(255,255,255,0.75)", fontStyle: "italic" }}
+                className="font-lato text-sm leading-relaxed mb-6 relative z-10"
+                style={{ color: "#2B2D31", fontStyle: "italic" }}
               >
                 {t.quote}
               </p>
+
+              {/* Divider */}
               <div
-                style={{ width: 32, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)", marginBottom: "1rem" }}
+                className="mb-4"
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                }}
               />
+
+              {/* Name & Role */}
               <p
-                className="font-montserrat text-sm font-semibold tracking-wide"
-                style={{ color: "#FFFFFF" }}
+                className="font-montserrat text-sm font-semibold tracking-wide mb-1"
+                style={{ color: "#17233A" }}
               >
                 {t.name}
               </p>
-              <p className="font-lato text-xs" style={{ color: "#C5A46D" }}>
+              <p className="font-lato text-xs tracking-wider uppercase" style={{ color: "#C5A46D" }}>
                 {t.role}
               </p>
             </div>
@@ -628,7 +659,7 @@ export default function HomePage() {
       </section>
 
       {/* Gold divider */}
-      <div className="flex justify-center" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)", padding: "2px 0" }}>
+      <div className="flex justify-center" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)", padding: "2px 0" }}>
         <div style={{ width: 80, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }} />
       </div>
 
@@ -686,12 +717,12 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div className="reveal-left">
               <h3
-                className="font-montserrat text-xl font-semibold mb-4"
+                className="font-montserrat text-xl font-semibold mb-5"
                 style={{ color: "#17233A" }}
               >
                 Africa's Financial Hub
               </h3>
-              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-4">
+              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
                 Sandton is renowned as the financial and business epicenter of South Africa, often referred to as Africa's richest square mile. Located in the heart of Johannesburg, this prestigious district hosts the Johannesburg Stock Exchange, multinational corporate headquarters, and the continent's most important business conferences and events.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
@@ -701,12 +732,12 @@ export default function HomePage() {
 
             <div className="reveal-right">
               <h3
-                className="font-montserrat text-xl font-semibold mb-4"
+                className="font-montserrat text-xl font-semibold mb-5"
                 style={{ color: "#17233A" }}
               >
                 World-Class Shopping &amp; Dining
               </h3>
-              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-4">
+              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
                 Beyond business, Sandton offers an unparalleled lifestyle experience. Sandton City, one of Africa's premier shopping destinations, sits just a five-minute walk from URBAN STAYS. Here you'll find luxury international brands, fine dining restaurants, artisanal cafes, and entertainment options that cater to the most refined tastes.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
@@ -718,12 +749,12 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="reveal-left">
               <h3
-                className="font-montserrat text-xl font-semibold mb-4"
+                className="font-montserrat text-xl font-semibold mb-5"
                 style={{ color: "#17233A" }}
               >
                 Exceptional Connectivity
               </h3>
-              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-4">
+              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
                 Sandton is seamlessly connected to the rest of Johannesburg and beyond. The Sandton Gautrain station, an eight-minute walk from Masingita Hotel, provides rapid transit to OR Tambo International Airport in just 15 minutes. This world-class train service also connects you to Pretoria, Rosebank, and other key Gauteng destinations with ease and comfort.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
@@ -733,12 +764,12 @@ export default function HomePage() {
 
             <div className="reveal-right">
               <h3
-                className="font-montserrat text-xl font-semibold mb-4"
+                className="font-montserrat text-xl font-semibold mb-5"
                 style={{ color: "#17233A" }}
               >
                 Safety &amp; Security
               </h3>
-              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-4">
+              <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
                 Your safety and peace of mind are paramount. Sandton is one of Johannesburg's most secure areas, with 24/7 private security, CCTV surveillance throughout public spaces, and well-maintained infrastructure. The Masingita Hotel complex where URBAN STAYS is located features controlled access, secure underground parking, and round-the-clock security personnel.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
@@ -824,7 +855,7 @@ export default function HomePage() {
                   {item.icon}
                 </div>
                 <h3
-                  className="font-montserrat text-lg font-semibold mb-3 text-center"
+                  className="font-montserrat text-lg font-semibold mb-4 text-center"
                   style={{ color: "#FFFFFF" }}
                 >
                   {item.title}
@@ -835,6 +866,14 @@ export default function HomePage() {
                 >
                   {item.desc}
                 </ExpandableText>
+                <div
+                  className="mx-auto mt-6"
+                  style={{
+                    width: 60,
+                    height: 2,
+                    background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -848,11 +887,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/apartments"
-              className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 inline-block px-8 py-4"
-              style={{
-                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
-                color: "#17233A",
-              }}
+              className="btn-gold font-montserrat text-xs font-semibold tracking-[0.2em] uppercase inline-block px-8 py-4"
             >
               Browse Apartments
             </Link>

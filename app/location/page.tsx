@@ -200,7 +200,7 @@ export default function LocationPage() {
       {/* ── NEARBY ────────────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <p
               className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
@@ -208,7 +208,7 @@ export default function LocationPage() {
               Explore the Neighbourhood
             </p>
             <h2
-              className="font-montserrat text-3xl font-light mb-4"
+              className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               Everything at Your{" "}
@@ -218,22 +218,69 @@ export default function LocationPage() {
             </h2>
             <div className="divider-gold-center" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {nearby.map((place, i) => (
               <div
                 key={i}
-                className="p-5 transition-all duration-300"
-                style={{ border: "1px solid rgba(255,255,255,0.12)" }}
+                className="group relative rounded-xl p-6 transition-all duration-500 card-hover"
+                style={{
+                  background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                  border: "1px solid rgba(197,164,109,0.2)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                }}
               >
+                {/* Gold corner accent */}
+                <div
+                  className="absolute top-0 right-0 w-12 h-12 opacity-30"
+                  style={{
+                    background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
+                    borderRadius: "0 0.75rem 0 0",
+                  }}
+                />
+
+                {/* Location pin icon */}
+                <div
+                  className="mb-4"
+                  style={{
+                    width: 36,
+                    height: 36,
+                    background: "linear-gradient(135deg, rgba(197,164,109,0.15) 0%, rgba(197,164,109,0.05) 100%)",
+                    border: "1px solid rgba(197,164,109,0.25)",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-4 h-4">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+
+                {/* Place name */}
                 <p
                   className="font-montserrat text-sm font-semibold tracking-wide mb-1"
                   style={{ color: "#FFFFFF" }}
                 >
                   {place.name}
                 </p>
+
+                {/* Distance */}
                 <p className="font-lato text-xs" style={{ color: "#C5A46D" }}>
                   {place.distance}
                 </p>
+
+                {/* Bottom gold line */}
+                <div
+                  className="mx-auto mt-5"
+                  style={{
+                    width: 40,
+                    height: 2,
+                    background: "linear-gradient(90deg, transparent, #C5A46D, transparent)",
+                  }}
+                />
               </div>
             ))}
           </div>
