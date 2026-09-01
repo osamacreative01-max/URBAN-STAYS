@@ -1,4 +1,4 @@
-# Image URLs Reference - Lavish Stays Website
+# Image URLs Reference - URBAN STAYS Website
 
 This document lists all Unsplash image URLs used across the website for easy verification and maintenance.
 

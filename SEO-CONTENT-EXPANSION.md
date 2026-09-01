@@ -48,7 +48,7 @@ Added **two comprehensive new sections** to the homepage with valuable, relevant
 - Controlled access at Masingita Hotel
 - Secure underground parking
 
-### 2. "Why Choose Lavish Stays?" Section
+### 2. "Why Choose URBAN STAYS?" Section
 **~350 words of value proposition content covering:**
 
 #### More Space, More Comfort
@@ -132,7 +132,7 @@ Visitors now get comprehensive information about:
 - ✅ Transportation options and connectivity
 - ✅ Safety and security measures
 - ✅ What makes serviced apartments unique
-- ✅ Why choose Lavish Stays over hotels
+- ✅ Why choose URBAN STAYS over hotels
 
 ### Decision-Making Support
 Content helps users understand:
@@ -264,7 +264,7 @@ No compilation errors
 | Booking | ~60 words | Conversion focus |
 | Testimonials | ~120 words | Social proof |
 | **Why Sandton** | **~400 words** | **Location benefits (NEW)** |
-| **Why Lavish Stays** | **~350 words** | **Competitive advantage (NEW)** |
+| **Why URBAN STAYS** | **~350 words** | **Competitive advantage (NEW)** |
 | **Total** | **~1,210 words** | **232% increase!** |
 
 ---

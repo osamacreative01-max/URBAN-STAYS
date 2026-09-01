@@ -40,7 +40,7 @@ SEO tools flagged: "There are few social sharing options on the page. Sharing pl
   - Accessible (ARIA labels)
 
 - ✅ **Premium design**:
-  - Matches Lavish Stays brand aesthetic
+  - Matches URBAN STAYS brand aesthetic
   - Gold (#C9A84C) accent colors
   - Smooth animations and transitions
   - Icon-based buttons
@@ -49,13 +49,13 @@ SEO tools flagged: "There are few social sharing options on the page. Sharing pl
 ### 2. Added to Key Pages
 
 #### Homepage (`app/page.tsx`)
-**Location**: After "Why Choose Lavish Stays" section  
+**Location**: After "Why Choose URBAN STAYS" section  
 **Title**: "Love What You See? Share with Others"  
 **Content**: New dedicated social share section with context
 
 #### Apartments Page (`app/apartments/page.tsx`)
 **Location**: After booking section, before closing  
-**Title**: "Help Others Discover Lavish Stays"  
+**Title**: "Help Others Discover URBAN STAYS"  
 **Content**: Encourages sharing apartment information
 
 ### 3. Enhanced Open Graph Meta Tags
@@ -211,16 +211,16 @@ interface SocialShareProps {
 
 ```typescript
 openGraph: {
-  title: "Lavish Stays | Luxury Serviced Apartments – Sandton",
+  title: "URBAN STAYS | Luxury Serviced Apartments – Sandton",
   description: "Premium serviced apartments in Sandton...",
   type: "website",
-  url: "https://lavishstays.co.za",
-  siteName: "Lavish Stays",
+  url: "https://urbanstays.co.za",
+  siteName: "URBAN STAYS",
   images: [{
     url: "https://images.unsplash.com/photo-1600596542815-3ad19b989b7b?w=1200&q=80",
     width: 1200,
     height: 630,
-    alt: "Lavish Stays Luxury Apartments Sandton",
+    alt: "URBAN STAYS Luxury Apartments Sandton",
   }],
   locale: "en_ZA",
 }
@@ -250,7 +250,7 @@ openGraph: {
 ### Homepage Sharing
 ```typescript
 <SocialShare 
-  title="Lavish Stays - Luxury Serviced Apartments in Sandton"
+  title="URBAN STAYS - Luxury Serviced Apartments in Sandton"
   description="Experience premium serviced apartments in the heart of Sandton..."
 />
 ```
@@ -258,7 +258,7 @@ openGraph: {
 ### Apartments Page Sharing
 ```typescript
 <SocialShare 
-  title="Luxury Serviced Apartments in Sandton - Lavish Stays"
+  title="Luxury Serviced Apartments in Sandton - URBAN STAYS"
   description="Explore studio, one-bedroom, and two-bedroom serviced apartments..."
 />
 ```
@@ -266,9 +266,9 @@ openGraph: {
 ### Custom URL Sharing (if needed)
 ```typescript
 <SocialShare 
-  title="Special Offer - Lavish Stays"
+  title="Special Offer - URBAN STAYS"
   description="Limited time offer..."
-  url="https://lavishstays.co.za/special-offer"
+  url="https://urbanstays.co.za/special-offer"
 />
 ```
 
@@ -347,7 +347,7 @@ No compilation errors across all files
 - [x] Hover effects work smoothly
 
 ### Design ✅
-- [x] Matches Lavish Stays branding
+- [x] Matches URBAN STAYS branding
 - [x] Icons display correctly
 - [x] Hover colors match social platforms
 - [x] Responsive on mobile
@@ -407,4 +407,4 @@ No compilation errors across all files
 **Build**: ✅ Passing  
 **SEO Issue**: ✅ Resolved
 
-Social sharing is now fully integrated across key pages, making it easy for users to spread the word about Lavish Stays! 🎉📱
+Social sharing is now fully integrated across key pages, making it easy for users to spread the word about URBAN STAYS! 🎉📱

@@ -20,12 +20,12 @@ Updated all H1 headings to be more descriptive and include relevant keywords tha
 
 | Page | Old H1 | New H1 (SEO-Optimized) |
 |------|--------|------------------------|
-| **Homepage** | "Live Beyond Ordinary" | "Luxury Serviced Apartments in Sandton - Lavish Stays" |
+| **Homepage** | "Live Beyond Ordinary" | "Luxury Serviced Apartments in Sandton - URBAN STAYS" |
 | **Apartments** | "Luxury Apartments" | "Luxury Serviced Apartments in Sandton" |
-| **Gallery** | "Our Gallery" | "Photo Gallery - Lavish Stays Apartments" |
+| **Gallery** | "Our Gallery" | "Photo Gallery - URBAN STAYS Apartments" |
 | **Shuttle & Chauffeur** | "Shuttle & Chauffeur" | "Private Shuttle & Chauffeur Services Sandton" |
-| **Location** | "Our Location" | "Lavish Stays Location in Sandton" |
-| **Contact** | "Contact Us" | "Contact Lavish Stays Sandton" |
+| **Location** | "Our Location" | "URBAN STAYS Location in Sandton" |
+| **Contact** | "Contact Us" | "Contact URBAN STAYS Sandton" |
 
 ---
 
@@ -40,7 +40,7 @@ Updated all H1 headings to be more descriptive and include relevant keywords tha
 ### After (Improvements)
 ✅ Descriptive H1 headings with keywords  
 ✅ Location "Sandton" included in all headings  
-✅ Brand "Lavish Stays" prominently featured  
+✅ Brand "URBAN STAYS" prominently featured  
 ✅ H1 keywords match page content  
 ✅ Better search engine visibility  
 ✅ Improved click-through rates  
@@ -50,7 +50,7 @@ Updated all H1 headings to be more descriptive and include relevant keywords tha
 ## Keyword Distribution in H1s
 
 **Primary Keywords Now Included:**
-- "Lavish Stays" (brand) - 4 occurrences
+- "URBAN STAYS" (brand) - 4 occurrences
 - "Sandton" (location) - 6 occurrences  
 - "Luxury" (descriptor) - 2 occurrences
 - "Serviced Apartments" - 2 occurrences
@@ -87,10 +87,10 @@ No errors on any page:
 Every H1 now mentions "Sandton" to help with local SEO and location-based searches.
 
 ### 2. **Include Brand Name**
-"Lavish Stays" appears in multiple H1 headings for brand recognition and search visibility.
+"URBAN STAYS" appears in multiple H1 headings for brand recognition and search visibility.
 
 ### 3. **Descriptive & Specific**
-Instead of generic phrases like "Our Gallery", we use "Photo Gallery - Lavish Stays Apartments" which is more descriptive.
+Instead of generic phrases like "Our Gallery", we use "Photo Gallery - URBAN STAYS Apartments" which is more descriptive.
 
 ### 4. **Keyword Match**
 H1 headings now contain keywords that are found throughout the page content, ensuring consistency.

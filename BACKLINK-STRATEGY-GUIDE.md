@@ -62,7 +62,7 @@
 ### Phase 1: Foundation (Week 1-2)
 
 #### 1. **Google My Business**
-- [ ] Create Google Business Profile for Lavish Stays
+- [ ] Create Google Business Profile for URBAN STAYS
 - [ ] Add all apartment photos
 - [ ] Complete all business information
 - [ ] Enable Q&A and posts

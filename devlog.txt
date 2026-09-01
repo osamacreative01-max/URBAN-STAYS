@@ -1,5 +1,5 @@
 
-> lavish-stays@0.1.0 dev
+> urban-stays@0.1.0 dev
 > next dev
 
 ▲ Next.js 16.3.2 (Turbopack)
