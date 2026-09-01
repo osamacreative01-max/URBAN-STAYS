@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ScrollObserver from "@/components/ScrollObserver";
 
 export const metadata: Metadata = {
@@ -72,6 +71,7 @@ export default function ShuttleChauffeurPage() {
 
   return (
     <>
+      <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
         className="relative pt-32 pb-20 overflow-hidden"
