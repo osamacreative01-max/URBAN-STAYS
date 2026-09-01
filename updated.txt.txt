@@ -1,0 +1,58 @@
+I have provided two brand font files:
+- Montserrat-Regular.ttf
+- Montserrat-Medium.ttf
+
+Place/use these fonts from:
+public/fonts/
+
+Do NOT use a random replacement font.
+
+Implement the provided Montserrat fonts properly throughout the website using Next.js font handling.
+
+Use:
+- Montserrat Regular for body text, descriptions, paragraphs and general UI text.
+- Montserrat Medium for navigation, buttons, labels, subheadings and medium-weight emphasis.
+- Use appropriate font-weight hierarchy while keeping the overall typography clean, premium and highly readable.
+
+IMPORTANT:
+The existing website concept, layout, sections, content and functionality are already approved. Do not rebuild the website or unnecessarily change its structure.
+
+Apply the client's requested luxury colour direction:
+- Deep Matte Black #0B0B0B
+- Rich Charcoal #151515
+- Dark Graphite #202020
+- Champagne Gold #C9A45C
+- Soft Gold #D8B978
+- Warm Ivory #F4EFE6
+- White #FFFFFF
+
+The overall visual style should match the supplied reference designs:
+luxury, premium, elegant, sophisticated, modern and high-end.
+
+Typography must remain primarily Montserrat because this is the brand font.
+
+Use:
+- White/Ivory Montserrat for primary text
+- Champagne Gold for selected headings, labels and accents
+- Montserrat Medium for important UI elements
+- Proper letter spacing for luxury headings
+- Clean line heights and generous spacing
+
+Do not use excessive gold.
+Do not introduce bright yellow.
+Do not replace Montserrat with another font.
+Do not change the existing website structure.
+Do not remove existing sections or functionality.
+Do not break desktop or mobile responsiveness.
+
+After implementing the fonts, check the entire website for:
+1. Font loading
+2. Font weights
+3. Heading hierarchy
+4. Navigation typography
+5. Button typography
+6. Mobile typography
+7. Consistent spacing
+8. No fallback-font visual inconsistencies
+
+The final result should feel like a premium luxury interior/hospitality website using a Black + Champagne Gold + White visual identity with Montserrat as the main brand typeface.

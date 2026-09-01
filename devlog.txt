@@ -1,0 +1,12 @@
+
+> lavish-stays@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.100.84:3000
+✓ Ready in 712ms
+✓ Running next.config.ts took 68ms
+
+ GET / 200 in 1052ms (next.js: 635ms, application-code: 417ms)
+ GET / 200 in 104ms (next.js: 8ms, application-code: 96ms)

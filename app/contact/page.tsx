@@ -1,0 +1,387 @@
+"use client";
+
+import { useState } from "react";
+import ScrollObserver from "@/components/ScrollObserver";
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "General Enquiry",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    await new Promise((r) => setTimeout(r, 1200));
+    setLoading(false);
+    setSubmitted(true);
+  };
+
+  const waMessage = encodeURIComponent(
+    "Hi URBAN STAYS! I'd like to get in touch regarding an enquiry."
+  );
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    border: "1px solid rgba(21,21,21,0.2)",
+    padding: "0.75rem 1rem",
+    fontFamily: "var(--font-montserrat, 'Montserrat', sans-serif)",
+    fontSize: "0.875rem",
+    color: "#17233A",
+    backgroundColor: "#FFFFFF",
+    outline: "none",
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontFamily: "var(--font-montserrat, 'Montserrat', sans-serif)",
+    fontSize: "0.625rem",
+    letterSpacing: "0.15em",
+    textTransform: "uppercase",
+    color: "#17233A",
+    marginBottom: "0.5rem",
+  };
+
+  return (
+    <>
+      <ScrollObserver />
+      {/* ── PAGE HERO ─────────────────────────────────────────────── */}
+      <section
+        className="relative pt-32 pb-20 overflow-hidden"
+        style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=1920&q=80')",
+            opacity: 0.3,
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 80%, rgba(197,164,109,0.10) 0%, transparent 70%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-scale">
+          <p
+            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            style={{ color: "#C5A46D" }}
+          >
+            Get in Touch
+          </p>
+          <h1
+            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-5 leading-tight"
+            style={{ color: "#FFFFFF" }}
+          >
+            Contact{" "}
+            <span className="font-semibold" style={{ color: "#C5A46D" }}>
+              URBAN STAYS Sandton
+            </span>
+          </h1>
+          <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
+          <p
+            className="font-lato text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
+            style={{ color: "rgba(255,255,255,0.70)" }}
+          >
+            Our team is ready to assist with bookings, enquiries, and anything else
+            you need.
+          </p>
+        </div>
+      </section>
+
+      {/* ── CONTACT SECTION ───────────────────────────────────────── */}
+      <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-12">
+          {/* ── Contact Info ── */}
+          <div className="md:col-span-2 reveal-left">
+            <p
+              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              style={{ color: "#C5A46D" }}
+            >
+              Reach Us Directly
+            </p>
+            <h2
+              className="font-montserrat text-2xl font-light mb-5"
+              style={{ color: "#17233A" }}
+            >
+              We'd Love to
+              <br />
+              <span className="font-semibold">Hear from You</span>
+            </h2>
+            <div className="divider-gold" />
+
+            <div
+              className="mt-6"
+              style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+            >
+              {/* WhatsApp */}
+              <div>
+                <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>WhatsApp</h3>
+                <a
+                  href={`https://wa.me/27000000000?text=${waMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-lato text-sm"
+                  style={{ color: "#C5A46D" }}
+                >
+                  +27 (0) 00 000 0000
+                </a>
+              </div>
+              {/* Email */}
+              <div>
+                <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>Email</h3>
+                <a
+                  href="mailto:info@lavishstays.co.za"
+                  className="font-lato text-sm"
+                  style={{ color: "#C5A46D" }}
+                >
+                  info@lavishstays.co.za
+                </a>
+              </div>
+              {/* Address */}
+              <div>
+                <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>Address</h3>
+                <address
+                  className="font-lato text-sm leading-relaxed"
+                  style={{ fontStyle: "normal", color: "#2B2D31" }}
+                >
+                  Masingita Hotel
+                  <br />
+                  Sandton, Johannesburg
+                  <br />
+                  Gauteng, South Africa
+                </address>
+              </div>
+              {/* Hours */}
+              <div>
+                <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>
+                  Reception Hours
+                </h3>
+                <p className="font-lato text-sm" style={{ color: "#2B2D31" }}>
+                  24/7 — We never close.
+                </p>
+              </div>
+            </div>
+
+            {/* Social */}
+            <div className="mt-8">
+              <h3 style={{ ...labelStyle, marginBottom: "1rem" }}>Follow Us</h3>
+              <div style={{ display: "flex", gap: "0.75rem" }}>
+                {[
+                  { label: "Instagram", short: "IG", href: "https://instagram.com/lavishstays" },
+                  { label: "Facebook",  short: "FB", href: "https://facebook.com/lavishstays" },
+                  { label: "TikTok",    short: "TK", href: "https://tiktok.com/@lavishstays" },
+                ].map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="font-montserrat text-xs transition-all duration-200"
+                    style={{
+                      width: 36,
+                      height: 36,
+                      border: "1px solid rgba(21,21,21,0.2)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#2B2D31",
+                    }}
+                  >
+                    {s.short}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Form ── */}
+          <div className="md:col-span-3">
+            {submitted ? (
+              <div
+                className="flex flex-col items-center justify-center text-center py-16 px-8"
+                style={{
+                  border: "1px solid rgba(197,164,109,0.3)",
+                  backgroundColor: "#FFFFFF",
+                  height: "100%",
+                }}
+              >
+                <div
+                  className="flex items-center justify-center mb-6"
+                  style={{
+                    width: 48,
+                    height: 48,
+                    border: "1px solid #C5A46D",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C5A46D"
+                    strokeWidth="1.5"
+                    className="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3
+                  className="font-montserrat text-xl font-semibold mb-3"
+                  style={{ color: "#17233A" }}
+                >
+                  Message Received
+                </h3>
+                <p
+                  className="font-lato text-sm max-w-sm"
+                  style={{ color: "#2B2D31" }}
+                >
+                  Thank you for reaching out. A member of our team will be in touch
+                  with you shortly.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                style={{
+                  border: "1px solid rgba(197,164,109,0.2)",
+                  backgroundColor: "#FFFFFF",
+                  padding: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1.25rem",
+                }}
+              >
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="name" style={labelStyle}>
+                      Full Name *
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" style={labelStyle}>
+                      Email Address *
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      style={inputStyle}
+                    />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="phone" style={labelStyle}>
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+27 00 000 0000"
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="subject" style={labelStyle}>
+                      Subject
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      style={inputStyle}
+                    >
+                      <option>General Enquiry</option>
+                      <option>Apartment Booking</option>
+                      <option>Shuttle &amp; Chauffeur</option>
+                      <option>Extended Stay</option>
+                      <option>Corporate Rates</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="message" style={labelStyle}>
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us how we can help you..."
+                    style={{ ...inputStyle, resize: "none" }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 w-full py-4"
+                  style={{
+                    backgroundColor: "#C5A46D",
+                    color: "#17233A",
+                    opacity: loading ? 0.6 : 1,
+                    cursor: loading ? "not-allowed" : "pointer",
+                    border: "none",
+                  }}
+                >
+                  {loading ? "Sending…" : "Send Message"}
+                </button>
+                <p
+                  className="font-lato text-xs text-center"
+                  style={{ color: "rgba(74,74,74,0.6)" }}
+                >
+                  Prefer instant response?{" "}
+                  <a
+                    href={`https://wa.me/27000000000?text=${waMessage}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#C5A46D" }}
+                  >
+                    Message us on WhatsApp
+                  </a>
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

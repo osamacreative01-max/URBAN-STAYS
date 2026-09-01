@@ -1,0 +1,28 @@
+# Robots.txt for URBAN STAYS
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lavishstays.co.za/sitemap.xml
+
+# Disallow admin or private areas (if any in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay (optional, for slower crawling)
+# Crawl-delay: 1
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
