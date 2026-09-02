@@ -106,7 +106,7 @@ export default function Navbar() {
             alt="URBAN STAYS Logo"
             className="w-auto object-contain transition-all duration-400"
             style={{
-              height: "clamp(48px, 10vw, 96px)",
+              height: "clamp(56px, 12vw, 96px)",
               filter: "drop-shadow(0 0 0 transparent)",
             }}
             onMouseEnter={(e) => {

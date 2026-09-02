@@ -91,7 +91,7 @@ export default function HomePage() {
       <ScrollObserver />
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center justify-center"
+        className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         {/* Hero background image */}
@@ -112,12 +112,12 @@ export default function HomePage() {
         />
 
         {/* Hero content */}
-        <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto pt-24 pb-16 sm:pt-20 sm:pb-20" style={{ zIndex: 20 }}>
-          <p className="font-lato text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-5 sm:mb-8" style={{ color: "#C5A46D" }} data-delay="1">
+        <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl mx-auto pt-20 pb-12 sm:pt-20 sm:pb-20" style={{ zIndex: 20 }}>
+          <p className="font-lato text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-4 sm:mb-8" style={{ color: "#C5A46D" }} data-delay="1">
             Sandton · Johannesburg · South Africa
           </p>
           <h1
-            className="font-montserrat text-[1.6rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-5 sm:mb-8"
+            className="font-montserrat text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-4 sm:mb-8"
             style={{ color: "#FFFFFF" }}
             data-delay="2"
           >
@@ -128,12 +128,12 @@ export default function HomePage() {
             </span>
           </h1>
           <div
-            className="mx-auto mb-5 sm:mb-8"
+            className="mx-auto mb-4 sm:mb-8"
             style={{ width: 64, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }}
             data-delay="3"
           />
           <p
-            className="font-lato text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-7 sm:leading-8 mb-10 sm:mb-16 text-center"
+            className="font-lato text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-6 sm:leading-8 mb-8 sm:mb-16 text-center"
             style={{ 
               color: "rgba(255,255,255,0.9)", 
               textShadow: "0 1px 3px rgba(0,0,0,0.3)"
