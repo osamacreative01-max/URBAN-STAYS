@@ -91,7 +91,7 @@ export default function HomePage() {
       <ScrollObserver />
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center"
+        className="relative min-h-screen flex items-center justify-center"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         {/* Hero background image */}
@@ -112,12 +112,12 @@ export default function HomePage() {
         />
 
         {/* Hero content */}
-        <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto" style={{ zIndex: 20 }}>
-          <p className="font-lato text-xs sm:text-sm tracking-[0.4em] uppercase mb-6" style={{ color: "#C5A46D" }} data-delay="1">
+        <div className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto pt-24 pb-16 sm:pt-20 sm:pb-20" style={{ zIndex: 20 }}>
+          <p className="font-lato text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-5 sm:mb-8" style={{ color: "#C5A46D" }} data-delay="1">
             Sandton · Johannesburg · South Africa
           </p>
           <h1
-            className="font-montserrat text-[1.35rem] sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-6"
+            className="font-montserrat text-[1.6rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-tight mb-5 sm:mb-8"
             style={{ color: "#FFFFFF" }}
             data-delay="2"
           >
@@ -128,27 +128,30 @@ export default function HomePage() {
             </span>
           </h1>
           <div
-            className="mx-auto mb-6"
+            className="mx-auto mb-5 sm:mb-8"
             style={{ width: 64, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)" }}
             data-delay="3"
           />
           <p
-            className="font-lato text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-8 mb-12"
-            style={{ color: "rgba(255,255,255,0.9)", textAlign: "center", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="font-lato text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-7 sm:leading-8 mb-10 sm:mb-16 text-center"
+            style={{ 
+              color: "rgba(255,255,255,0.9)", 
+              textShadow: "0 1px 3px rgba(0,0,0,0.3)"
+            }}
             data-delay="4"
           >
             Luxury serviced apartments in the heart of Sandton. Curated comfort, personalised service, and an experience that redefines accommodation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-delay="5">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center" data-delay="5">
             <Link
               href="/apartments#book"
-              className="btn-gold font-montserrat text-xs font-semibold tracking-[0.2em] uppercase px-8 py-4"
+              className="btn-gold font-montserrat text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-6 sm:px-8 py-3 sm:py-4"
             >
               Reserve Your Apartment
             </Link>
             <Link
               href="/apartments"
-              className="btn-outline-gold font-montserrat text-xs tracking-[0.2em] uppercase px-8 py-4"
+              className="btn-outline-gold font-montserrat text-[10px] sm:text-xs tracking-[0.2em] uppercase px-6 sm:px-8 py-3 sm:py-4"
             >
               View All Apartments
             </Link>
@@ -180,7 +183,7 @@ export default function HomePage() {
 
       {/* ── WELCOME STRIP ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="reveal-left">
             <p
               className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
@@ -278,7 +281,7 @@ export default function HomePage() {
           <div className="divider-gold-center" />
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               icon: (
@@ -356,7 +359,7 @@ export default function HomePage() {
               />
 
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-36 sm:h-48 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -371,13 +374,13 @@ export default function HomePage() {
               </div>
 
               {/* Content */}
-              <div className="p-8 text-center flex flex-col items-center flex-1">
+              <div className="p-5 sm:p-8 text-center flex flex-col items-center flex-1">
                 {/* Icon */}
                 <div
-                  className="mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-10 relative z-10"
+                  className="mb-4 sm:mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-8 sm:-mt-10 relative z-10"
                   style={{
-                    width: 64,
-                    height: 64,
+                    width: "clamp(48px, 10vw, 64px)",
+                    height: "clamp(48px, 10vw, 64px)",
                     background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
                     border: "2px solid rgba(197,164,109,0.4)",
                     backdropFilter: "blur(8px)",
@@ -434,25 +437,25 @@ export default function HomePage() {
 
       {/* ── SHUTTLE CTA STRIP ─────────────────────────────────────── */}
       <section
-        className="py-16 px-6 reveal"
+        className="py-10 sm:py-16 px-4 sm:px-6 reveal"
         style={{ background: "linear-gradient(135deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}
       >
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+          <div className="text-center md:text-left">
             <h3
-              className="font-montserrat text-2xl font-light mb-2"
+              className="font-montserrat text-xl sm:text-2xl font-light mb-2"
               style={{ color: "#17233A" }}
             >
               Need a{" "}
               <span className="font-semibold" style={{ color: "#C5A46D" }}>Private Transfer?</span>
             </h3>
-            <p className="font-lato text-sm" style={{ color: "#2B2D31" }}>
+            <p className="font-lato text-xs sm:text-sm" style={{ color: "#2B2D31" }}>
               Airport pickups, corporate transfers, city tours — handled with elegance.
             </p>
           </div>
           <Link
             href="/shuttle-chauffeur"
-            className="btn-outline-gold flex-shrink-0 font-montserrat text-xs tracking-widest uppercase px-8 py-4"
+            className="btn-outline-gold flex-shrink-0 font-montserrat text-[10px] sm:text-xs tracking-widest uppercase px-6 sm:px-8 py-3 sm:py-4"
           >
             Book Shuttle Service
           </Link>
@@ -468,21 +471,21 @@ export default function HomePage() {
       <section id="book" className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <p
-            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
           >
             Direct Booking
           </p>
           <h2
-            className="font-montserrat text-3xl font-light mb-3"
+            className="font-montserrat text-2xl sm:text-3xl font-light mb-3"
             style={{ color: "#FFFFFF" }}
           >
             Reserve Your{" "}
             <span className="font-semibold" style={{ color: "#C5A46D" }}>Apartment</span>
           </h2>
-          <div className="divider-gold-center" style={{ marginBottom: "2rem" }} />
+          <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-base mb-10"
+            className="font-lato text-sm sm:text-base mb-8 sm:mb-10"
             style={{ color: "rgba(255,255,255,0.65)" }}
           >
             Book directly and enjoy the best available rates. Secure, instant
@@ -576,16 +579,16 @@ export default function HomePage() {
       </div>
 
       {/* ── TESTIMONIALS ──────────────────────────────────────────── */}
-      <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)", paddingBottom: "6rem" }}>
-        <div className="max-w-6xl mx-auto text-center mb-16">
+      <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)", paddingBottom: "4rem" }}>
+        <div className="max-w-6xl mx-auto text-center mb-10 sm:mb-16">
           <p
-            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
           >
             Guest Experiences
           </p>
           <h2
-            className="font-montserrat text-3xl md:text-4xl font-light mb-4"
+            className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-light mb-4"
             style={{ color: "#17233A" }}
           >
             What Our Guests{" "}
@@ -596,7 +599,7 @@ export default function HomePage() {
           <div className="divider-gold-center" />
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               quote:
@@ -632,7 +635,7 @@ export default function HomePage() {
             >
               {/* Gold corner accent */}
               <div
-                className="absolute top-0 right-0 w-20 h-20"
+                className="absolute top-0 right-0 w-14 h-14 sm:w-20 sm:h-20"
                 style={{
                   background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
                   borderRadius: "0 1rem 0 0",
@@ -640,7 +643,7 @@ export default function HomePage() {
               />
 
               {/* Avatar */}
-              <div className="relative mb-6">
+              <div className="relative mb-4 sm:mb-6">
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
@@ -656,8 +659,8 @@ export default function HomePage() {
                     alt={t.name}
                     className="relative rounded-full object-cover"
                     style={{
-                      width: 100,
-                      height: 100,
+                      width: "clamp(64px, 15vw, 100px)",
+                      height: "clamp(64px, 15vw, 100px)",
                       border: "3px solid white",
                       boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
                     }}
@@ -666,8 +669,8 @@ export default function HomePage() {
                   <div
                     className="relative rounded-full flex items-center justify-center"
                     style={{
-                      width: 100,
-                      height: 100,
+                      width: "clamp(64px, 15vw, 100px)",
+                      height: "clamp(64px, 15vw, 100px)",
                       background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 100%)",
                       border: "3px solid white",
                       boxShadow: "0 4px 12px rgba(197,164,109,0.25)",
@@ -732,15 +735,15 @@ export default function HomePage() {
       {/* ── WHY SANDTON ───────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 reveal">
+          <div className="text-center mb-8 sm:mb-12 reveal">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Your Perfect Location
             </p>
             <h2
-              className="font-montserrat text-3xl md:text-4xl font-light mb-4"
+              className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-light mb-4"
               style={{ color: "#17233A" }}
             >
               Why Stay in{" "}
@@ -750,10 +753,10 @@ export default function HomePage() {
           </div>
 
           {/* Sandton cityscape image */}
-          <div className="mb-12 reveal-scale" data-delay="1">
+          <div className="mb-8 sm:mb-12 reveal-scale" data-delay="1">
             <div
               className="w-full overflow-hidden relative"
-              style={{ height: 280, borderRadius: 2 }}
+              style={{ height: "clamp(180px, 30vw, 280px)", borderRadius: 2 }}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -767,12 +770,12 @@ export default function HomePage() {
                 style={{ background: "linear-gradient(to right, rgba(15,15,15,0.50) 0%, transparent 40%, transparent 60%, rgba(15,15,15,0.50) 100%)" }}
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="font-montserrat text-lg font-light tracking-wider" style={{ color: "#FFFFFF", textShadow: "0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3)" }}>
+                <div className="text-center px-4">
+                  <p className="font-montserrat text-sm sm:text-lg font-light tracking-wider" style={{ color: "#FFFFFF", textShadow: "0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3)" }}>
                     Sandton · Johannesburg
                   </p>
                   <div style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #C5A46D, transparent)", margin: "0.5rem auto" }} />
-                  <p className="font-lato text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.65)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+                  <p className="font-lato text-[10px] sm:text-xs tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.65)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
                     Africa's Richest Square Mile
                   </p>
                 </div>
@@ -780,10 +783,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12">
             <div className="reveal-left">
               <h3
-                className="font-montserrat text-xl font-semibold mb-5"
+                className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
               >
                 Africa's Financial Hub
@@ -798,7 +801,7 @@ export default function HomePage() {
 
             <div className="reveal-right">
               <h3
-                className="font-montserrat text-xl font-semibold mb-5"
+                className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
               >
                 World-Class Shopping &amp; Dining
@@ -812,10 +815,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             <div className="reveal-left">
               <h3
-                className="font-montserrat text-xl font-semibold mb-5"
+                className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
               >
                 Exceptional Connectivity
@@ -830,7 +833,7 @@ export default function HomePage() {
 
             <div className="reveal-right">
               <h3
-                className="font-montserrat text-xl font-semibold mb-5"
+                className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
               >
                 Safety &amp; Security
@@ -854,15 +857,15 @@ export default function HomePage() {
       {/* ── WHY CHOOSE URBAN STAYS ──────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 reveal">
+          <div className="text-center mb-8 sm:mb-12 reveal">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               The URBAN Difference
             </p>
             <h2
-              className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
+              className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               Why Choose{" "}
@@ -873,7 +876,7 @@ export default function HomePage() {
             <div className="divider-gold-center" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-8 sm:mb-12">
             {[
               {
                 icon: (
@@ -912,8 +915,8 @@ export default function HomePage() {
                 <div
                   className="flex items-center justify-center mx-auto mb-5"
                   style={{
-                    width: 52,
-                    height: 52,
+                    width: "clamp(40px, 8vw, 52px)",
+                    height: "clamp(40px, 8vw, 52px)",
                     border: "1px solid rgba(197,164,109,0.45)",
                     borderRadius: "50%",
                   }}
@@ -921,7 +924,7 @@ export default function HomePage() {
                   {item.icon}
                 </div>
                 <h3
-                  className="font-montserrat text-lg font-semibold mb-4 text-center"
+                  className="font-montserrat text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-center"
                   style={{ color: "#FFFFFF" }}
                 >
                   {item.title}
@@ -946,7 +949,7 @@ export default function HomePage() {
 
           <div className="text-center reveal-scale" data-delay="4">
             <p
-              className="font-lato text-base leading-relaxed mb-8 max-w-3xl mx-auto"
+              className="font-lato text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
               At URBAN STAYS, we understand that modern travelers need more than just a place to sleep. You need a productive workspace, a comfortable living area, and the flexibility to maintain your routine. Our apartments are designed for the way you actually live and work, not just for how you vacation. From high-speed Wi-Fi and ergonomic workspaces to premium bedding and rainfall showers, every detail is considered to make your stay seamless, comfortable, and genuinely enjoyable.
@@ -969,23 +972,23 @@ export default function HomePage() {
       {/* ── SOCIAL SHARE ──────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8 reveal-scale">
+          <div className="mb-6 sm:mb-8 reveal-scale">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Spread the Word
             </p>
             <h2
-              className="font-montserrat text-2xl md:text-3xl font-light mb-4"
+              className="font-montserrat text-xl sm:text-2xl md:text-3xl font-light mb-4"
               style={{ color: "#17233A" }}
             >
               Love What You See?{" "}
               <span className="font-semibold">Share with Others</span>
             </h2>
-            <div className="divider-gold-center" style={{ marginBottom: "2rem" }} />
+            <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
             <p
-              className="font-lato text-sm max-w-xl mx-auto mb-8"
+              className="font-lato text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8"
               style={{ color: "#2B2D31" }}
             >
               Help your friends and colleagues discover luxury serviced apartments in Sandton. Share URBAN STAYS on your favorite platform.

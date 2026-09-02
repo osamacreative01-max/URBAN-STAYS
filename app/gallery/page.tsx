@@ -39,7 +39,7 @@ export default function GalleryPage() {
       <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 overflow-hidden"
+        className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         <div
@@ -54,15 +54,15 @@ export default function GalleryPage() {
           style={{ background: "rgba(0,0,0,0.70)" }}
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-scale">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center reveal-scale">
           <p
-            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4"
             style={{ color: "#C5A46D" }}
           >
             Visual Journey
           </p>
           <h1
-            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-5 leading-tight"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-5 leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             Photo{" "}
@@ -72,7 +72,7 @@ export default function GalleryPage() {
           </h1>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
+            className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
             A curated glimpse into the URBAN STAYS experience — spaces, moments,
@@ -82,13 +82,13 @@ export default function GalleryPage() {
       </section>
 
       {/* ── FILTER TABS ───────────────────────────────────────────── */}
-      <section className="pt-12 pb-4 px-6" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-3">
+      <section className="pt-8 sm:pt-12 pb-4 px-4 sm:px-6" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2 sm:gap-3">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className="font-montserrat text-xs tracking-widest uppercase transition-all duration-200 px-5 py-2"
+              className="font-montserrat text-[10px] sm:text-xs tracking-widest uppercase transition-all duration-200 px-3 sm:px-5 py-1.5 sm:py-2"
               style={
                 activeCategory === cat
                   ? { backgroundColor: "#C5A46D", color: "#17233A" }
@@ -103,7 +103,7 @@ export default function GalleryPage() {
 
       {/* ── MASONRY GRID ──────────────────────────────────────────── */}
       <section
-        className="px-6 pb-20 pt-8"
+        className="px-4 sm:px-6 pb-12 sm:pb-20 pt-6 sm:pt-8"
         style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}
       >
         <div className="max-w-6xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-4">
@@ -117,7 +117,7 @@ export default function GalleryPage() {
               {/* Placeholder background always visible */}
               <div
                 className="w-full h-full img-placeholder"
-                style={{ minHeight: 200 }}
+                style={{ minHeight: "clamp(120px, 30vw, 200px)" }}
               >
                 {/* Real image sits on top */}
                 <div

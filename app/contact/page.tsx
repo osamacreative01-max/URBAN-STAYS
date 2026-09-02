@@ -58,7 +58,7 @@ export default function ContactPage() {
       <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 overflow-hidden"
+        className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         <div
@@ -77,15 +77,15 @@ export default function ContactPage() {
           }}
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-scale">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center reveal-scale">
           <p
-            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4"
             style={{ color: "#C5A46D" }}
           >
             Get in Touch
           </p>
           <h1
-            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-5 leading-tight"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-5 leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             Contact{" "}
@@ -95,7 +95,7 @@ export default function ContactPage() {
           </h1>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
+            className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
             Our team is ready to assist with bookings, enquiries, and anything else
@@ -106,17 +106,17 @@ export default function ContactPage() {
 
       {/* ── CONTACT SECTION ───────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-6 sm:gap-8 md:gap-12">
           {/* ── Contact Info ── */}
           <div className="md:col-span-2 reveal-left">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Reach Us Directly
             </p>
             <h2
-              className="font-montserrat text-2xl font-light mb-5"
+              className="font-montserrat text-xl sm:text-2xl font-light mb-4 sm:mb-5"
               style={{ color: "#17233A" }}
             >
               We'd Love to
@@ -195,8 +195,8 @@ export default function ContactPage() {
                     aria-label={s.label}
                     className="font-montserrat text-xs transition-all duration-200"
                     style={{
-                      width: 36,
-                      height: 36,
+                      width: 44,
+                      height: 44,
                       border: "1px solid rgba(21,21,21,0.2)",
                       display: "flex",
                       alignItems: "center",
@@ -258,10 +258,10 @@ export default function ContactPage() {
             ) : (
               <form
                 onSubmit={handleSubmit}
+                className="p-4 sm:p-6 md:p-8"
                 style={{
                   border: "1px solid rgba(197,164,109,0.2)",
                   backgroundColor: "#FFFFFF",
-                  padding: "2rem",
                   display: "flex",
                   flexDirection: "column",
                   gap: "1.25rem",

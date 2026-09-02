@@ -25,7 +25,7 @@ export default function LocationPage() {
       <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 overflow-hidden"
+        className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         {/* Background image */}
@@ -42,15 +42,15 @@ export default function LocationPage() {
           style={{ background: "rgba(0,0,0,0.70)" }}
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center">
           <p
-            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4"
             style={{ color: "#C5A46D" }}
           >
             Find Us
           </p>
           <h1
-            className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-light mb-5 leading-tight"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-5 leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             <span style={{ color: "#FFFFFF" }}>URBAN STAYS</span>
@@ -62,7 +62,7 @@ export default function LocationPage() {
           </h1>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-base max-w-xl mx-auto"
+            className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
             At the heart of Sandton — Africa's richest square mile — perfectly
@@ -73,7 +73,7 @@ export default function LocationPage() {
 
       {/* ── ADDRESS & MAP ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12">
           {/* Address info */}
           <div>
             <p
@@ -180,8 +180,8 @@ export default function LocationPage() {
 
           {/* Map embed */}
           <div
-            className="overflow-hidden"
-            style={{ height: 450, backgroundColor: "rgba(21,21,21,0.08)" }}
+            className="overflow-hidden w-full"
+            style={{ height: "min(450px, 60vw)", backgroundColor: "rgba(21,21,21,0.08)" }}
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.652!2d28.0567!3d-26.1076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sSandton%2C+Johannesburg!5e0!3m2!1sen!2sza!4v1"
@@ -200,15 +200,15 @@ export default function LocationPage() {
       {/* ── NEARBY ────────────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-14">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Explore the Neighbourhood
             </p>
             <h2
-              className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
+              className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               Everything at Your{" "}
@@ -219,7 +219,7 @@ export default function LocationPage() {
             <div className="divider-gold-center" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {nearby.map((place, i) => (
               <div
                 key={i}
@@ -240,7 +240,7 @@ export default function LocationPage() {
                 />
 
                 {/* Image */}
-                <div className="relative h-32 overflow-hidden">
+                <div className="relative h-28 sm:h-32 overflow-hidden">
                   <img
                     src={place.image}
                     alt={place.name}
@@ -255,13 +255,13 @@ export default function LocationPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5 text-center flex flex-col items-center flex-1">
+                <div className="p-4 sm:p-5 text-center flex flex-col items-center flex-1">
                   {/* Location pin icon */}
                   <div
-                    className="mb-3 flex items-center justify-center rounded-full -mt-6 relative z-10"
+                    className="mb-3 flex items-center justify-center rounded-full -mt-5 sm:-mt-6 relative z-10"
                     style={{
-                      width: 40,
-                      height: 40,
+                      width: "clamp(32px, 7vw, 40px)",
+                      height: "clamp(32px, 7vw, 40px)",
                       background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
                       border: "2px solid rgba(197,164,109,0.4)",
                       backdropFilter: "blur(8px)",
@@ -306,13 +306,13 @@ export default function LocationPage() {
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <p
-            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
           >
             About Sandton
           </p>
           <h2
-            className="font-montserrat text-3xl font-light mb-4"
+            className="font-montserrat text-2xl sm:text-3xl font-light mb-4"
             style={{ color: "#17233A" }}
           >
             Africa's{" "}
@@ -320,7 +320,7 @@ export default function LocationPage() {
           </h2>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-base leading-relaxed mb-4"
+            className="font-lato text-sm sm:text-base leading-relaxed mb-4"
             style={{ color: "#2B2D31" }}
           >
             Sandton is South Africa's most dynamic urban hub — home to the JSE,
@@ -329,7 +329,7 @@ export default function LocationPage() {
             converge.
           </p>
           <p
-            className="font-lato text-base leading-relaxed"
+            className="font-lato text-sm sm:text-base leading-relaxed"
             style={{ color: "#2B2D31" }}
           >
             Staying at URBAN STAYS places you at the epicentre of this energy, with

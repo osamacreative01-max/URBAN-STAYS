@@ -74,7 +74,7 @@ export default function ShuttleChauffeurPage() {
       <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 overflow-hidden"
+        className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         <div
@@ -93,15 +93,15 @@ export default function ShuttleChauffeurPage() {
           }}
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center">
           <p
-            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4"
             style={{ color: "#C5A46D" }}
           >
             Private Transport
           </p>
           <h1
-            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-5 leading-tight"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-5 leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             Private Shuttle &amp;{" "}
@@ -111,7 +111,7 @@ export default function ShuttleChauffeurPage() {
           </h1>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
+            className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
             Your personal driver. Wherever you need to be, whenever you need to be
@@ -123,15 +123,15 @@ export default function ShuttleChauffeurPage() {
       {/* ── SERVICES GRID ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-14">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               What We Offer
             </p>
             <h2
-              className="font-montserrat text-3xl font-light mb-4"
+              className="font-montserrat text-2xl sm:text-3xl font-light mb-4"
               style={{ color: "#17233A" }}
             >
               Our{" "}
@@ -139,11 +139,11 @@ export default function ShuttleChauffeurPage() {
             </h2>
             <div className="divider-gold-center" />
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 md:gap-8">
             {services.map((service, i) => (
               <div
                 key={i}
-                className="p-8 transition-all duration-300"
+                className="p-5 sm:p-8 transition-all duration-300"
                 style={{
                   border: "1px solid rgba(197,164,109,0.25)",
                   backgroundColor: "#FFFFFF",
@@ -174,15 +174,15 @@ export default function ShuttleChauffeurPage() {
       {/* ── FLEET ─────────────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-14">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Our Vehicles
             </p>
             <h2
-              className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
+              className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               The{" "}
@@ -193,7 +193,7 @@ export default function ShuttleChauffeurPage() {
             <div className="divider-gold-center" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {fleet.map((v, i) => (
               <div
                 key={i}
@@ -214,7 +214,7 @@ export default function ShuttleChauffeurPage() {
                 />
 
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-36 sm:h-48 overflow-hidden">
                   <img
                     src={v.image}
                     alt={v.name}
@@ -229,13 +229,13 @@ export default function ShuttleChauffeurPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 text-center flex flex-col items-center flex-1">
+                <div className="p-5 sm:p-8 text-center flex flex-col items-center flex-1">
                   {/* Icon */}
                   <div
-                    className="mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-10 relative z-10"
+                    className="mb-4 sm:mb-5 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-8 sm:-mt-10 relative z-10"
                     style={{
-                      width: 64,
-                      height: 64,
+                      width: "clamp(48px, 10vw, 64px)",
+                      height: "clamp(48px, 10vw, 64px)",
                       background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
                       border: "2px solid rgba(197,164,109,0.4)",
                       backdropFilter: "blur(8px)",
@@ -300,16 +300,16 @@ export default function ShuttleChauffeurPage() {
 
       {/* ── WHY CHOOSE US ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-center">
           <div>
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Why Choose Us
             </p>
             <h2
-              className="font-montserrat text-3xl font-light mb-5"
+              className="font-montserrat text-2xl sm:text-3xl font-light mb-4 sm:mb-5"
               style={{ color: "#17233A" }}
             >
               The URBAN Standard of{" "}
@@ -365,19 +365,19 @@ export default function ShuttleChauffeurPage() {
 
       {/* ── REQUEST CTA ───────────────────────────────────────────── */}
       <section
-        className="py-20 px-6"
+        className="py-12 sm:py-20 px-4 sm:px-6"
         style={{ background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2
-            className="font-montserrat text-3xl font-light mb-4"
+            className="font-montserrat text-2xl sm:text-3xl font-light mb-4"
             style={{ color: "#17233A" }}
           >
             Ready to{" "}
             <span className="font-semibold">Book a Transfer?</span>
           </h2>
           <p
-            className="font-lato text-sm mb-8 max-w-lg mx-auto"
+            className="font-lato text-xs sm:text-sm mb-6 sm:mb-8 max-w-lg mx-auto"
             style={{ color: "rgba(21,21,21,0.75)" }}
           >
             Message us directly on WhatsApp with your date, time, and destination —
@@ -387,7 +387,7 @@ export default function ShuttleChauffeurPage() {
             href={`https://wa.me/923401313713?text=${waMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 px-10 py-4"
+            className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 px-6 sm:px-10 py-3 sm:py-4"
             style={{ background: "linear-gradient(135deg, #17233A 0%, #1a2844 50%, #17233A 100%)", color: "#FFFFFF" }}
           >
             <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4" aria-hidden="true">

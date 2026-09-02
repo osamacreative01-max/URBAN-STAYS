@@ -20,7 +20,8 @@
 @utility font-montserrat-medium { font-family: var(--font-montserrat-medium, var(--font-montserrat, 'Montserrat'), sans-serif); font-weight: 500; }
 /* Body font · Montserrat Regular — body text, descriptions, paragraphs, general UI */
 @utility font-lato             { font-family: var(--font-montserrat, 'Montserrat', sans-serif); font-weight: 400; }
-@utility section-padding { padding: 4rem 1.5rem; }
+@utility section-padding { padding: 2.5rem 1rem; }
+@media (min-width: 640px) { .section-padding { padding: 3rem 1.25rem; } }
 @media (min-width: 1024px) { .section-padding { padding: 4.5rem 2rem; } }
 @utility divider-gold {
   width: 60px; height: 2px;
@@ -53,6 +54,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   cursor: none; /* hide default — custom cursor takes over */
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
 /* Restore cursor on touch devices */
 @media (hover: none) { body { cursor: auto; } }
@@ -370,4 +372,26 @@ nextjs-portal,
 }
 @media (max-width: 768px) {
   .parallax-bg { background-attachment: scroll; }
+}
+
+/* ─── Mobile Responsive Fixes ────────────────────────────── */
+@media (max-width: 640px) {
+  .card-hover:hover {
+    transform: none;
+  }
+  /* Ensure hero sections have proper top padding on mobile */
+  section[class*="pt-"] {
+    overflow: visible;
+  }
+}
+
+/* ─── Hide custom cursor on touch devices ─────────────────── */
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* ─── Smooth scroll behavior for anchor links ─────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }

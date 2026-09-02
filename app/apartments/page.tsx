@@ -75,7 +75,7 @@ export default function ApartmentsPage() {
       <ScrollObserver />
       {/* ── PAGE HERO ─────────────────────────────────────────────── */}
       <section
-        className="relative pt-32 pb-20 overflow-hidden"
+        className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pb-20 overflow-hidden"
         style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}
       >
         {/* Background image */}
@@ -92,15 +92,15 @@ export default function ApartmentsPage() {
           style={{ background: "rgba(0,0,0,0.70)" }}
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-scale">
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center reveal-scale">
           <p
-            className="font-lato text-xs tracking-[0.4em] uppercase mb-4"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4"
             style={{ color: "#C5A46D" }}
           >
             Our Residences
           </p>
           <h1
-            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-5 leading-tight"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-5 leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             Luxury Serviced{" "}
@@ -110,7 +110,7 @@ export default function ApartmentsPage() {
           </h1>
           <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
+            className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
             From intimate studio suites to expansive two-bedroom residences — each
@@ -121,11 +121,11 @@ export default function ApartmentsPage() {
 
       {/* ── APARTMENTS LISTING ────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
-        <div className="max-w-6xl mx-auto" style={{ display: "flex", flexDirection: "column", gap: "5rem" }}>
+        <div className="max-w-6xl mx-auto" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
           {apartments.map((apt, i) => (
             <div
               key={apt.id}
-              className="grid md:grid-cols-2 gap-12 items-center reveal"
+              className="grid md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center reveal"
               style={{ direction: i % 2 === 1 ? "rtl" : "ltr" }}
               data-delay={String(i + 1)}
             >
@@ -247,15 +247,15 @@ export default function ApartmentsPage() {
 
       {/* ── AMENITIES STRIP ───────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
-        <div className="max-w-6xl mx-auto text-center mb-14">
+        <div className="max-w-6xl mx-auto text-center mb-8 sm:mb-14">
           <p
-            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
           >
             Premium Amenities
           </p>
           <h2
-            className="font-montserrat text-2xl sm:text-3xl lg:text-4xl font-light mb-4"
+            className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4"
             style={{ color: "#FFFFFF" }}
           >
             Included in Every{" "}
@@ -266,7 +266,7 @@ export default function ApartmentsPage() {
           <div className="divider-gold-center" />
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           {[
             {
               icon: (
@@ -373,7 +373,7 @@ export default function ApartmentsPage() {
               />
 
               {/* Image */}
-              <div className="relative h-32 overflow-hidden">
+              <div className="relative h-28 sm:h-32 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.label}
@@ -388,13 +388,13 @@ export default function ApartmentsPage() {
               </div>
 
               {/* Content */}
-              <div className="p-5 text-center flex flex-col items-center flex-1">
+              <div className="p-4 sm:p-5 text-center flex flex-col items-center flex-1">
                 {/* Icon */}
                 <div
-                  className="mb-3 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-7 relative z-10"
+                  className="mb-3 flex items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 -mt-6 sm:-mt-7 relative z-10"
                   style={{
-                    width: 48,
-                    height: 48,
+                    width: "clamp(40px, 8vw, 48px)",
+                    height: "clamp(40px, 8vw, 48px)",
                     background: "linear-gradient(135deg, rgba(197,164,109,0.2) 0%, rgba(197,164,109,0.1) 100%)",
                     border: "2px solid rgba(197,164,109,0.4)",
                     backdropFilter: "blur(8px)",
@@ -430,21 +430,21 @@ export default function ApartmentsPage() {
       <section id="book" className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <p
-            className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+            className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
             style={{ color: "#C5A46D" }}
           >
             Direct Booking
           </p>
           <h2
-            className="font-montserrat text-3xl font-light mb-3"
+            className="font-montserrat text-2xl sm:text-3xl font-light mb-3"
             style={{ color: "#17233A" }}
           >
             Check Availability &amp;{" "}
             <span className="font-semibold">Book</span>
           </h2>
-          <div className="divider-gold-center" style={{ marginBottom: "2rem" }} />
+          <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
           <p
-            className="font-lato text-sm mb-10"
+            className="font-lato text-xs sm:text-sm mb-8 sm:mb-10"
             style={{ color: "#2B2D31" }}
           >
             Book directly for the best rates — powered by NightsBridge for secure,
@@ -463,7 +463,7 @@ export default function ApartmentsPage() {
           >
             {/* Interim booking options — remove once NightsBridge is live */}
             <div
-              className="flex flex-col items-center justify-center text-center py-12 px-8"
+              className="flex flex-col items-center justify-center text-center py-8 sm:py-12 px-5 sm:px-8"
               style={{ backgroundColor: "#F7F3EA" }}
             >
               <svg
@@ -532,15 +532,15 @@ export default function ApartmentsPage() {
       {/* ── SOCIAL SHARE ──────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #17233A 0%, #1a2844 50%, #17233A 100%)" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <p
-              className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
+              className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
               Share Our Apartments
             </p>
             <h2
-              className="font-montserrat text-2xl md:text-3xl font-light mb-4"
+              className="font-montserrat text-xl sm:text-2xl md:text-3xl font-light mb-4"
               style={{ color: "#FFFFFF" }}
             >
               Help Others Discover{" "}
@@ -548,9 +548,9 @@ export default function ApartmentsPage() {
                 URBAN STAYS
               </span>
             </h2>
-            <div className="divider-gold-center" style={{ marginBottom: "2rem" }} />
+            <div className="divider-gold-center" style={{ marginBottom: "1.5rem" }} />
             <p
-              className="font-lato text-sm max-w-xl mx-auto mb-8"
+              className="font-lato text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8"
               style={{ color: "rgba(255,255,255,0.70)" }}
             >
               Know someone looking for luxury accommodation in Sandton? Share our apartments on social media.

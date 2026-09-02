@@ -19,25 +19,21 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Scroll detection
       if (currentScrollY > 40) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
 
-      // Hide/show navbar on scroll
-      if (currentScrollY > 200) {
-        if (currentScrollY > lastScrollY.current + 50) {
-          setShowNavbar(false); // Scrolling down
-        } else {
-          setShowNavbar(true); // Scrolling up
-        }
+      if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
+        setShowNavbar(false);
       } else {
         setShowNavbar(true);
       }
@@ -48,6 +44,45 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close menu on outside click (mouse + touch)
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node;
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   const headerBg =
     isScrolled || menuOpen ? "#17233A" : "transparent";
@@ -61,19 +96,17 @@ export default function Navbar() {
       }}
     >
       <div
-        className="max-w-7xl mx-auto px-6 flex items-center justify-between"
-        style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between"
+        style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem" }}
       >
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <img
             src="/images/PNG/Asset 6@2x.png"
             alt="URBAN STAYS Logo"
+            className="w-auto object-contain transition-all duration-400"
             style={{
-              height: 120,
-              width: "auto",
-              objectFit: "contain",
-              transition: "all 0.4s ease",
+              height: "clamp(48px, 10vw, 96px)",
               filter: "drop-shadow(0 0 0 transparent)",
             }}
             onMouseEnter={(e) => {
@@ -88,21 +121,21 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-montserrat-medium text-sm tracking-widest uppercase transition-all duration-300 group relative"
+              className="font-montserrat-medium text-xs xl:text-sm tracking-widest uppercase transition-all duration-300 group relative whitespace-nowrap"
               style={{
                 color: pathname === link.href ? "#C5A46D" : "rgba(255,255,255,0.85)",
               }}
             >
               {link.label}
               <span
-                className="absolute bottom-0 left-0 w-0 h-0.5 bg-C9A45C transition-all duration-300 group-hover:w-full"
+                className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
                 style={{ 
-                  backgroundColor: pathname === link.href ? "#C5A46D" : "#C5A46D",
+                  backgroundColor: "#C5A46D",
                   opacity: pathname === link.href ? 1 : 0.5
                 }}
               />
@@ -110,7 +143,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/apartments#book"
-            className="btn-outline-gold font-montserrat text-xs tracking-widest uppercase ml-4 px-5 py-2"
+            className="btn-outline-gold font-montserrat text-xs tracking-widest uppercase ml-2 xl:ml-4 px-4 xl:px-5 py-2"
           >
             Reserve Now
           </Link>
@@ -118,7 +151,8 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col p-2"
+          ref={buttonRef}
+          className="lg:hidden flex flex-col p-2"
           style={{ gap: 5, background: "none", border: "none", cursor: "pointer" }}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
@@ -154,15 +188,20 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
+      <div
+        ref={menuRef}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div
-          className="md:hidden px-6 pb-6"
+          className="px-4 sm:px-6 pb-6"
           style={{
             background: "linear-gradient(180deg, #17233A 0%, #1a2844 100%)",
             borderTop: "1px solid rgba(255,255,255,0.1)",
           }}
         >
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -184,7 +223,7 @@ export default function Navbar() {
             Reserve Now
           </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }

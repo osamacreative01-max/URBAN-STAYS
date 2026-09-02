@@ -30,11 +30,7 @@ export default function Preloader() {
       <img
         src="/images/PNG/Asset 6@2x.png"
         alt="URBAN STAYS"
-        style={{
-          height: 80,
-          width: "auto",
-          objectFit: "contain",
-        }}
+        className="h-16 sm:h-20 w-auto object-contain"
       />
     </div>
   );

@@ -4,17 +4,17 @@ export default function Footer() {
   return (
     <footer style={{ background: "linear-gradient(180deg, #0f1a2e 0%, #17233A 50%, #0f1a2e 100%)" }} className="reveal-left">
       <div
-        className="max-w-7xl mx-auto px-6"
-        style={{ paddingTop: "4rem", paddingBottom: "4rem" }}
+        className="max-w-7xl mx-auto px-4 sm:px-6"
+        style={{ paddingTop: "3rem", paddingBottom: "3rem" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {/* ── Brand ── */}
           <div className="md:col-span-1">
             <div style={{ marginBottom: "1rem" }}>
               <img
                 src="/images/PNG/Asset 6@2x.png"
                 alt="URBAN STAYS Logo"
-                style={{ height: 120, width: 180, objectFit: "contain" }}
+                className="h-16 sm:h-20 w-auto object-contain"
               />
             </div>
             <div
@@ -177,8 +177,8 @@ export default function Footer() {
                   aria-label={s.label}
                   className="font-montserrat text-xs group"
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 44,
+                    height: 44,
                     border: "1px solid rgba(255,255,255,0.25)",
                     display: "flex",
                     alignItems: "center",
