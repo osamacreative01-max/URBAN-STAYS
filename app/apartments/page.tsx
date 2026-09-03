@@ -172,8 +172,7 @@ export default function ApartmentsPage() {
                 <div className="flex gap-4 flex-wrap">
                   <a
                     href="#book"
-                    className="font-montserrat text-xs font-semibold tracking-widest uppercase transition-all duration-300 px-6 py-3"
-                    style={{ background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)", color: "#17233A" }}
+                    className="btn-gold-shimmer font-montserrat text-xs font-semibold tracking-widest uppercase px-6 py-3"
                   >
                     Book Now
                   </a>

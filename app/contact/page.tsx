@@ -353,13 +353,12 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 w-full py-4"
+                  className="btn-gold-shimmer font-montserrat text-xs font-semibold tracking-[0.2em] uppercase w-full py-4"
                   style={{
-                    background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
-                    color: "#17233A",
                     opacity: loading ? 0.6 : 1,
                     cursor: loading ? "not-allowed" : "pointer",
                     border: "none",
+                    borderRadius: "0.375rem",
                   }}
                 >
                   {loading ? "Sending…" : "Send Message"}

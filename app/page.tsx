@@ -145,7 +145,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center" data-delay="5">
             <Link
               href="/apartments#book"
-              className="btn-gold font-montserrat text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-6 sm:px-8 py-3 sm:py-4"
+              className="btn-gold-shimmer font-montserrat text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase px-6 sm:px-8 py-3 sm:py-4"
             >
               Reserve Your Apartment
             </Link>
