@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ScrollObserver from "@/components/ScrollObserver";
 import SocialShare from "@/components/SocialShare";
+import ApartmentImageCarousel from "@/components/ApartmentImageCarousel";
 
 export const metadata: Metadata = {
   title: "Our Apartment | URBAN STAYS – Sandton",
@@ -16,7 +17,16 @@ const apartment = {
   size: "120 m²",
   occupancy: "2–5 Guests",
   price: "R3,700 / night",
-  image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
+  images: [
+    "/images/Two Bedroom Apartment images/1269276.jpg",
+    "/images/Two Bedroom Apartment images/1269282.jpg",
+    "/images/Two Bedroom Apartment images/1269284.jpg",
+    "/images/Two Bedroom Apartment images/1269287.jpg",
+    "/images/Two Bedroom Apartment images/1269292.jpg",
+    "/images/Two Bedroom Apartment images/1269294.jpg",
+    "/images/Two Bedroom Apartment images/1269296.jpg",
+    "/images/Two Bedroom Apartment images/1270159.jpg",
+  ],
   description:
     "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work, relax, and entertain.",
   features: [
@@ -87,29 +97,20 @@ export default function ApartmentsPage() {
               data-delay="1"
             >
               {/* Image */}
+              <div className="mb-4">
+                <ApartmentImageCarousel images={apartment.images} />
+              </div>
+              {/* Size badge */}
               <div
-                className="img-placeholder overflow-hidden relative group"
-                style={{ aspectRatio: "4/3" }}
+                className="absolute top-4 left-4 px-3 py-1 z-10"
+                style={{ backgroundColor: "#C5A46D" }}
               >
-                {/* Real photo loads on top of placeholder */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
-                  style={{ 
-                    backgroundImage: `url('${apartment.image}')`
-                  }}
-                />
-                {/* Size badge */}
-                <div
-                  className="absolute top-4 left-4 px-3 py-1 z-10"
-                  style={{ backgroundColor: "#C5A46D" }}
+                <span
+                  className="font-montserrat font-semibold tracking-widest uppercase"
+                  style={{ fontSize: "0.625rem", color: "#17233A" }}
                 >
-                  <span
-                    className="font-montserrat font-semibold tracking-widest uppercase"
-                    style={{ fontSize: "0.625rem", color: "#17233A" }}
-                  >
-                    {apartment.size}
-                  </span>
-                </div>
+                  {apartment.size}
+                </span>
               </div>
 
               {/* Content */}
