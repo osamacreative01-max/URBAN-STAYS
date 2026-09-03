@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 interface ApartmentImageCarouselProps {
   images: string[];
@@ -13,9 +14,13 @@ export default function ApartmentImageCarousel({ images }: ApartmentImageCarouse
 
   return (
     <div className="relative" style={{ aspectRatio: "4/3", borderRadius: "0.5rem" }}>
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
-        style={{ backgroundImage: `url('${images[currentIndex]}')`, opacity: 1 }}
+      <Image
+        src={images[currentIndex]}
+        alt={`Two Bedroom Apartment view ${currentIndex + 1}`}
+        fill
+        priority={currentIndex === 0}
+        className="object-cover rounded-lg transition-opacity duration-500"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       {/* Prev Button */}
       <button
