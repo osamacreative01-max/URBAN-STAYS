@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 const nearby = [
-  { name: "Sandton City Mall",          distance: "5 min walk",     image: "/images/gallery/Sandton Mall.jpg" },
-  { name: "Nelson Mandela Square",      distance: "5 min walk",     image: "/images/gallery/📍sandton city.jpg" },
-  { name: "Sandton Gautrain Station",   distance: "8 min walk",     image: "/images/gallery/Sandton, South Africa.jpg" },
-  { name: "OR Tambo International",     distance: "35 min drive",   image: "/images/gallery/Sandton city diaries __.jpg" },
-  { name: "Lanseria Airport",           distance: "40 min drive",   image: "/images/gallery/download (4).jpg" },
+  { name: "Sandton City Mall",          distance: "5 min walk",     image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.06 PM.jpeg" },
+  { name: "Nelson Mandela Square",      distance: "5 min walk",     image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM123.jpeg" },
+  { name: "Sandton Gautrain Station",   distance: "8 min walk",     image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM321.jpeg" },
+  { name: "OR Tambo International",     distance: "35 min drive",   image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg" },
+  { name: "Lanseria Airport",           distance: "40 min drive",   image: "/images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg" },
   { name: "Rosebank",                   distance: "12 min drive",   image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM456.jpeg" },
-  { name: "Melrose Arch",               distance: "10 min drive",   image: "/images/gallery/Sandton, South Africa 🤍.jpg" },
+  { name: "Melrose Arch",               distance: "10 min drive",   image: "/images/WhatsApp Image 2026-08-03 at 5.08.33 PM.jpeg" },
   { name: "Hyde Park Corner",           distance: "15 min drive",   image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM.jpeg" },
 ];
 
@@ -32,7 +32,7 @@ export default function LocationPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/Sandton 📍.jpg')",
+            backgroundImage: "url('/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg')",
           }}
           aria-hidden="true"
         />

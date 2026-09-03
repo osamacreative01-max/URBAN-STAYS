@@ -11,18 +11,7 @@ const galleryItems = [
   { id: 3, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM123.jpeg",  alt: "Restaurant and dining area",       aspectClass: "aspect-[4/3]" },
   { id: 4, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM321.jpeg",  alt: "Gym and fitness centre",          aspectClass: "aspect-square" },
   { id: 5, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM456.jpeg",  alt: "Fitness equipment area",          aspectClass: "aspect-[3/4]" },
-  { id: 6, category: "Interiors",           src: "/images/gallery/master bedroom big windows view.jpg",  alt: "Master bedroom with panoramic windows",  aspectClass: "aspect-[4/3]" },
-  { id: 7, category: "Sandton",             src: "/images/gallery/Sandton, South Africa.jpg",  alt: "Sandton, South Africa skyline",          aspectClass: "aspect-[3/4]" },
-  { id: 8, category: "Sandton",             src: "/images/gallery/Sandton, South Africa 🤍.jpg",  alt: "Sandton cityscape",                      aspectClass: "aspect-square" },
-  { id: 9, category: "Sandton",             src: "/images/gallery/Sandton 📍.jpg",  alt: "Sandton district view",                    aspectClass: "aspect-[4/3]" },
-  { id: 10, category: "Sandton",            src: "/images/gallery/Sandton city diaries __.jpg",  alt: "Sandton city diary",                aspectClass: "aspect-[3/4]" },
-  { id: 11, category: "Sandton",            src: "/images/gallery/📍sandton city.jpg",  alt: "Sandton City landmark",                    aspectClass: "aspect-[4/3]" },
-  { id: 12, category: "Sandton",            src: "/images/gallery/Sandton Towers.jpg",  alt: "Sandton Towers building",                  aspectClass: "aspect-square" },
-  { id: 13, category: "Sandton",            src: "/images/gallery/Sandton Mall.jpg",  alt: "Sandton Mall area",                          aspectClass: "aspect-[3/4]" },
-  { id: 14, category: "Apartments",         src: "/images/gallery/#aictch travel aesthetic_.jpg",  alt: "Travel aesthetic",                  aspectClass: "aspect-[4/3]" },
-  { id: 15, category: "Apartments",         src: "/images/gallery/download (4).jpg",  alt: "Lifestyle imagery",                          aspectClass: "aspect-square" },
-  { id: 16, category: "Interiors",          src: "/images/gallery/Leonardo Sandton.jpg",  alt: "Leonardo Sandton",                      aspectClass: "aspect-[4/3]" },
-  { id: 17, category: "Shuttle & Chauffeur", src: "/images/UrbanStays_Shuttles - Car3.png",  alt: "Executive chauffeur vehicle",       aspectClass: "aspect-[4/3]" },
+  { id: 6, category: "Shuttle & Chauffeur", src: "/images/UrbanStays_Shuttles - Car3.png",  alt: "Executive chauffeur vehicle",       aspectClass: "aspect-[4/3]" },
 ];
 
 export default function GalleryPage() {

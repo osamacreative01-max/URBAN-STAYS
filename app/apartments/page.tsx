@@ -250,7 +250,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Daily Housekeeping",
-              image: "/images/gallery/master bedroom big windows view.jpg",
+              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM123.jpeg",
             },
             {
               icon: (
@@ -259,7 +259,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "24/7 Concierge",
-              image: "/images/gallery/Leonardo Sandton.jpg",
+              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM321.jpeg",
             },
             {
               icon: (
@@ -269,7 +269,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Secure Parking",
-              image: "/images/gallery/Sandton Towers.jpg",
+              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM456.jpeg",
             },
             {
               icon: (
@@ -279,7 +279,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "In-unit Laundry",
-              image: "/images/gallery/Sandton, South Africa.jpg",
+              image: "/images/WhatsApp Image 2026-08-03 at 5.08.33 PM.jpeg",
             },
             {
               icon: (
@@ -288,7 +288,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Premium Bedding",
-              image: "/images/gallery/Sandton, South Africa 🤍.jpg",
+              image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
             },
             {
               icon: (
@@ -301,7 +301,7 @@ export default function ApartmentsPage() {
                 </svg>
               ),
               label: "Welcome Pack",
-              image: "/images/gallery/Sandton city diaries __.jpg",
+              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM.jpeg",
             },
           ].map((item, i) => (
             <div
