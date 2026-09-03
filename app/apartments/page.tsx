@@ -5,7 +5,7 @@ import SocialShare from "@/components/SocialShare";
 import ApartmentImageCarousel from "@/components/ApartmentImageCarousel";
 
 export const metadata: Metadata = {
-  title: "Our Apartment | URBAN STAYS – Sandton",
+  title: "Our Apartments | URBAN STAYS – Sandton",
   description:
     "A luxury two-bedroom serviced apartment in Sandton – fully furnished with premium amenities at the Masingita Hotel.",
 };
