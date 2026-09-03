@@ -978,9 +978,17 @@ export default function HomePage() {
             </p>
             <Link
               href="/apartments"
-              className="btn-gold font-montserrat text-xs font-semibold tracking-[0.2em] uppercase inline-block px-8 py-4"
+              className="font-montserrat text-xs font-semibold tracking-[0.15em] uppercase inline-flex items-center gap-2 transition-all duration-300 hover:scale-105 px-8 py-4"
+              style={{
+                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
+                color: "#17233A",
+                borderRadius: "0.375rem",
+              }}
             >
               Browse Apartments
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
             </Link>
           </div>
         </div>
