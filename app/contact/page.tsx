@@ -108,7 +108,7 @@ export default function ContactPage() {
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-6 sm:gap-8 md:gap-12">
           {/* ── Contact Info ── */}
-          <div className="md:col-span-2 reveal-left">
+          <div className="md:col-span-2 reveal-left flex flex-col justify-center">
             <p
               className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}

@@ -109,7 +109,7 @@ export default function ApartmentsPage() {
               </div>
 
               {/* Content */}
-              <div>
+              <div className="flex flex-col justify-center">
                 <p
                   className="font-lato text-xs tracking-[0.35em] uppercase mb-2"
                   style={{ color: "#C5A46D" }}

@@ -301,7 +301,7 @@ export default function ShuttleChauffeurPage() {
       {/* ── WHY CHOOSE US ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-center">
-          <div>
+          <div className="flex flex-col justify-center">
             <p
               className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}

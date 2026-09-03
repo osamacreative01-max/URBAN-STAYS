@@ -184,7 +184,7 @@ export default function HomePage() {
       {/* ── WELCOME STRIP ─────────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          <div className="reveal-left">
+          <div className="reveal-left flex flex-col justify-center">
             <p
               className="font-lato text-xs tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
@@ -784,7 +784,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12">
-            <div className="reveal-left">
+            <div className="reveal-left flex flex-col justify-center">
               <h3
                 className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
@@ -816,7 +816,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
-            <div className="reveal-left">
+            <div className="reveal-left flex flex-col justify-center">
               <h3
                 className="font-montserrat text-lg sm:text-xl font-semibold mb-4 sm:mb-5"
                 style={{ color: "#17233A" }}
