@@ -92,20 +92,20 @@ export default function ApartmentsPage() {
               data-delay="1"
             >
               {/* Image */}
-              <div className="mb-4">
+              <div className="relative mb-4">
                 <ApartmentImageCarousel images={apartment.images} />
-              </div>
-              {/* Size badge */}
-              <div
-                className="absolute top-4 left-4 px-3 py-1 z-10"
-                style={{ backgroundColor: "#C5A46D" }}
-              >
-                <span
-                  className="font-montserrat font-semibold tracking-widest uppercase"
-                  style={{ fontSize: "0.625rem", color: "#17233A" }}
+                {/* Size badge */}
+                <div
+                  className="absolute top-4 left-4 px-3 py-1 z-20"
+                  style={{ backgroundColor: "#C5A46D" }}
                 >
-                  {apartment.size}
-                </span>
+                  <span
+                    className="font-montserrat font-semibold tracking-widest uppercase"
+                    style={{ fontSize: "0.625rem", color: "#17233A" }}
+                  >
+                    {apartment.size}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
