@@ -4,70 +4,30 @@ import ScrollObserver from "@/components/ScrollObserver";
 import SocialShare from "@/components/SocialShare";
 
 export const metadata: Metadata = {
-  title: "Apartments | URBAN STAYS – Sandton",
+  title: "Our Apartment | URBAN STAYS – Sandton",
   description:
-    "Explore our luxury serviced apartments in Sandton. Studio, one-bedroom, and two-bedroom options – all fully furnished with premium amenities.",
+    "A luxury two-bedroom serviced apartment in Sandton – fully furnished with premium amenities at the Masingita Hotel.",
 };
 
-const apartments = [
-  {
-    id: "studio",
-    name: "The Studio Suite",
-    tagline: "Smart Luxury in Every Square Metre",
-    size: "45 m²",
-    occupancy: "1–2 Guests",
-    price: "From R2,800 / night",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
-    description:
-      "Thoughtfully designed for the solo traveller or couple, the Studio Suite combines a sleek living and sleeping area with a fully equipped kitchenette, premium bathroom, and curated finishes.",
-    features: [
-      "King-size bed",
-      "Fully equipped kitchenette",
-      "Smart TV & high-speed Wi-Fi",
-      "Premium bath amenities",
-      "Daily housekeeping",
-      "24/7 concierge",
-    ],
-  },
-  {
-    id: "one-bedroom",
-    name: "One Bedroom Apartment",
-    tagline: "Space, Privacy & Refined Comfort",
-    size: "75 m²",
-    occupancy: "1–3 Guests",
-    price: "From R4,200 / night",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-    description:
-      "Generous proportions, a separate bedroom, a full kitchen, and elegant living spaces — ideal for executives on extended stays or couples seeking true comfort.",
-    features: [
-      "Separate king bedroom",
-      "Full kitchen with appliances",
-      "Open-plan living & dining",
-      "Rainfall shower & soaking tub",
-      "In-unit washer/dryer",
-      "Daily housekeeping",
-    ],
-  },
-  {
-    id: "two-bedroom",
-    name: "Two Bedroom Apartment",
-    tagline: "The Ultimate Sandton Retreat",
-    size: "120 m²",
-    occupancy: "2–5 Guests",
-    price: "From R6,500 / night",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    description:
-      "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work, relax, and entertain.",
-    features: [
-      "Two en-suite bedrooms",
-      "Full gourmet kitchen",
-      "Spacious lounge & dining",
-      "Private balcony",
-      "In-unit washer/dryer",
-      "Priority concierge",
-    ],
-  },
-];
+const apartment = {
+  id: "two-bedroom",
+  name: "Two Bedroom Apartment",
+  tagline: "The Ultimate Sandton Retreat",
+  size: "120 m²",
+  occupancy: "2–5 Guests",
+  price: "R3,700 / night",
+  image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
+  description:
+    "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work, relax, and entertain.",
+  features: [
+    "Two en-suite bedrooms",
+    "Full gourmet kitchen",
+    "Spacious lounge & dining",
+    "Private balcony",
+    "In-unit washer/dryer",
+    "Priority concierge",
+  ],
+};
 
 export default function ApartmentsPage() {
   return (
@@ -113,8 +73,8 @@ export default function ApartmentsPage() {
             className="font-lato text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(255,255,255,0.70)" }}
           >
-            From intimate studio suites to expansive two-bedroom residences — each
-            apartment is a statement in refined living.
+            A spacious two-bedroom apartment — a statement in refined living, designed
+            for those who refuse to settle for less.
           </p>
         </div>
       </section>
@@ -122,23 +82,20 @@ export default function ApartmentsPage() {
       {/* ── APARTMENTS LISTING ────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}>
         <div className="max-w-6xl mx-auto" style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
-          {apartments.map((apt, i) => (
             <div
-              key={apt.id}
               className="grid md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center reveal"
-              style={{ direction: i % 2 === 1 ? "rtl" : "ltr" }}
-              data-delay={String(i + 1)}
+              data-delay="1"
             >
               {/* Image */}
               <div
                 className="img-placeholder overflow-hidden relative group"
-                style={{ aspectRatio: "4/3", direction: "ltr" }}
+                style={{ aspectRatio: "4/3" }}
               >
                 {/* Real photo loads on top of placeholder */}
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
                   style={{ 
-                    backgroundImage: `url('${apt.image}')`
+                    backgroundImage: `url('${apartment.image}')`
                   }}
                 />
                 {/* Size badge */}
@@ -150,37 +107,37 @@ export default function ApartmentsPage() {
                     className="font-montserrat font-semibold tracking-widest uppercase"
                     style={{ fontSize: "0.625rem", color: "#17233A" }}
                   >
-                    {apt.size}
+                    {apartment.size}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div style={{ direction: "ltr" }}>
+              <div>
                 <p
                   className="font-lato text-xs tracking-[0.35em] uppercase mb-2"
                   style={{ color: "#C5A46D" }}
                 >
-                  {apt.occupancy}
+                  {apartment.occupancy}
                 </p>
                 <h2
                   className="font-montserrat text-2xl md:text-3xl font-light mb-2"
                   style={{ color: "#17233A" }}
                 >
-                  {apt.name}
+                  {apartment.name}
                 </h2>
                 <p
                   className="font-lato text-sm mb-4"
                   style={{ color: "#C5A46D", fontStyle: "italic" }}
                 >
-                  {apt.tagline}
+                  {apartment.tagline}
                 </p>
                 <div className="divider-gold" />
                 <p
                   className="font-lato text-sm leading-relaxed mb-6 mt-5"
                   style={{ color: "#2B2D31" }}
                 >
-                  {apt.description}
+                  {apartment.description}
                 </p>
 
                 {/* Features */}
@@ -188,7 +145,7 @@ export default function ApartmentsPage() {
                   className="grid grid-cols-2 gap-2 mb-6"
                   style={{ listStyle: "none", padding: 0, margin: 0 }}
                 >
-                  {apt.features.map((f, fi) => (
+                  {apartment.features.map((f, fi) => (
                     <li
                       key={f}
                       className="flex items-center gap-2 font-lato text-sm transition-all duration-300"
@@ -213,7 +170,7 @@ export default function ApartmentsPage() {
                   className="font-montserrat text-lg font-semibold mb-6"
                   style={{ color: "#C5A46D" }}
                 >
-                  {apt.price}
+                  {apartment.price}
                 </p>
 
                 <div className="flex gap-4 flex-wrap">
@@ -222,11 +179,11 @@ export default function ApartmentsPage() {
                     className="font-montserrat text-xs font-semibold tracking-widest uppercase transition-all duration-300 px-6 py-3"
                     style={{ background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)", color: "#17233A" }}
                   >
-                    Book {apt.name}
+                    Book Now
                   </a>
                   <a
                     href={`https://wa.me/923401313713?text=${encodeURIComponent(
-                      `Hi, I'm interested in the ${apt.name} at URBAN STAYS.`
+                      `Hi, I'm interested in the ${apartment.name} at URBAN STAYS.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -241,7 +198,6 @@ export default function ApartmentsPage() {
                 </div>
               </div>
             </div>
-          ))}
         </div>
       </section>
 
@@ -447,9 +403,24 @@ export default function ApartmentsPage() {
             className="font-lato text-xs sm:text-sm mb-8 sm:mb-10"
             style={{ color: "#2B2D31" }}
           >
-            Book directly for the best rates — powered by NightsBridge for secure,
+            Our Two Bedroom Apartment is available for direct booking — powered by NightsBridge for secure,
             instant confirmation.
           </p>
+          {/* ── Book Now Button ──────────────────────────────────── */}
+          <div className="mb-8">
+            <a
+              href="https://book.nightsbridge.com/40117"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-montserrat text-sm font-semibold tracking-[0.2em] uppercase px-10 py-4 inline-block transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
+                color: "#17233A",
+              }}
+            >
+              Book Now
+            </a>
+          </div>
             {/* ── NightsBridge widget ────────────────────────────────── */}
           <div
             style={{
@@ -459,7 +430,7 @@ export default function ApartmentsPage() {
           >
             {/* Live NightsBridge iframe */}
             <iframe
-              src="https://book.nightsbridge.com/4117"
+              src="https://book.nightsbridge.com/40117"
               width="100%"
               height="1400"
               frameBorder="0"
@@ -510,7 +481,7 @@ export default function ApartmentsPage() {
               className="font-lato text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-3"
               style={{ color: "#C5A46D" }}
             >
-              Share Our Apartments
+              Share This Apartment
             </p>
             <h2
               className="font-montserrat text-xl sm:text-2xl md:text-3xl font-light mb-4"
@@ -526,14 +497,14 @@ export default function ApartmentsPage() {
               className="font-lato text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8"
               style={{ color: "rgba(255,255,255,0.70)" }}
             >
-              Know someone looking for luxury accommodation in Sandton? Share our apartments on social media.
+              Know someone looking for luxury accommodation in Sandton? Share this apartment on social media.
             </p>
           </div>
           
           <div className="flex justify-center">
             <SocialShare 
-              title="Luxury Serviced Apartments in Sandton - URBAN STAYS"
-              description="Explore studio, one-bedroom, and two-bedroom serviced apartments with premium amenities in the heart of Sandton."
+              title="Luxury Two Bedroom Apartment in Sandton - URBAN STAYS"
+              description="A spacious two-bedroom serviced apartment with premium amenities in the heart of Sandton."
             />
           </div>
         </div>
