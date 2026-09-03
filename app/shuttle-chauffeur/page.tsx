@@ -60,8 +60,8 @@ const services = [
 
 const fleet = [
   { name: "Executive Sedan", desc: "Mercedes-Benz E-Class or equivalent · 1–3 passengers", image: "/images/UrbanStays_Shuttles - Car3.png" },
-  { name: "Premium SUV", desc: "BMW X5 or equivalent · 1–5 passengers · extra luggage", image: "/images/WhatsApp Image 2026-08-03 at 5.08.33 PM.jpeg" },
-  { name: "Luxury Van", desc: "Mercedes-Benz V-Class or equivalent · Up to 7 passengers", image: "/images/gallery/Sandton Towers.jpg" },
+  { name: "Premium SUV", desc: "BMW X5 or equivalent · 1–5 passengers · extra luggage", image: "/images/UrbanStays_Shuttles - Car3.png" },
+  { name: "Luxury Van", desc: "Mercedes-Benz V-Class or equivalent · Up to 7 passengers", image: "/images/UrbanStays_Shuttles - Car3.png" },
 ];
 
 export default function ShuttleChauffeurPage() {
@@ -80,7 +80,7 @@ export default function ShuttleChauffeurPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1920&q=80')",
+            backgroundImage: "url('/images/UrbanStays_Shuttles - Car3.png')",
             opacity: 0.3,
           }}
           aria-hidden="true"
