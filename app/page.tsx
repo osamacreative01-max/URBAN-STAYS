@@ -536,15 +536,11 @@ export default function HomePage() {
                 href="https://book.nightsbridge.com/40117"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-montserrat text-xs font-semibold tracking-[0.15em] uppercase px-6 py-2.5 inline-flex items-center gap-2 transition-all duration-300 hover:scale-105"
-                style={{
-                  background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
-                  color: "#17233A",
-                  borderRadius: "0.375rem",
-                }}
+                className="btn-gold-shimmer font-montserrat text-xs font-semibold tracking-[0.15em] uppercase px-6 py-2.5 inline-flex items-center gap-2"
+                style={{ borderRadius: "0.375rem" }}
               >
                 Book Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 relative z-10">
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
@@ -978,15 +974,11 @@ export default function HomePage() {
             </p>
             <Link
               href="/apartments"
-              className="font-montserrat text-xs font-semibold tracking-[0.15em] uppercase inline-flex items-center gap-2 transition-all duration-300 hover:scale-105 px-8 py-4"
-              style={{
-                background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
-                color: "#17233A",
-                borderRadius: "0.375rem",
-              }}
+              className="btn-gold-shimmer font-montserrat text-xs font-semibold tracking-[0.15em] uppercase inline-flex items-center gap-2 px-8 py-4"
+              style={{ borderRadius: "0.375rem" }}
             >
               Browse Apartments
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 relative z-10">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
             </Link>
