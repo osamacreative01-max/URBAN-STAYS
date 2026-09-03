@@ -18,14 +18,9 @@ const apartment = {
   occupancy: "2–5 Guests",
   price: "R3,700 / night",
   images: [
-    "/images/Two Bedroom Apartment images/1269276.jpg",
-    "/images/Two Bedroom Apartment images/1269282.jpg",
-    "/images/Two Bedroom Apartment images/1269284.jpg",
-    "/images/Two Bedroom Apartment images/1269287.jpg",
-    "/images/Two Bedroom Apartment images/1269292.jpg",
-    "/images/Two Bedroom Apartment images/1269294.jpg",
-    "/images/Two Bedroom Apartment images/1269296.jpg",
-    "/images/Two Bedroom Apartment images/1270159.jpg",
+    "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
+    "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg",
+    "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.08.33 PM.jpeg",
   ],
   description:
     "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work, relax, and entertain.",
