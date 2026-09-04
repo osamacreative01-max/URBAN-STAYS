@@ -336,7 +336,7 @@ export default function HomePage() {
               ),
               title: "Shuttle & Chauffeur",
               text: "Professional, private transport for airport transfers, business meetings, or wherever Sandton takes you.",
-              image: "/images/UrbanStays_Shuttles - Car3.png",
+              image: "/images/shuttle-chauffeur/Executive Travel.png",
             },
           ].map((item, i) => (
             <div

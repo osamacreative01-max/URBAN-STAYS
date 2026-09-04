@@ -11,7 +11,46 @@ const galleryItems = [
   { id: 3, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM123.jpeg",  alt: "Restaurant and dining area",       aspectClass: "aspect-[4/3]" },
   { id: 4, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM321.jpeg",  alt: "Gym and fitness centre",          aspectClass: "aspect-square" },
   { id: 5, category: "Interiors",           src: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM456.jpeg",  alt: "Fitness equipment area",          aspectClass: "aspect-[3/4]" },
-  { id: 6, category: "Shuttle & Chauffeur", src: "/images/UrbanStays_Shuttles - Car3.png",  alt: "Executive chauffeur vehicle",       aspectClass: "aspect-[4/3]" },
+  { id: 6, category: "Shuttle & Chauffeur", src: "/images/shuttle-chauffeur/Executive Travel.png",  alt: "Executive chauffeur vehicle",       aspectClass: "aspect-[4/3]" },
+  { id: 7, category: "Shuttle & Chauffeur", src: "/images/gallery/Executive Travel (2).png",  alt: "Premium fleet vehicle",             aspectClass: "aspect-[4/3]" },
+  { id: 8, category: "Apartments",          src: "/images/gallery/IMG-20260618-WA0006.jpg",  alt: "Apartment living space",            aspectClass: "aspect-[4/3]" },
+  { id: 9, category: "Interiors",           src: "/images/gallery/IMG-20260618-WA0009.jpg",  alt: "Modern interior design",            aspectClass: "aspect-[3/4]" },
+  { id: 10, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0010.jpg",  alt: "Elegant room interior",             aspectClass: "aspect-[4/3]" },
+  { id: 11, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0011.jpg",  alt: "Stylish living area",               aspectClass: "aspect-square" },
+  { id: 12, category: "Apartments",         src: "/images/gallery/IMG-20260618-WA0012.jpg",  alt: "Apartment bedroom",                 aspectClass: "aspect-[3/4]" },
+  { id: 13, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0013.jpg",  alt: "Contemporary decor",                aspectClass: "aspect-[4/3]" },
+  { id: 14, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0013 (1).jpg",  alt: "Luxury finishing",              aspectClass: "aspect-[3/4]" },
+  { id: 15, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0014 (1).jpg",  alt: "Premium fixtures",              aspectClass: "aspect-[4/3]" },
+  { id: 16, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0015 (1).jpg",  alt: "Spacious layout",              aspectClass: "aspect-square" },
+  { id: 17, category: "Apartments",         src: "/images/gallery/IMG-20260618-WA0016.jpg",  alt: "Apartment kitchen",                aspectClass: "aspect-[4/3]" },
+  { id: 18, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0016 (1).jpg",  alt: "Kitchen finishing",             aspectClass: "aspect-[3/4]" },
+  { id: 19, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0017.jpg",  alt: "Bathroom design",                  aspectClass: "aspect-[4/3]" },
+  { id: 20, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0017 (1).jpg",  alt: "Modern bathroom",              aspectClass: "aspect-square" },
+  { id: 21, category: "Apartments",         src: "/images/gallery/IMG-20260618-WA0018.jpg",  alt: "Apartment view",                   aspectClass: "aspect-[3/4]" },
+  { id: 22, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0018 (1).jpg",  alt: "Interior detail",              aspectClass: "aspect-[4/3]" },
+  { id: 23, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0019 (1).jpg",  alt: "Designer space",              aspectClass: "aspect-[3/4]" },
+  { id: 24, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0020 (1).jpg",  alt: "Ambient lighting",             aspectClass: "aspect-[4/3]" },
+  { id: 25, category: "Apartments",         src: "/images/gallery/IMG-20260618-WA0021.jpg",  alt: "Apartment overview",               aspectClass: "aspect-square" },
+  { id: 26, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0021 (1).jpg",  alt: "Curated interior",             aspectClass: "aspect-[4/3]" },
+  { id: 27, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0022 (1).jpg",  alt: "Warm tones",                   aspectClass: "aspect-[3/4]" },
+  { id: 28, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0023.jpg",  alt: "Open plan living",                 aspectClass: "aspect-[4/3]" },
+  { id: 29, category: "Apartments",         src: "/images/gallery/IMG-20260618-WA0024 (1).jpg",  alt: "Apartment dining",             aspectClass: "aspect-square" },
+  { id: 30, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0025 (1).jpg",  alt: "Furnishing detail",             aspectClass: "aspect-[4/3]" },
+  { id: 31, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0026 (1).jpg",  alt: "Premium materials",             aspectClass: "aspect-[3/4]" },
+  { id: 32, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0027.jpg",  alt: "Luxury ambiance",                  aspectClass: "aspect-[4/3]" },
+  { id: 33, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0028.jpg",  alt: "Signature style",                 aspectClass: "aspect-square" },
+  { id: 34, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0029 (1).jpg",  alt: "Artistic detail",              aspectClass: "aspect-[3/4]" },
+  { id: 35, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0030.jpg",  alt: "Refined space",                   aspectClass: "aspect-[4/3]" },
+  { id: 36, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0031.jpg",  alt: "Sophisticated design",            aspectClass: "aspect-square" },
+  { id: 37, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0032 (1).jpg",  alt: "Elegant touch",                aspectClass: "aspect-[4/3]" },
+  { id: 38, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0033.jpg",  alt: "Classy interior",                 aspectClass: "aspect-[3/4]" },
+  { id: 39, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0034 (1).jpg",  alt: "High-end finish",              aspectClass: "aspect-[4/3]" },
+  { id: 40, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0035.jpg",  alt: "Tasteful decor",                  aspectClass: "aspect-square" },
+  { id: 41, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0036.jpg",  alt: "Boutique feel",                   aspectClass: "aspect-[4/3]" },
+  { id: 42, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0037 (1).jpg",  alt: "Statement pieces",             aspectClass: "aspect-[3/4]" },
+  { id: 43, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0038 (1).jpg",  alt: "Design highlights",             aspectClass: "aspect-[4/3]" },
+  { id: 44, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0039 (1).jpg",  alt: "Interior showcase",             aspectClass: "aspect-square" },
+  { id: 45, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0041.jpg",  alt: "Final touch",                     aspectClass: "aspect-[4/3]" },
 ];
 
 export default function GalleryPage() {
@@ -118,7 +157,7 @@ export default function GalleryPage() {
                 {/* Label shown until real image loads */}
                 <span
                   className="font-lato text-xs tracking-wider relative z-10"
-                  style={{ color: "rgba(197,164,109,0.65)" }}
+                  style={{ color: "rgba(255,255,255,0.35)" }}
                 >
                   {item.alt}
                 </span>

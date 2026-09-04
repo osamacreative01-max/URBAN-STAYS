@@ -171,10 +171,22 @@ export default function LocationPage() {
 
             <Link
               href="/shuttle-chauffeur"
-              className="font-montserrat text-xs tracking-widest uppercase transition-all duration-300 inline-block px-6 py-3"
-              style={{ border: "1px solid #C5A46D", color: "#C5A46D" }}
+              className="group/btn font-montserrat relative inline-flex items-center gap-2 px-8 py-3 transition-all duration-300 overflow-hidden"
+              style={{
+                border: "1.5px solid rgba(197,164,109,0.50)",
+                borderRadius: "0.5rem",
+                background: "rgba(197,164,109,0.08)",
+              }}
             >
-              Book a Transfer
+              <span
+                className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover/btn:opacity-100"
+                style={{
+                  background: "linear-gradient(135deg, #C5A46D 0%, #D4B87E 50%, #C5A46D 100%)",
+                }}
+              />
+              <span className="relative z-10 font-montserrat text-xs font-semibold tracking-widest uppercase btn-text-main transition-colors duration-500" style={{ color: "#C5A46D" }}>
+                Book a Transfer
+              </span>
             </Link>
           </div>
 
@@ -219,7 +231,7 @@ export default function LocationPage() {
             <div className="divider-gold-center" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+          <div className="flex overflow-x-auto sm:grid sm:grid-cols-4 gap-4 md:gap-5 pb-2 sm:pb-0" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
             {nearby.map((place, i) => (
               <div
                 key={i}
@@ -235,7 +247,7 @@ export default function LocationPage() {
                   className="absolute top-0 right-0 w-10 h-10 opacity-30 z-10"
                   style={{
                     background: "linear-gradient(135deg, transparent 50%, #C5A46D 50%, #D4B87E 70%, #C5A46D 85%, #A8894E 100%)",
-                    borderRadius: "0 0.5rem 0 0",
+                    borderRadius: "0 0.75rem 0 0",
                   }}
                 />
 

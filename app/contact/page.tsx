@@ -64,7 +64,7 @@ export default function ContactPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=1920&q=80')",
+            backgroundImage: "url('/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg')",
             opacity: 0.3,
           }}
           aria-hidden="true"

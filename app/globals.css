@@ -34,6 +34,12 @@
   margin: 1rem auto;
 }
 
+/* ─── CTA Button Hover Text Color ────────────────────────── */
+.group\/btn:hover .btn-text-main { color: #17233A !important; }
+.group\/btn:hover .btn-text-sub { color: rgba(23,35,58,0.70) !important; }
+.group\/cta:hover .cta-text { color: #C5A46D !important; }
+.group\/cta:hover .cta-icon { fill: #C5A46D !important; }
+
 /* ─── Base Reset ───────────────────────────────────────────── */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
