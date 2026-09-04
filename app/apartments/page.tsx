@@ -16,7 +16,7 @@ const apartment = {
   tagline: "The Ultimate Sandton Retreat",
   size: "120 m²",
   occupancy: "2–5 Guests",
-  price: "R3,700 / night",
+  price: "R3,699 / night",
   images: [
     "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
     "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg",
@@ -470,7 +470,7 @@ export default function ApartmentsPage() {
                 </div>
                 <div className="text-left">
                   <p className="font-montserrat text-sm font-semibold" style={{ color: "#17233A" }}>Two Bedroom Apartment</p>
-                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,700 / night · 2-5 Guests</p>
+                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,699 / night · 2-5 Guests</p>
                 </div>
               </div>
               <a
