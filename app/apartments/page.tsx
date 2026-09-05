@@ -247,7 +247,7 @@ export default function ApartmentsPage() {
           <div className="divider-gold-center" />
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 justify-center">
           {[
             {
               icon: (
@@ -316,7 +316,7 @@ export default function ApartmentsPage() {
           ].map((item, i) => (
             <div
               key={i}
-              className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover reveal-scale flex flex-col"
+              className={`group relative rounded-xl overflow-hidden transition-all duration-500 card-hover reveal-scale flex flex-col ${i >= 4 ? "md:col-span-2" : ""}`}
               style={{
                 background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                 border: "1px solid rgba(197,164,109,0.2)",
