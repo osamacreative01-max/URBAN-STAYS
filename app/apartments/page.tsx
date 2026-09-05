@@ -15,8 +15,8 @@ const apartment = {
   name: "Two Bedroom Apartment",
   tagline: "The Ultimate Sandton Retreat",
   size: "120 m²",
-  occupancy: "2–5 Guests",
-  price: "R3,699 / night",
+  occupancy: "2–4 Guests",
+  price: "R3,700/night",
   images: [
     "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
     "/images/Two Bedroom Apartment images/WhatsApp Image 2026-08-03 at 5.08.06 PM.jpeg",
@@ -29,14 +29,13 @@ const apartment = {
     "/images/Two Bedroom Apartment images/IMG-20260618-WA0015 (1).jpg",
   ],
   description:
-    "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work, relax, and entertain.",
+    "Our flagship apartment offers two en-suite bedrooms, a fully appointed kitchen, a large lounge, and all the space you need to work and relax.",
   features: [
     "Two en-suite bedrooms",
     "Full gourmet kitchen",
     "Spacious lounge & dining",
-    "Private balcony",
     "In-unit washer/dryer",
-    "Priority concierge",
+    "Daily housekeeping (or on request)",
   ],
 };
 
@@ -283,15 +282,7 @@ export default function ApartmentsPage() {
               label: "Daily Housekeeping",
               image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM123.jpeg",
             },
-            {
-              icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                </svg>
-              ),
-              label: "24/7 Concierge",
-              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.58.25 PM321.jpeg",
-            },
+
             {
               icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
@@ -321,19 +312,7 @@ export default function ApartmentsPage() {
               label: "Premium Bedding",
               image: "/images/WhatsApp Image 2026-08-03 at 5.07.27 PM.jpeg",
             },
-            {
-              icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C5A46D" strokeWidth="1.5" className="w-7 h-7">
-                  <path d="M20 12v10H4V12" />
-                  <path d="M2 7h20v5H2z" />
-                  <path d="M12 22V7" />
-                  <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
-                  <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
-                </svg>
-              ),
-              label: "Welcome Pack",
-              image: "/images/gallery/WhatsApp Image 2026-08-25 at 12.57.09 PM.jpeg",
-            },
+
           ].map((item, i) => (
             <div
               key={i}
@@ -470,7 +449,7 @@ export default function ApartmentsPage() {
                 </div>
                 <div className="text-left">
                   <p className="font-montserrat text-sm font-semibold" style={{ color: "#17233A" }}>Two Bedroom Apartment</p>
-                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,699 / night · 2-5 Guests</p>
+                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,700/night · 2-4 Guests</p>
                 </div>
               </div>
               <a

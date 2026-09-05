@@ -148,13 +148,7 @@ export default function GalleryPage() {
                   role="img"
                   aria-label={item.alt}
                 />
-                {/* Label shown until real image loads */}
-                <span
-                  className="font-lato text-xs tracking-wider relative z-10"
-                  style={{ color: "rgba(255,255,255,0.35)" }}
-                >
-                  {item.alt}
-                </span>
+
                 {/* Hover overlay */}
                 <div
                   className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"

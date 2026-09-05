@@ -529,7 +529,7 @@ export default function HomePage() {
                 </div>
                 <div className="text-left">
                   <p className="font-montserrat text-sm font-semibold" style={{ color: "#17233A" }}>Two Bedroom Apartment</p>
-                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,700 / night · 2-5 Guests</p>
+                  <p className="font-lato text-xs" style={{ color: "#2B2D31" }}>R3,700/night · 2-4 Guests</p>
                 </div>
               </div>
               <a
