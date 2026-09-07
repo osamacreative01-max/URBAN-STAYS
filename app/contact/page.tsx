@@ -133,24 +133,32 @@ export default function ContactPage() {
               <div>
                 <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>WhatsApp</h3>
                 <a
-                  href={`https://wa.me/923401313713?text=${waMessage}`}
+                  href={`https://wa.me/27799117815?text=${waMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-lato text-sm"
                   style={{ color: "#C5A46D" }}
                 >
-                  +92 340 1313713
+                  +27 79 911 7815
                 </a>
               </div>
               {/* Email */}
               <div>
                 <h3 style={{ ...labelStyle, marginBottom: "0.4rem" }}>Email</h3>
                 <a
-                  href="mailto:info@urbanstays.co.za"
+                  href="mailto:enquiries@tirzah.co.za"
                   className="font-lato text-sm"
                   style={{ color: "#C5A46D" }}
                 >
-                  info@urbanstays.co.za
+                  enquiries@tirzah.co.za
+                </a>
+                <br />
+                <a
+                  href="mailto:tirzahdlamini@gmail.com"
+                  className="font-lato text-sm"
+                  style={{ color: "#C5A46D" }}
+                >
+                  tirzahdlamini@gmail.com
                 </a>
               </div>
               {/* Address */}
@@ -369,7 +377,7 @@ export default function ContactPage() {
                 >
                   Prefer instant response?{" "}
                   <a
-                    href={`https://wa.me/923401313713?text=${waMessage}`}
+                  href={`https://wa.me/27799117815?text=${waMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: "#C5A46D" }}

@@ -195,7 +195,7 @@ export default function ApartmentsPage() {
                     </span>
                   </a>
                   <a
-                    href={`https://wa.me/923401313713?text=${encodeURIComponent(
+                    href={`https://wa.me/27799117815?text=${encodeURIComponent(
                       `Hi, I'm interested in the ${apartment.name} at URBAN STAYS.`
                     )}`}
                     target="_blank"
@@ -499,7 +499,7 @@ export default function ApartmentsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://wa.me/923401313713?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
+                href="https://wa.me/27799117815?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn font-montserrat relative inline-flex items-center justify-center gap-2 px-8 py-3 transition-all duration-300 overflow-hidden"
@@ -523,7 +523,7 @@ export default function ApartmentsPage() {
                 </span>
               </a>
               <a
-                href="mailto:info@urbanstays.co.za?subject=Booking%20Enquiry"
+                href="mailto:enquiries@tirzah.co.za?subject=Booking%20Enquiry"
                 className="group/btn font-montserrat relative inline-flex items-center justify-center gap-2 px-8 py-3 transition-all duration-300 overflow-hidden"
                 style={{
                   border: "1.5px solid rgba(197,164,109,0.50)",

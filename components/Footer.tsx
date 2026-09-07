@@ -139,7 +139,7 @@ export default function Footer() {
                 South Africa
               </p>
               <a
-                href="https://wa.me/923401313713"
+                href="https://wa.me/27799117815"
                 className="font-lato text-sm group"
                 style={{ color: "rgba(255,255,255,0.80)" }}
               >
@@ -150,11 +150,11 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="mailto:info@urbanstays.co.za"
+                href="mailto:enquiries@tirzah.co.za"
                 className="font-lato text-sm group"
                 style={{ color: "rgba(255,255,255,0.80)" }}
               >
-                info@urbanstays.co.za
+                enquiries@tirzah.co.za
                 <span
                   className="inline-block w-0 h-0.5 bg-C9A45C transition-all duration-300 ml-2"
                   style={{ backgroundColor: "#C5A46D" }}

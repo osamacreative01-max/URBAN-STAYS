@@ -29,8 +29,8 @@ export default function HomePage() {
       "latitude": "-26.1076",
       "longitude": "28.0567"
     },
-    "telephone": "+27-00-000-0000",
-    "email": "info@urbanstays.co.za",
+    "telephone": "+27-79-911-7815",
+    "email": "enquiries@tirzah.co.za",
     "priceRange": "R2,800 - R6,500",
     "amenityFeature": [
       {
@@ -568,7 +568,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://wa.me/923401313713?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
+                href="https://wa.me/27799117815?text=Hi%20URBAN%20STAYS%2C%20I%20would%20like%20to%20make%20a%20booking."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp font-montserrat text-xs font-semibold tracking-widest uppercase px-6 py-3 inline-flex items-center justify-center gap-2"
@@ -580,7 +580,7 @@ export default function HomePage() {
                 Reserve via WhatsApp
               </a>
               <a
-                href="mailto:info@urbanstays.co.za?subject=Booking%20Enquiry"
+                href="mailto:enquiries@tirzah.co.za?subject=Booking%20Enquiry"
                 className="font-montserrat text-xs tracking-widest uppercase px-6 py-3 inline-flex items-center justify-center transition-all duration-300 hover:scale-105"
                 style={{ border: "1px solid rgba(197,164,109,0.5)", color: "#C5A46D", borderRadius: "0.375rem" }}
               >
