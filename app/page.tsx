@@ -489,7 +489,7 @@ export default function HomePage() {
             style={{ color: "rgba(255,255,255,0.65)" }}
           >
             Book directly and enjoy the best available rates. Secure, instant
-            confirmation via NightsBridge.
+            confirmation via our booking system.
           </p>
 
           {/* ── Booking Card ──────────────────────────────────── */}
@@ -552,7 +552,7 @@ export default function HomePage() {
               width="100%"
               height="1400"
               frameBorder="0"
-              title="NightsBridge Booking Widget"
+              title="Booking Widget"
               style={{ display: "block", border: "none" }}
               loading="lazy"
             />
@@ -564,7 +564,7 @@ export default function HomePage() {
               className="font-lato text-xs sm:text-sm mb-5"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
-              Secure your apartment instantly — book via NightsBridge.
+              Secure your apartment instantly — book directly below.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -574,7 +574,7 @@ export default function HomePage() {
                 className="btn-gold-shimmer font-montserrat text-xs font-semibold tracking-widest uppercase px-6 py-3 inline-flex items-center justify-center"
                 style={{ borderRadius: "0.375rem" }}
               >
-                Book Your Stay on NightsBridge
+                Book Your Stay
               </a>
             </div>
           </div>

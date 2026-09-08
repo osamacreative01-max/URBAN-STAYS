@@ -382,7 +382,7 @@ export default function ApartmentsPage() {
             className="font-lato text-xs sm:text-sm mb-8 sm:mb-10 max-w-xl mx-auto"
             style={{ color: "rgba(255,255,255,0.65)" }}
           >
-            Our Two Bedroom Apartment is available for direct booking — powered by NightsBridge for secure,
+            Our Two Bedroom Apartment is available for direct booking — powered for secure,
             instant confirmation.
           </p>
 
@@ -458,7 +458,7 @@ export default function ApartmentsPage() {
               width="100%"
               style={{ display: "block", border: "none", aspectRatio: "4/3", minHeight: "800px", maxHeight: "90vh" }}
               frameBorder="0"
-              title="NightsBridge Booking Widget"
+              title="Booking Widget"
               loading="lazy"
             />
           </div>
@@ -469,7 +469,7 @@ export default function ApartmentsPage() {
               className="font-lato text-xs sm:text-sm mb-5"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
-              Secure your apartment instantly — book via NightsBridge.
+              Secure your apartment instantly — book directly below.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -496,7 +496,7 @@ export default function ApartmentsPage() {
                   <line x1="3" y1="10" x2="21" y2="10" />
                 </svg>
                 <span className="relative z-10 font-montserrat text-xs font-semibold tracking-widest uppercase btn-text-main transition-colors duration-500" style={{ color: "#C5A46D" }}>
-                  Book on NightsBridge
+                  Book Your Stay
                 </span>
               </a>
             </div>
