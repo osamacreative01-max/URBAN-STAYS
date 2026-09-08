@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   const whatsappNumber = "27799117815";
   const message = encodeURIComponent(
-    "Hi URBAN STAYS! I'm interested in booking a luxury apartment in Sandton. Could you please assist me?"
+    "Hi URBAN STAYS! I would like to make an enquiry. Could you please assist me?"
   );
   const href = `https://wa.me/${whatsappNumber}?text=${message}`;
 
