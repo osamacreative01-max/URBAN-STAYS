@@ -45,6 +45,8 @@ const galleryItems = [
   { id: 39, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0038 (1).jpg",  alt: "Design highlights",             aspectClass: "aspect-[4/3]" },
   { id: 40, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0039 (1).jpg",  alt: "Interior showcase",             aspectClass: "aspect-square" },
   { id: 41, category: "Interiors",          src: "/images/gallery/IMG-20260618-WA0041.jpg",  alt: "Final touch",                     aspectClass: "aspect-[4/3]" },
+  { id: 42, category: "Sandton",            src: "/images/gallery/WhatsApp Image 2026-09-07 at 9.27.50 AM.jpeg",  alt: "Sandton view",              aspectClass: "aspect-[4/3]" },
+  { id: 43, category: "Sandton",            src: "/images/gallery/WhatsApp Image 2026-09-07 at 9.28.29 AM.jpeg",  alt: "Sandton skyline",           aspectClass: "aspect-[3/4]" },
 ];
 
 export default function GalleryPage() {

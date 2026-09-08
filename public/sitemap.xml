@@ -25,9 +25,17 @@
   <!-- Gallery Page -->
   <url>
     <loc>https://urbanstays.co.za/gallery</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://urbanstays.co.za/images/gallery/WhatsApp%20Image%202026-09-07%20at%209.27.50%20AM.jpeg</image:loc>
+      <image:title>Sandton view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://urbanstays.co.za/images/gallery/WhatsApp%20Image%202026-09-07%20at%209.28.29%20AM.jpeg</image:loc>
+      <image:title>Sandton skyline</image:title>
+    </image:image>
   </url>
   
   <!-- Shuttle & Chauffeur Page -->
