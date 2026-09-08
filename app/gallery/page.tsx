@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ScrollObserver from "@/components/ScrollObserver";
 
 const categories = ["All", "Apartments", "Interiors", "Shuttle & Chauffeur", "Sandton"];
@@ -51,12 +51,47 @@ const galleryItems = [
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [lightboxItem, setLightboxItem] = useState<typeof galleryItems[0] | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered =
     activeCategory === "All"
       ? galleryItems
       : galleryItems.filter((item) => item.category === activeCategory);
+
+  const lightboxItem = lightboxIndex !== null ? filtered[lightboxIndex] : null;
+
+  const closeLightbox = () => setLightboxIndex(null);
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev === null ? null : (prev + 1) % filtered.length));
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + filtered.length) % filtered.length));
+  };
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY > 0) nextImage();
+      else prevImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("wheel", handleWheel, { passive: true });
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [lightboxIndex, filtered.length]);
 
   return (
     <>
@@ -131,11 +166,11 @@ export default function GalleryPage() {
         style={{ background: "linear-gradient(180deg, #F7F3EA 0%, #F2EDDF 50%, #F7F3EA 100%)" }}
       >
         <div className="max-w-6xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-4">
-          {filtered.map((item) => (
+          {filtered.map((item, i) => (
             <div
               key={item.id}
               className={`break-inside-avoid mb-4 overflow-hidden cursor-pointer group relative ${item.aspectClass}`}
-              onClick={() => setLightboxItem(item)}
+              onClick={() => setLightboxIndex(i)}
               style={{ display: "block" }}
             >
               {/* Placeholder background always visible */}
@@ -194,16 +229,61 @@ export default function GalleryPage() {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-6"
           style={{ backgroundColor: "rgba(0,0,0,0.92)" }}
-          onClick={() => setLightboxItem(null)}
+          onClick={closeLightbox}
         >
           <button
-            className="absolute top-6 right-6 font-lato text-sm tracking-widest uppercase transition-opacity hover:opacity-100"
+            className="absolute top-6 right-6 font-lato text-sm tracking-widest uppercase transition-opacity hover:opacity-100 z-10"
             style={{ color: "rgba(255,255,255,0.7)", opacity: 0.7 }}
-            onClick={() => setLightboxItem(null)}
+            onClick={closeLightbox}
             aria-label="Close lightbox"
           >
             Close ✕
           </button>
+
+          {/* Prev button */}
+          <button
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center transition-all hover:opacity-100"
+            style={{
+              width: "clamp(40px, 8vw, 56px)",
+              height: "clamp(40px, 8vw, 56px)",
+              opacity: 0.7,
+              border: "1px solid rgba(255,255,255,0.4)",
+              borderRadius: "50%",
+              backgroundColor: "rgba(255,255,255,0.05)",
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            aria-label="Previous image"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" className="w-5 h-5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          {/* Next button */}
+          <button
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center transition-all hover:opacity-100"
+            style={{
+              width: "clamp(40px, 8vw, 56px)",
+              height: "clamp(40px, 8vw, 56px)",
+              opacity: 0.7,
+              border: "1px solid rgba(255,255,255,0.4)",
+              borderRadius: "50%",
+              backgroundColor: "rgba(255,255,255,0.05)",
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            aria-label="Next image"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" className="w-5 h-5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
           <div
             className="max-w-4xl w-full overflow-hidden relative"
             style={{ minHeight: "50vh", maxHeight: "80vh" }}
@@ -214,6 +294,14 @@ export default function GalleryPage() {
               className="w-full h-full"
               style={{ objectFit: "contain", maxHeight: "80vh" }}
             />
+          </div>
+
+          {/* Counter */}
+          <div
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 font-lato text-xs tracking-widest z-10"
+            style={{ color: "rgba(255,255,255,0.6)" }}
+          >
+            {lightboxIndex !== null ? lightboxIndex + 1 : 0} / {filtered.length}
           </div>
         </div>
       )}
