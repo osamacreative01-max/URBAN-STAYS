@@ -23,6 +23,10 @@ const montserratMedium = localFont({
 
 export const metadata: Metadata = {
   title: "URBAN STAYS | Luxury Serviced Apartments – Sandton",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }, { url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+  },
   description:
     "Experience luxury serviced apartments in the heart of Sandton. URBAN STAYS offers premium accommodation, private shuttle and chauffeur services.",
   keywords:
