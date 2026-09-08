@@ -19,7 +19,7 @@ export default function HomePage() {
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Masingita Hotel, Sandton",
+      "streetAddress": "Masingita Towers, Sandton",
       "addressLocality": "Johannesburg",
       "addressRegion": "Gauteng",
       "addressCountry": "ZA"
@@ -204,7 +204,7 @@ export default function HomePage() {
               className="font-lato text-base mb-5 mt-6"
               style={{ color: "#2B2D31", lineHeight: "1.85" }}
             >
-              Situated at the iconic Masingita Hotel in the heart of Sandton, URBAN
+              Situated at the iconic Masingita Towers in the heart of Sandton, URBAN
               STAYS offers a curated selection of fully serviced luxury apartments —
               designed for discerning travellers, executives, and those who simply
               refuse to settle for less.
@@ -842,7 +842,7 @@ export default function HomePage() {
                 Exceptional Connectivity
               </h3>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
-                Sandton is seamlessly connected to the rest of Johannesburg and beyond. The Sandton Gautrain station, an eight-minute walk from Masingita Hotel, provides rapid transit to OR Tambo International Airport in just 15 minutes. This world-class train service also connects you to Pretoria, Rosebank, and other key Gauteng destinations with ease and comfort.
+                Sandton is seamlessly connected to the rest of Johannesburg and beyond. The Sandton Gautrain station, an eight-minute walk from Masingita Towers, provides rapid transit to OR Tambo International Airport in just 15 minutes. This world-class train service also connects you to Pretoria, Rosebank, and other key Gauteng destinations with ease and comfort.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
                 Major highways including the M1, N1, and William Nicol Drive intersect in Sandton, making road travel convenient whether you're heading to business meetings, exploring Johannesburg's cultural attractions, or venturing further afield. For ultimate convenience, URBAN STAYS offers private chauffeur and shuttle services for stress-free transportation.
@@ -857,7 +857,7 @@ export default function HomePage() {
                 Safety &amp; Security
               </h3>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }} className="mb-5">
-                Your safety and peace of mind are paramount. Sandton is one of Johannesburg's most secure areas, with 24/7 private security, CCTV surveillance throughout public spaces, and well-maintained infrastructure. The Masingita Hotel complex where URBAN STAYS is located features controlled access, secure underground parking, and round-the-clock security personnel.
+                Your safety and peace of mind are paramount. Sandton is one of Johannesburg's most secure areas, with 24/7 private security, CCTV surveillance throughout public spaces, and well-maintained infrastructure. The Masingita Towers complex where URBAN STAYS is located features controlled access, secure underground parking, and round-the-clock security personnel.
               </ExpandableText>
               <ExpandableText lines={3} style={{ color: "#2B2D31" }}>
                 Our apartments are equipped with modern security systems, and our concierge team is available at any hour to assist with your needs. Whether you're a first-time visitor to Johannesburg or a regular traveler to the city, URBAN STAYS provides the secure, comfortable environment you expect from premium accommodation.

@@ -207,7 +207,6 @@ export default function GalleryPage() {
           <div
             className="max-w-4xl w-full overflow-hidden relative"
             style={{ minHeight: "50vh", maxHeight: "80vh" }}
-            onClick={(e) => e.stopPropagation()}
           >
             <img
               src={lightboxItem.src}

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Experience luxury serviced apartments in the heart of Sandton. URBAN STAYS offers premium accommodation, private shuttle and chauffeur services.",
   keywords:
-    "URBAN STAYS, serviced apartments, Sandton, luxury accommodation, Masingita Hotel, chauffeur, shuttle",
+    "URBAN STAYS, serviced apartments, Sandton, luxury accommodation, Masingita Towers, chauffeur, shuttle",
   openGraph: {
     title: "URBAN STAYS | Luxury Serviced Apartments – Sandton",
     description:

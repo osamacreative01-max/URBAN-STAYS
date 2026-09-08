@@ -5,7 +5,7 @@ import ScrollObserver from "@/components/ScrollObserver";
 export const metadata: Metadata = {
   title: "Location | URBAN STAYS – Sandton, Johannesburg",
   description:
-    "URBAN STAYS is located at the Masingita Hotel in Sandton, Johannesburg — the business and lifestyle hub of South Africa.",
+    "URBAN STAYS is located at the Masingita Towers in Sandton, Johannesburg — the business and lifestyle hub of South Africa.",
 };
 
 const nearby = [
@@ -86,7 +86,7 @@ export default function LocationPage() {
               className="font-montserrat text-2xl font-light mb-5"
               style={{ color: "#17233A" }}
             >
-              Masingita Hotel,
+              Masingita Towers,
               <br />
               <span className="font-semibold">Sandton, Johannesburg</span>
             </h2>
@@ -101,7 +101,7 @@ export default function LocationPage() {
                 gap: "0.25rem",
               }}
             >
-              <span>Masingita Hotel</span>
+              <span>Masingita Towers</span>
               <span>Sandton, Johannesburg</span>
               <span>Gauteng, South Africa</span>
             </address>
@@ -196,7 +196,7 @@ export default function LocationPage() {
             style={{ height: "min(450px, 60vw)", backgroundColor: "rgba(21,21,21,0.08)" }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.652!2d28.0567!3d-26.1076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sSandton%2C+Johannesburg!5e0!3m2!1sen!2sza!4v1"
+              src="https://www.google.com/maps?q=Masingita+Towers,+Sandton,+Johannesburg&ll=-26.0941341,28.0536391&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

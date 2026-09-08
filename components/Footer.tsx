@@ -132,7 +132,7 @@ export default function Footer() {
                 className="font-lato text-sm leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.75)" }}
               >
-                Masingita Hotel
+                Masingita Towers
                 <br />
                 Sandton, Johannesburg
                 <br />
