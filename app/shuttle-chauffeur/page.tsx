@@ -94,7 +94,7 @@ export default function ShuttleChauffeurPage() {
           </div>
 
           {/* Vehicle Gallery — 3 images with gold borders & captions */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-5 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-12 sm:mb-16">
             {vehicleGallery.map((img, i) => (
               <div key={i} className="group">
                 <div
@@ -191,8 +191,8 @@ export default function ShuttleChauffeurPage() {
             {/* Right Column — CTA + Trust */}
             <div className="flex flex-col items-center md:items-end md:pt-2">
 
-              {/* Feature Icons Row — single line */}
-              <div className="flex justify-center md:justify-end gap-5 sm:gap-7 mb-10 whitespace-nowrap">
+              {/* Feature Icons Row — wraps on mobile */}
+              <div className="flex flex-wrap justify-center md:justify-end gap-x-5 sm:gap-x-7 gap-y-3 mb-10">
                 {[
                   {
                     label: "1–3 Passengers",
