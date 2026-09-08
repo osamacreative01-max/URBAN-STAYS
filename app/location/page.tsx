@@ -235,7 +235,7 @@ export default function LocationPage() {
             {nearby.map((place, i) => (
               <div
                 key={i}
-                className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover flex flex-col"
+                className="group relative rounded-xl overflow-hidden transition-all duration-500 card-hover flex flex-col flex-none w-[70%] max-w-[280px] sm:w-auto sm:max-w-none sm:flex-1"
                 style={{
                   background: "linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
                   border: "1px solid rgba(197,164,109,0.2)",
