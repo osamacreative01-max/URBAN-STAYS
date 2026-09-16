@@ -74,8 +74,8 @@ export default function HomePage() {
       "reviewCount": "127"
     },
     "sameAs": [
-      "https://www.facebook.com/urbanstays",
-      "https://www.instagram.com/urbanstays",
+      "https://www.facebook.com/profile.php?id=61594582280860",
+      "https://www.instagram.com/urbanstaysandshuttles/",
       "https://www.linkedin.com/company/urbanstays"
     ]
   };
