@@ -30,7 +30,7 @@ export default function HomePage() {
       "longitude": "28.0567"
     },
     "telephone": "+27-79-911-7815",
-    "email": "enquiries@tirzah.co.za",
+    "email": "enquiries@urbanstaysandshuttles.co.za",
     "priceRange": "R2,800 - R6,500",
     "amenityFeature": [
       {
