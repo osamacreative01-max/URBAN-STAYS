@@ -123,10 +123,19 @@ async function sendWithWebhook(payload: Record<string, string>) {
   if (!res.ok) throw new Error(`Webhook ${res.status}`);
 }
 
+/** Relay's one-time activation is still waiting to be clicked — retrying is pointless. */
+class ActivationPendingError extends Error {}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 /**
  * Free relay through https://formsubmit.co — works with no account, no API key
  * and no DNS changes. FormSubmit requires the calling origin, so the site URL is
  * sent along with the request.
+ *
+ * The relay answers with a momentary 5xx every now and then, so a failed attempt
+ * is retried a couple of times before the enquiry is reported as unsent. Nothing
+ * is ever reported as "sent" without a positive confirmation.
  */
 async function sendWithFormSubmit(payload: {
   name: string;
@@ -138,36 +147,57 @@ async function sendWithFormSubmit(payload: {
   const primary = process.env.FORMSUBMIT_TO?.trim() || ccList[0] || EMAIL_TO;
   const cc = [EMAIL_TO, ...ccList].filter((a) => a && a !== primary);
 
-  const res = await fetch(`${FORMSUBMIT_ENDPOINT}${encodeURIComponent(primary)}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Origin: SITE_URL,
-      Referer: `${SITE_URL}/contact`,
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    },
-    body: JSON.stringify({
-      name: payload.name,
-      email: payload.email,
-      phone: payload.phone,
-      subject: payload.subject,
-      message: payload.message,
-      _subject: `[Website] ${payload.subject} — ${payload.name}`,
-      _captcha: "false",
-      _honey: "",
-      ...(cc.length ? { _cc: cc.join(",") } : {}),
-    }),
+  const url = `${FORMSUBMIT_ENDPOINT}${encodeURIComponent(primary)}`;
+  const body = JSON.stringify({
+    name: payload.name,
+    email: payload.email,
+    phone: payload.phone,
+    subject: payload.subject,
+    message: payload.message,
+    _subject: `[Website] ${payload.subject} — ${payload.name}`,
+    _captcha: "false",
+    _honey: "",
+    ...(cc.length ? { _cc: cc.join(",") } : {}),
   });
 
-  const data: { success?: string; message?: string } | null = await res
-    .json()
-    .catch(() => null);
+  const ATTEMPTS = 3;
+  let lastError: unknown = "no attempt made";
 
-  if (!res.ok || !data || String(data.success).toLowerCase() !== "true") {
-    throw new Error(`FormSubmit ${res.status}: ${data?.message ?? "no confirmation"}`);
+  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Origin: SITE_URL,
+          Referer: `${SITE_URL}/contact`,
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        },
+        body,
+      });
+
+      const data: { success?: string; message?: string } | null = await res
+        .json()
+        .catch(() => null);
+      const detail = data?.message ?? `HTTP ${res.status}`;
+
+      if (res.ok && data && String(data.success).toLowerCase() === "true") return;
+
+      // The one-time activation link has not been clicked yet — no point retrying.
+      if (/activ/i.test(detail)) throw new ActivationPendingError(detail);
+
+      lastError = new Error(`FormSubmit ${res.status}: ${detail}`);
+    } catch (err) {
+      if (err instanceof ActivationPendingError) throw err;
+      lastError = err; // network hiccup or timeout — worth another try
+    }
+
+    if (attempt < ATTEMPTS) await sleep(attempt * 1500);
   }
+
+  throw lastError;
 }
 
 export async function POST(request: NextRequest) {
@@ -232,18 +262,29 @@ export async function POST(request: NextRequest) {
       );
     }
   } catch (err) {
-    console.error("[contact] delivery failed:", err);
     const detail = err instanceof Error ? err.message : String(err);
-    if (/activ/i.test(detail)) {
+    console.error("[contact] delivery failed:", detail);
+
+    if (err instanceof ActivationPendingError) {
       console.error(
         "[contact] ACTION REQUIRED: open the inbox of " +
           (process.env.FORMSUBMIT_TO?.trim() || ccList[0] || EMAIL_TO) +
-          " and click the 'Activate Form' link from FormSubmit."
+          " and click the 'Activate Form' link from FormSubmit. Until it is clicked, every enquiry is refused."
       );
     }
+
+    /* Keep the enquiry so it can still be recovered from the Vercel logs. */
+    console.error(
+      "[contact] ENQUIRY NOT DELIVERED — recoverable copy:\n" +
+        JSON.stringify({ ...payload, receivedAt: new Date().toISOString() }, null, 2)
+    );
+
+    /* `code` is machine-readable so the problem can be identified from outside;
+       the visitor-facing wording stays the same in every failure. */
     return json(
       {
         ok: false,
+        code: err instanceof ActivationPendingError ? "activation_pending" : "relay_error",
         error:
           "We could not send your message just now. Please try again, or use WhatsApp for an instant reply.",
       },

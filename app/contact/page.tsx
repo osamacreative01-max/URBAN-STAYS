@@ -56,6 +56,23 @@ export default function ContactPage() {
     "Hi URBAN STAYS! I'd like to get in touch regarding an enquiry."
   );
 
+  /* If delivery fails, the visitor's own words are carried straight into
+     WhatsApp so the enquiry can never be lost — nothing to retype. */
+  const waFallback = encodeURIComponent(
+    [
+      "Hi URBAN STAYS! My message via your website did not send, so here it is:",
+      "",
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      formData.phone ? `Phone: ${formData.phone}` : "",
+      `Subject: ${formData.subject}`,
+      "",
+      formData.message,
+    ]
+      .filter(Boolean)
+      .join("\n")
+  );
+
   const inputStyle: React.CSSProperties = {
     width: "100%",
     border: "1px solid rgba(21,21,21,0.2)",
@@ -324,16 +341,31 @@ export default function ContactPage() {
                       color: "#8A2B2B",
                       padding: "0.85rem 1rem",
                       lineHeight: 1.6,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "0.75rem",
                     }}
                   >
-                    {error}{" "}
+                    <span>{error}</span>
+                    {/* Nothing is lost if delivery fails: the visitor's message is
+                        carried into WhatsApp exactly as they typed it. */}
                     <a
-                      href={`https://wa.me/27799117815?text=${waMessage}`}
+                      href={`https://wa.me/27799117815?text=${waFallback}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "#C5A46D", fontWeight: 600, textDecoration: "underline" }}
+                      className="font-montserrat self-start"
+                      style={{
+                        backgroundColor: "#C5A46D",
+                        color: "#FFFFFF",
+                        padding: "0.65rem 1.25rem",
+                        fontSize: "0.8rem",
+                        fontWeight: 600,
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        textDecoration: "none",
+                      }}
                     >
-                      Message us on WhatsApp
+                      Send my message on WhatsApp instead
                     </a>
                   </div>
                 )}
