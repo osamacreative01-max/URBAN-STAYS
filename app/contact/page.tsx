@@ -10,9 +10,11 @@ export default function ContactPage() {
     phone: "",
     subject: "General Enquiry",
     message: "",
+    company: "", // honeypot — hidden from real visitors, filled by bots
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -23,9 +25,31 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.ok) {
+        setSubmitted(true);
+      } else {
+        setError(
+          data.error ||
+            "We could not send your message just now. Please try again, or use WhatsApp for an instant reply."
+        );
+      }
+    } catch {
+      setError(
+        "We could not reach our enquiry service. Please check your connection and try again, or message us on WhatsApp."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const waMessage = encodeURIComponent(
@@ -276,6 +300,44 @@ export default function ContactPage() {
                   gap: "1.25rem",
                 }}
               >
+                {/* Honeypot field — invisible to people, catches spam bots */}
+                <div style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }} aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                {error && (
+                  <div
+                    role="alert"
+                    className="font-lato text-xs sm:text-sm"
+                    style={{
+                      border: "1px solid rgba(180,60,60,0.35)",
+                      backgroundColor: "rgba(180,60,60,0.06)",
+                      color: "#8A2B2B",
+                      padding: "0.85rem 1rem",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {error}{" "}
+                    <a
+                      href={`https://wa.me/27799117815?text=${waMessage}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#C5A46D", fontWeight: 600, textDecoration: "underline" }}
+                    >
+                      Message us on WhatsApp
+                    </a>
+                  </div>
+                )}
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" style={labelStyle}>

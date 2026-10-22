@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
+import { SITE_URL } from "@/lib/site";
 
 const montserratRegular = localFont({
   src: "../public/fonts/Montserrat-Regular.ttf",
@@ -22,7 +23,11 @@ const montserratMedium = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "URBAN STAYS | Luxury Serviced Apartments – Sandton",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }, { url: "/favicon.ico", sizes: "any" }],
     apple: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
@@ -36,7 +41,7 @@ export const metadata: Metadata = {
     description:
       "Premium serviced apartments in Sandton with private shuttle and chauffeur services.",
     type: "website",
-    url: "https://urbanstays.co.za",
+    url: SITE_URL,
     siteName: "URBAN STAYS",
     images: [
       {

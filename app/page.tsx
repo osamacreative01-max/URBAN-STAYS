@@ -2,6 +2,7 @@ import Link from "next/link";
 import ScrollObserver from "@/components/ScrollObserver";
 import SocialShare from "@/components/SocialShare";
 import ExpandableText from "@/components/ExpandableText";
+import { SITE_URL } from "@/lib/site";
 
 export default function HomePage() {
   // JSON-LD Structured Data for Local Business
@@ -10,8 +11,8 @@ export default function HomePage() {
     "@type": "LodgingBusiness",
     "name": "URBAN STAYS",
     "description": "Luxury serviced apartments in the heart of Sandton, Johannesburg. Premium accommodation with personalized service and private chauffeur options.",
-    "url": "https://urbanstays.co.za",
-    "logo": "https://urbanstays.co.za/logo.png",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/images/PNG/Asset 6@2x.png`,
     "image": [
       "https://images.unsplash.com/photo-1600596542815-3ad19b989b7b?w=1200&q=80",
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80",
@@ -31,7 +32,7 @@ export default function HomePage() {
     },
     "telephone": "+27-79-911-7815",
     "email": "enquiries@urbanstaysandshuttles.co.za",
-    "priceRange": "R2,800 - R6,500",
+    "priceRange": "R3,700",
     "amenityFeature": [
       {
         "@type": "LocationFeatureSpecification",
