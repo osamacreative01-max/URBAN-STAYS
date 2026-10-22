@@ -1,16 +1,22 @@
 import { NextRequest } from "next/server";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
  *  URBAN STAYS — contact form delivery
  * ─────────────────────────────────────────────────────────────────────────────
- *  Website enquiries are delivered through one of two providers:
+ *  Website enquiries are delivered through the first provider that is set up:
  *
- *    1. RESEND_API_KEY  → https://resend.com  (recommended, reliable)
- *    2. CONTACT_WEBHOOK_URL → FormSubmit / Web3Forms / Make / Zapier / your own API
+ *    1. RESEND_API_KEY       → https://resend.com (recommended once the domain
+ *                              is verified — best deliverability)
+ *    2. CONTACT_WEBHOOK_URL  → your own endpoint (Make / Zapier / Formspree …)
+ *    3. FormSubmit           → free relay, ON BY DEFAULT. Requires one one-time
+ *                              "Activate Form" link to be clicked in the inbox
+ *                              of FORMSUBMIT_TO (the Gmail address) — nothing
+ *                              else to install, buy or configure.
  *
- *  If neither is configured the endpoint answers 503 and the form shows an
- *  honest error with a WhatsApp fallback — it never pretends a message was sent.
+ *  A message is only ever reported as "sent" when the provider confirms it.
+ *  Otherwise the visitor sees an honest error plus a WhatsApp fallback.
  *
  *  All variables are documented in .env.example and in HANDOVER.md.
  */
@@ -19,6 +25,15 @@ const EMAIL_TO = process.env.CONTACT_EMAIL_TO ?? "enquiries@urbanstaysandshuttle
 const EMAIL_CC = process.env.CONTACT_EMAIL_CC ?? "tirzahdlamini@gmail.com";
 const EMAIL_FROM =
   process.env.CONTACT_EMAIL_FROM ?? "URBAN STAYS Website <onboarding@resend.dev>";
+
+/* FormSubmit (free relay). Primary must be an address whose inbox we can open,
+   because that is where the one-time activation link is sent. */
+const FORMSUBMIT_ENDPOINT = process.env.FORMSUBMIT_ENDPOINT ?? "https://formsubmit.co/ajax/";
+const FORMSUBMIT_ENABLED = process.env.FORMSUBMIT_ENABLED !== "false";
+
+const ccList = EMAIL_CC.split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 const MAX_MESSAGE = 5000;
 const MAX_NAME = 120;
@@ -108,6 +123,53 @@ async function sendWithWebhook(payload: Record<string, string>) {
   if (!res.ok) throw new Error(`Webhook ${res.status}`);
 }
 
+/**
+ * Free relay through https://formsubmit.co — works with no account, no API key
+ * and no DNS changes. FormSubmit requires the calling origin, so the site URL is
+ * sent along with the request.
+ */
+async function sendWithFormSubmit(payload: {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}) {
+  const primary = process.env.FORMSUBMIT_TO?.trim() || ccList[0] || EMAIL_TO;
+  const cc = [EMAIL_TO, ...ccList].filter((a) => a && a !== primary);
+
+  const res = await fetch(`${FORMSUBMIT_ENDPOINT}${encodeURIComponent(primary)}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Origin: SITE_URL,
+      Referer: `${SITE_URL}/contact`,
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    },
+    body: JSON.stringify({
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone,
+      subject: payload.subject,
+      message: payload.message,
+      _subject: `[Website] ${payload.subject} — ${payload.name}`,
+      _captcha: "false",
+      _honey: "",
+      ...(cc.length ? { _cc: cc.join(",") } : {}),
+    }),
+  });
+
+  const data: { success?: string; message?: string } | null = await res
+    .json()
+    .catch(() => null);
+
+  if (!res.ok || !data || String(data.success).toLowerCase() !== "true") {
+    throw new Error(`FormSubmit ${res.status}: ${data?.message ?? "no confirmation"}`);
+  }
+}
+
 export async function POST(request: NextRequest) {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
@@ -154,9 +216,11 @@ export async function POST(request: NextRequest) {
       await sendWithResend(payload);
     } else if (process.env.CONTACT_WEBHOOK_URL) {
       await sendWithWebhook(payload);
+    } else if (FORMSUBMIT_ENABLED) {
+      await sendWithFormSubmit(payload);
     } else {
       console.error(
-        "[contact] No email provider configured. Set RESEND_API_KEY (or CONTACT_WEBHOOK_URL) in Vercel."
+        "[contact] No email provider configured. Set RESEND_API_KEY, CONTACT_WEBHOOK_URL or enable FormSubmit."
       );
       return json(
         {
@@ -169,6 +233,14 @@ export async function POST(request: NextRequest) {
     }
   } catch (err) {
     console.error("[contact] delivery failed:", err);
+    const detail = err instanceof Error ? err.message : String(err);
+    if (/activ/i.test(detail)) {
+      console.error(
+        "[contact] ACTION REQUIRED: open the inbox of " +
+          (process.env.FORMSUBMIT_TO?.trim() || ccList[0] || EMAIL_TO) +
+          " and click the 'Activate Form' link from FormSubmit."
+      );
+    }
     return json(
       {
         ok: false,

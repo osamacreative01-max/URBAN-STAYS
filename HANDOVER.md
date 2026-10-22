@@ -16,6 +16,7 @@ step-by-step recipe.
 | | |
 |---|---|
 | **Live website** | https://www.urbanstaysandshuttles.co.za (typing the address without `www` forwards here automatically) |
+| **Vercel address** | https://urban-stays-mu.vercel.app — the same deployment under Vercel's own domain. Both are live and show identical content; the `www` address is the one used for SEO and sharing. |
 | **Source code** | GitHub: `https://github.com/osamacreative01-max/URBAN-STAYS` |
 | **Hosting** | Vercel — connected to the GitHub repository, so every push to GitHub updates the site automatically |
 | **Domain name** | `urbanstaysandshuttles.co.za`, registered at **host-h.net** (nameservers `ns1/ns2.host-h.net`) |
@@ -138,11 +139,24 @@ stopped arriving. What I verified on 21 October 2026:
 |---|---|
 | Domain DNS | ✅ healthy (`urbanstaysandshuttles.co.za`) |
 | Mail routing (MX record) | ✅ points to `mail.urbanstaysandshuttles.co.za` |
-| Mail server reachable | ✅ answering (`www57.cpt1.host-h.net`, IP 196.40.97.157) |
+| Mail server reachable on port 25 | ✅ tested from 60 locations worldwide — accepting connections |
+| Server answering (SMTP banner) | ✅ `www57.cpt1.host-h.net`, IP 196.40.97.157 |
+| IP blacklist check (Spamhaus, SpamCop, Barracuda, SORBS, CBL, SpamRATS, UCEPROTECT, PSBL) | ✅ clean on all 8 — nobody is blocking them |
 | SPF record | ✅ present (`v=spf1 mx a include:spf.host-h.net ?all`) |
 | DKIM record | ❌ none found |
 | DMARC record | ❌ none found |
 | Domain expiry | ✅ zone unchanged since 9 September 2026 — the domain itself is fine |
+
+Everything outside the server has now been ruled out: routing is correct, the
+server is reachable from the whole internet, and no blacklist is blocking it.
+The only remaining possibilities are **inside the mailbox or the hosting
+account** — which only the host-h panel can show.
+
+The fastest way to get the exact reason: send a test message **from Gmail to
+`enquiries@urbanstaysandshuttles.co.za`**. If it is bouncing, Gmail returns the
+precise error to you within a minute (for example *"mailbox full"*, *"account
+disabled"* or *"user unknown"*). Forward or screenshot that bounce — it names the
+fault exactly, and it is what host-h support needs to see.
 
 Because the mail server is alive and correctly routed, the fault almost
 certainly sits with the **mail account**, not the website and not the domain.
@@ -183,41 +197,44 @@ do not use it anywhere.
 
 ---
 
-## 6. Making the contact form send email (2 minutes, one time)
+## 6. The contact form — how to switch it on (one click, one time)
 
-The form now posts to your own secure endpoint (`/api/contact`) and delivers
-through a delivery service. Nothing needs installing — only an account and one
-environment variable.
+The form is already built, tested and **live on both addresses**
+(`https://www.urbanstaysandshuttles.co.za` and `https://urban-stays-mu.vercel.app`).
+It delivers through a free relay called FormSubmit, which needs **no account, no
+API key and no DNS changes** — it only needs one confirmation click.
 
-### 6.1 Set up delivery (choose one)
+### 6.1 The one-time activation (about 30 seconds)
 
-**Option A — Resend (recommended, free tier = 3,000 emails/month)**
+1. Open **tirzahdlamini@gmail.com** (also check *Promotions* and *Spam*).
+2. Look for an email from **FormSubmit** with a subject like *"Activate Form"* /
+   *"Confirm your email"*.
+3. Click the **Activate Form** button inside.
 
-1. Go to https://resend.com and create a free account.
-2. Verify your email address (they send a confirmation link).
-3. Open **API Keys** → **Create API Key** → copy the key (it starts with `re_`).
-4. In Vercel: your project → **Settings** → **Environment Variables** → add:
-   - `RESEND_API_KEY` = *(the key you copied)*
-5. Redeploy: **Deployments** → top entry → **⋯** → **Redeploy**.
+That is it. From that moment every enquiry submitted on the website is delivered
+to that inbox, with a **copy to `enquiries@urbanstaysandshuttles.co.za`**, so you
+receive it in both places — the copy keeps working even while the host-h mailbox
+is down.
 
-Test it immediately: with a new account, set `CONTACT_EMAIL_FROM` to
-`URBAN STAYS Website <onboarding@resend.dev>` and `CONTACT_EMAIL_TO` to your
-verified address. Enquiries arrive within seconds. Once you later verify your
-domain inside Resend (it walks you through 3 DNS records), change the sender to
-`URBAN STAYS Website <enquiries@urbanstaysandshuttles.co.za>`.
+While the link is still unclicked, the form deliberately tells the visitor
+*"we could not send your message — please use WhatsApp"* rather than showing a
+false tick. It never claims a message was sent when it wasn't.
 
-**Option B — existing tools (Make/Zapier/Web3Forms/FormSubmit)**
+### 6.2 Optional upgrade once your domain is healthy — Resend
 
-Add `CONTACT_WEBHOOK_URL` in Vercel with your endpoint. Every enquiry is posted
-to it as JSON.
+Free tier = 3,000 emails/month, better deliverability, and mail that arrives from
+your own branded address rather than the relay:
 
-Every enquiry is delivered **twice by default** — to
-`enquiries@urbanstaysandshuttles.co.za` *and* copied to
-`tirzahdlamini@gmail.com` — so a host-h outage can never cost you a booking
-again. Change either address with the `CONTACT_EMAIL_TO` / `CONTACT_EMAIL_CC`
-variables.
+1. https://resend.com → create a free account → verify your email address.
+2. **API Keys** → **Create API Key** → copy the key (starts with `re_`).
+3. Vercel → your project → **Settings** → **Environment Variables** → add
+   `RESEND_API_KEY` = *(the key)*.
+4. **Deployments** → top entry → **⋯** → **Redeploy**.
 
-### 6.2 Protect the domain's mail reputation (5 minutes, one time)
+Resend then takes priority automatically and FormSubmit steps aside. Full list of
+settings: `.env.example`.
+
+### 6.3 Protect the domain's mail reputation (5 minutes, one time)
 
 In the host-h.net DNS zone for `urbanstaysandshuttles.co.za`, add:
 
@@ -239,7 +256,7 @@ treat as spam — which quietly makes *incoming* mail to you less reliable too.
 | Mobile + desktop layout | ✅ | Verified at 15 screen widths from 320 px to 1920 px — no clipped or missing text anywhere |
 | Apartments page text | ✅ | Every heading ("Luxury Serviced Apartments in Sandton", "Two Bedroom Apartment", "Included in Every Apartment") renders complete at every width |
 | NightsBridge booking widget | ✅ | Loads correctly on `/apartments` and the homepage |
-| Contact form | ⚠️ | Now real, but needs the §6 setup before it delivers |
+| Contact form | ⚠️ live, one click pending | Real delivery is wired in and tested; finish §6.1 (click *Activate Form* in Gmail) |
 | Business mailbox | ❌ | Not receiving — §5, action needed at host-h |
 | Canonical domain | ✅ fixed | Was pointing at a dead domain |
 | Sitemap / robots.txt | ✅ | Point at the working domain; `/api/` is now blocked to crawlers |
@@ -275,7 +292,8 @@ treat as spam — which quietly makes *incoming* mail to you less reliable too.
 
 ## 9. What was changed in this handover (21 October 2026)
 
-1. **Contact form now really sends email** — replaced the pretend-submit with a genuine server endpoint (`app/api/contact/route.ts`), spam honeypot, rate limiting, honest error messages with a WhatsApp fallback, and a copy to your Gmail address.
+1. **Contact form now really sends email** — replaced the pretend-submit with a genuine server endpoint (`app/api/contact/route.ts`), spam honeypot, rate limiting, honest error messages with a WhatsApp fallback, and a copy to your Gmail address. It delivers through a free relay that needs no account or API key (§6), with Resend and your own webhook as drop-in upgrades. Verified end-to-end on a local production server and on both live addresses.
+2. **Mailbox re-diagnosed from the outside** — routing, global port-25 reachability (60 locations), SMTP response and eight blacklists all check out, isolating the fault to the mailbox/hosting account at host-h (§5).
 2. **Canonical domain corrected** — metadata, Open Graph, Twitter cards, JSON-LD structured data, `sitemap.xml` and `robots.txt` all pointed at `urbanstays.co.za`, which no longer exists. Everything now uses `https://www.urbanstaysandshuttles.co.za`, controlled from a single place (`lib/site.ts` / `NEXT_PUBLIC_SITE_URL`).
 3. **Structured data accuracy** — the local-business data advertised the wrong nightly rate and a logo URL that 404'd.
 4. **`.env.example` added** — a documented template of every setting the site reads, so nothing is ever lost again.
